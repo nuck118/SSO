@@ -1,0 +1,15 @@
+{
+  "name": "library-backend",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "express": "latest",
+    "mongoose": "latest",
+    "cors": "latest",
+    "dotenv": "latest",
+    "firebase-admin": "latest"
+  },
+  "scripts": {
+    "start": "node server.js"
+  }
+}
