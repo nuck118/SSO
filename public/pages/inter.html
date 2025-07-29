@@ -284,36 +284,30 @@
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleInterval" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                     <button type="button" data-bs-target="#carouselExampleInterval" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleInterval" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselExampleInterval" data-bs-slide-to="3" aria-label="Slide 4"></button>
                 </div>
                 <!-- Carousel Items -->
                 <div class="carousel-inner">
                     <div class="carousel-item active" data-bs-interval="3000">
-                        <div class="row justify-content-center">
-                            <div class="col-auto p-2">
-                                <button type="button" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="/images/ 9.JPG" data-bs-alt="Gallery image 1">
-                                    <img src="/images/ 9.JPG" class="d-block mx-auto rounded" style="width:200px;height:200px;object-fit:cover;" alt="Gallery image 1" />
-                                </button>
-                            </div>
-                            <div class="col-auto p-2">
-                                <button type="button" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="/images/ 13.JPG" data-bs-alt="Gallery image 2">
-                                    <img src="/images/ 13.JPG" class="d-block mx-auto rounded" style="width:200px;height:200px;object-fit:cover;" alt="Gallery image 2" />
-                                </button>
-                            </div>
-                            <div class="col-auto p-2">
-                                <button type="button" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="/images/ 16.JPG" data-bs-alt="Gallery image 3">
-                                    <img src="/images/ 16.JPG" class="d-block mx-auto rounded" style="width:200px;height:200px;object-fit:cover;" alt="Gallery image 3" />
-                                </button>
-                            </div>
-                        </div>
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="/images/ 9.JPG" data-bs-alt="Gallery image 1">
+                            <img src="/images/ 9.JPG" class="d-block mx-auto rounded" style="width:400px;height:400px;object-fit:cover;" alt="Gallery image 1" />
+                        </button>
                     </div>
                     <div class="carousel-item" data-bs-interval="3000">
-                        <div class="row justify-content-center">
-                            <div class="col-auto p-2">
-                                <button type="button" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="/images/ 18.JPG" data-bs-alt="Gallery image 4">
-                                    <img src="/images/ 18.JPG" class="d-block mx-auto rounded" style="width:200px;height:200px;object-fit:cover;" alt="Gallery image 4" />
-                                </button>
-                            </div>
-                        </div>
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="/images/ 13.JPG" data-bs-alt="Gallery image 2">
+                            <img src="/images/ 13.JPG" class="d-block mx-auto rounded" style="width:400px;height:400px;object-fit:cover;" alt="Gallery image 2" />
+                        </button>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="3000">
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="/images/ 16.JPG" data-bs-alt="Gallery image 3">
+                            <img src="/images/ 16.JPG" class="d-block mx-auto rounded" style="width:400px;height:400px;object-fit:cover;" alt="Gallery image 3" />
+                        </button>
+                    </div>
+                    <div class="carousel-item" data-bs-interval="3000">
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="/images/ 18.JPG" data-bs-alt="Gallery image 4">
+                            <img src="/images/ 18.JPG" class="d-block mx-auto rounded" style="width:400px;height:400px;object-fit:cover;" alt="Gallery image 4" />
+                        </button>
                     </div>
                 </div>
                 <!-- Carousel Controls -->
@@ -333,9 +327,9 @@
 <!-- Modal for Enlarged Image -->
 <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="imageModalLabel">Image Preview</h5>
+        <div class="modal-content" style="background: transparent; border: none;">
+            <div class="modal-header" style="border: none;">
+                <h5 class="modal-title" id="imageModalLabel" style="color: white;">Image Preview</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body text-center">
@@ -359,6 +353,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 </script>
+
+<!-- CSS to Remove Backgrounds -->
+<style>
+.carousel, .carousel-inner {
+    background: transparent !important;
+}
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: semi-transparent background for visibility */
+}
+.carousel-indicators button {
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: semi-transparent background for visibility */
+}
+</style>
 
 
 
