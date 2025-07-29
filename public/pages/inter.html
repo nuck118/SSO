@@ -41,7 +41,7 @@
         fbq('track', 'PageView');
         </script>
         <!-- End Meta Pixel Code -->
-         <style>
+        <style>
         body {
             margin: 0;
             padding: 0;
@@ -73,17 +73,21 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow for depth */
             border-radius: 8px; /* Rounded corners */
             overflow: hidden; /* Ensure image corners match wrapper */
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, box-shadow 0.3s ease-in-out, filter 0.3s ease-in-out; /* Add filter to transition */
             transform: scale(0.85); /* Smaller default for side images */
-            opacity: 0.7; /* Dimmer default for side images */
+            
             cursor: pointer; /* Indicate clickable */
+            filter: blur(0); /* Apply a blur by default to side images */
+            
         }
 
         /* Active/Centered slide styling */
         .slick-center .image-wrapper {
             transform: scale(1); /* Full size for the centered image */
-            opacity: 1; /* Fully opaque for the centered image */
+            
             box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* More prominent shadow for active slide */
+           
+            -webkit-filter: blur(0); /* For Safari */
         }
 
         .image-wrapper img {
