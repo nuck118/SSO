@@ -41,12 +41,8 @@
         <style>
         /* Base styling for carousel images */
         .carousel-item img {
-            /* Removed previous max-height, width: auto */
+            /* This general rule for img is now less critical as the .image-wrapper img overrides some properties */
             display: block; /* Ensures no extra space below images */
-            width: 100%; /* Image fills its container */
-            height: 100%; /* Image fills its container */
-            object-fit: cover; /* Images will cover the container. You might prefer 'contain' if you want to see the whole image and accept letterboxing/pillarboxing. */
-                               /* 'cover' will crop if aspect ratio doesn't match container, but ensures no empty space. */
         }
 
         /* Adjust carousel controls for better visibility if needed */
@@ -71,20 +67,22 @@
             position: relative;
             width: 100%; /* Takes full width of its column */
             /* Calculate 16:10 aspect ratio for height based on width */
-            /* Height = (10 / 16) * Width = 0.625 * Width */
             padding-top: 62.5%; /* This creates the 16:10 aspect ratio (10 / 16 = 0.625) */
             overflow: hidden; /* Hide anything that spills out */
             background-color: #f0f0f0; /* Optional: placeholder color before image loads */
         }
 
-        /* Position the image absolutely inside its wrapper */
+        /* Essential for cropping/enlarging to fit the 16:10 aspect ratio */
         .carousel-item .col .image-wrapper img {
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            /* object-fit: cover; - moved to general img rule, but useful here too */
+            width: 100%; /* Image fills 100% width of its wrapper */
+            height: 100%; /* Image fills 100% height of its wrapper */
+            object-fit: cover; /* This is the key property! */
+            /* If the image's aspect ratio doesn't match the 16:10 wrapper,
+               'cover' will make the image fill the area and crop any excess.
+               If the image is smaller, it will be enlarged to fill the area. */
         }
 
         /* Add some padding/margin to prevent images from touching */
