@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slick Gallery Carousel with Lightbox</title>
+    <title>Slick Gallery Carousel with Lightbox and Blurred Side Images</title>
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
@@ -42,10 +42,12 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow for depth */
             border-radius: 8px; /* Rounded corners */
             overflow: hidden; /* Ensure image corners match wrapper */
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, box-shadow 0.3s ease-in-out, filter 0.3s ease-in-out; /* Add filter to transition */
             transform: scale(0.85); /* Smaller default for side images */
             opacity: 0.7; /* Dimmer default for side images */
             cursor: pointer; /* Indicate clickable */
+            filter: blur(2px); /* Apply a blur by default to side images */
+            -webkit-filter: blur(2px); /* For Safari */
         }
 
         /* Active/Centered slide styling */
@@ -53,6 +55,8 @@
             transform: scale(1); /* Full size for the centered image */
             opacity: 1; /* Fully opaque for the centered image */
             box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* More prominent shadow for active slide */
+            filter: blur(0); /* Remove blur for the centered image */
+            -webkit-filter: blur(0); /* For Safari */
         }
 
         .image-wrapper img {
@@ -139,36 +143,36 @@
     <div class="gallery-wrapper">
         <div class="carousel">
             <div class="image-wrapper">
-                <a data-fancybox="gallery" href="/images/ 4.JPG" data-caption="">
-                    <img src="/images/ 4.JPG" alt="">
+                <a data-fancybox="gallery" href="/images/ 4.JPG" data-caption="Wedding couple exchanging vows">
+                    <img src="/images/ 4.JPG" alt="Wedding couple exchanging vows">
                 </a>
             </div>
             <div class="image-wrapper">
-                <a data-fancybox="gallery" href="/images/ 5.JPG" data-caption="">
-                    <img src="/images/ 5.JPG" alt="">
+                <a data-fancybox="gallery" href="/images/ 5.JPG" data-caption="Close-up of bride and groom holding hands">
+                    <img src="/images/ 5.JPG" alt="Close-up of bride and groom holding hands">
                 </a>
             </div>
             <div class="image-wrapper">
-                <a data-fancybox="gallery" href="/images/ 6.JPG" data-caption="">
-                    <img src="/images/ 6.JPG" alt="">
+                <a data-fancybox="gallery" href="/images/ 6.JPG" data-caption="Wedding rings and bridal bouquet">
+                    <img src="/images/ 6.JPG" alt="Wedding rings and bridal bouquet">
                 </a>
             </div>
             <div class="image-wrapper">
-                <a data-fancybox="gallery" href="/images/ 13.JPG" data-caption="">
-                    <img src="/images/ 13.JPG" alt="">
+                <a data-fancybox="gallery" href="/images/ 13.JPG" data-caption="Guests celebrating at a wedding reception">
+                    <img src="/images/ 13.JPG" alt="Guests celebrating at a wedding reception">
                 </a>
             </div>
             <div class="image-wrapper">
-                <a data-fancybox="gallery" href="/images/ 16.JPG" data-caption="">
-                    <img src="/images/ 16.JPG" alt="">
+                <a data-fancybox="gallery" href="/images/ 16.JPG" data-caption="Outdoor wedding ceremony arch">
+                    <img src="/images/ 16.JPG" alt="Outdoor wedding ceremony arch">
                 </a>
             </div>
             <div class="image-wrapper">
-                <a data-fancybox="gallery" href="/images/ 9.JPG" data-caption="">
-                    <img src="/images/ 9.JPG" alt="">
+                <a data-fancybox="gallery" href="/images/ 9.JPG" data-caption="Candid shot of wedding attendees">
+                    <img src="/images/ 9.JPG" alt="Candid shot of wedding attendees">
                 </a>
             </div>
-            </div>
+        </div>
     </div>
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -177,7 +181,6 @@
 
     <script type="text/javascript">
         $(document).ready(function(){
-            // Initialize Slick Carousel
             $('.carousel').slick({
                 centerMode: true,
                 centerPadding: '60px',
@@ -210,15 +213,7 @@
                 ]
             });
 
-            // Initialize Fancybox on the image links
-            $('[data-fancybox="gallery"]').fancybox({
-                // Optional: Customize Fancybox options here
-                // For example, to show captions:
-                // caption: function(instance, item) {
-                //     return $(this).data('caption') || '';
-                // },
-                // loop: true // Allows looping through the gallery
-            });
+            $('[data-fancybox="gallery"]').fancybox({});
         });
     </script>
 
