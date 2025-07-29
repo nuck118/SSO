@@ -38,7 +38,61 @@
         fbq('track', 'PageView');
         </script>
         <!-- End Meta Pixel Code -->
-       
+       <style>
+        /* Base styling for carousel images */
+        .carousel-item img {
+            display: block;
+            /* The 'rounded mx-auto d-block mt-3' classes are still on the img tag.
+               'd-block' and 'mx-auto' are for centering, but 'position: absolute'
+               on the image inside image-wrapper makes them less relevant for centering
+               the image *within* the wrapper, as it fills it. 'mt-3' adds margin-top. */
+        }
+
+        /* Adjust carousel controls for better visibility if needed */
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 5%;
+        }
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            filter: invert(100%);
+        }
+
+        /* Ensure flex behavior for the row inside carousel item */
+        .carousel-item .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        /* Container for each image with aspect ratio */
+        .carousel-item .col .image-wrapper {
+            position: relative;
+            width: 100%;
+            padding-top: 62.5%; /* This creates the 16:10 aspect ratio (10 / 16 = 0.625) */
+            overflow: hidden;
+            background-color: #f0f0f0; /* Optional placeholder background */
+        }
+
+        /* Essential for cropping/enlarging to fit the 16:10 aspect ratio */
+        .carousel-item .col .image-wrapper img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* This makes images crop or enlarge to fit the container */
+        }
+
+        /* Add some padding/margin to prevent images from touching */
+        .carousel-item .col {
+            padding: 5px;
+            margin-bottom: 10px;
+            display: flex; /* Helps center the image-wrapper within the column */
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
         <link rel="shortcut icon" href="https://www.wsg.pl/images/favicon.ico" type="image/x-icon">
         <link rel="icon" href="https://www.wsg.pl/images/favicon.ico" type="image/x-icon">
         <link rel="apple-touch-icon" href="https://www.wsg.pl/images/apple-touch-icon.png">
