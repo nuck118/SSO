@@ -38,62 +38,55 @@
         fbq('track', 'PageView');
         </script>
         <!-- End Meta Pixel Code -->
-        <style>
+       <style>
         /* Base styling for carousel images */
         .carousel-item img {
-            /* Removed previous max-height, width: auto */
-            display: block; /* Ensures no extra space below images */
-            width: 100%; /* Image fills its container */
-            height: 100%; /* Image fills its container */
-            object-fit: cover; /* Images will cover the container. You might prefer 'contain' if you want to see the whole image and accept letterboxing/pillarboxing. */
-                               /* 'cover' will crop if aspect ratio doesn't match container, but ensures no empty space. */
+            display: block;
         }
 
         /* Adjust carousel controls for better visibility if needed */
         .carousel-control-prev,
         .carousel-control-next {
-            width: 5%; /* Make controls narrower */
+            width: 5%;
         }
         .carousel-control-prev-icon,
         .carousel-control-next-icon {
-            filter: invert(100%); /* Makes icons white for better contrast */
+            filter: invert(100%);
         }
 
-        /* FIX: Ensure flex behavior for the row inside carousel item */
+        /* Ensure flex behavior for the row inside carousel item */
         .carousel-item .row {
-            display: flex; /* Explicitly set to flex */
-            flex-wrap: wrap; /* Allow items to wrap to the next line */
-            justify-content: center; /* Keep items centered */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
-        /* NEW: Container for each image with aspect ratio */
+        /* Container for each image with aspect ratio */
         .carousel-item .col .image-wrapper {
             position: relative;
-            width: 100%; /* Takes full width of its column */
-            /* Calculate 16:10 aspect ratio for height based on width */
-            /* Height = (10 / 16) * Width = 0.625 * Width */
+            width: 100%;
             padding-top: 62.5%; /* This creates the 16:10 aspect ratio (10 / 16 = 0.625) */
-            overflow: hidden; /* Hide anything that spills out */
-            background-color: #f0f0f0; /* Optional: placeholder color before image loads */
+            overflow: hidden;
+            background-color: #f0f0f0;
         }
 
-        /* Position the image absolutely inside its wrapper */
+        /* Essential for cropping/enlarging to fit the 16:10 aspect ratio */
         .carousel-item .col .image-wrapper img {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            /* object-fit: cover; - moved to general img rule, but useful here too */
+            object-fit: cover; /* This is the key property! */
         }
 
         /* Add some padding/margin to prevent images from touching */
         .carousel-item .col {
-            padding: 5px; /* Add padding around each column */
-            margin-bottom: 10px; /* Add margin below each column for vertical spacing */
-            display: flex; /* Make column a flex container to center wrapper if needed */
-            justify-content: center; /* Center wrapper horizontally */
-            align-items: center; /* Center wrapper vertically if other content exists */
+            padding: 5px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     </style>
         <link rel="shortcut icon" href="https://www.wsg.pl/images/favicon.ico" type="image/x-icon">
@@ -339,24 +332,32 @@
 
    <div class="container mt-5">
         <div class="row align-items-center">
-            <div class="col-12"> <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="col-12">
+
+                <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
 
                         <div class="carousel-item active">
                             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-lg-5 justify-content-center">
                                 <div class="col text-center">
-                                    <a href="/images/ 4.JPG">
-                                        <img class="rounded mx-auto d-block mt-3" src="/images/ 4.JPG" alt="Image 1">
+                                    <a href="/images/%204.JPG">
+                                        <div class="image-wrapper">
+                                            <img class="rounded mx-auto d-block mt-3" src="/images/%204.JPG" alt="Image 1">
+                                        </div>
                                     </a>
                                 </div>
                                 <div class="col text-center">
-                                    <a href="/images/ 5.JPG">
-                                        <img class="rounded mx-auto d-block mt-3" src="/images/ 5.JPG" alt="Image 2">
+                                    <a href="/images/%205.JPG">
+                                        <div class="image-wrapper">
+                                            <img class="rounded mx-auto d-block mt-3" src="/images/%205.JPG" alt="Image 2">
+                                        </div>
                                     </a>
                                 </div>
                                 <div class="col text-center">
-                                    <a href="/images/ 6.JPG">
-                                        <img class="rounded mx-auto d-block mt-3" src="/images/ 6.JPG" alt="Image 3">
+                                    <a href="/images/%206.JPG">
+                                        <div class="image-wrapper">
+                                            <img class="rounded mx-auto d-block mt-3" src="/images/%206.JPG" alt="Image 3">
+                                        </div>
                                     </a>
                                 </div>
                             </div>
@@ -365,18 +366,24 @@
                         <div class="carousel-item">
                             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-lg-5 justify-content-center">
                                 <div class="col text-center">
-                                    <a href="/images/ 13.JPG">
-                                        <img class="rounded mx-auto d-block mt-3" src="/images/ 13.JPG" alt="Image 4">
+                                    <a href="/images/%2013.JPG">
+                                        <div class="image-wrapper">
+                                            <img class="rounded mx-auto d-block mt-3" src="/images/%2013.JPG" alt="Image 4">
+                                        </div>
                                     </a>
                                 </div>
                                 <div class="col text-center">
-                                    <a href="/images/ 16.JPG">
-                                        <img class="rounded mx-auto d-block mt-3" src="/images/ 16.JPG" alt="Image 5">
+                                    <a href="/images/%2016.JPG">
+                                        <div class="image-wrapper">
+                                            <img class="rounded mx-auto d-block mt-3" src="/images/%2016.JPG" alt="Image 5">
+                                        </div>
                                     </a>
                                 </div>
                                 <div class="col text-center">
-                                    <a href="/images/ 9.JPG">
-                                        <img class="rounded mx-auto d-block mt-3" src="/images/ 9.JPG" alt="Image 6">
+                                    <a href="/images/%209.JPG">
+                                        <div class="image-wrapper">
+                                            <img class="rounded mx-auto d-block mt-3" src="/images/%209.JPG" alt="Image 6">
+                                        </div>
                                     </a>
                                 </div>
                             </div>
@@ -396,6 +403,7 @@
             </div>
         </div>
     </div>
+
 
 
 
