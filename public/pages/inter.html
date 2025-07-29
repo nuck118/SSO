@@ -11,6 +11,8 @@
         <link href="https://www.wsg.pl/css/simple-lightbox.css" rel="stylesheet">
         <link rel="stylesheet" href="https://www.wsg.pl/css/dselect.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.1.0/dist/cookieconsent.css">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
         <!-- Google tag (gtag.js) -->
         <script async type="text/plain" src="https://www.googletagmanager.com/gtag/js?id=G-L4MEV9QCV0" data-category="analytics" data-service="Google Analytics"></script>
         <script type="text/plain" data-category="analytics" data-service="Google Analytics">
@@ -38,7 +40,128 @@
         fbq('track', 'PageView');
         </script>
         <!-- End Meta Pixel Code -->
-        
+         <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background-color: #f8f8f8; /* Light background similar to example */
+        }
+
+        .header-title {
+            text-align: center;
+            margin: 40px 0 30px;
+            font-size: 2em;
+            color: #333;
+        }
+
+        .gallery-wrapper {
+            max-width: 90vw; /* Adjust max-width as needed, e.g., 90% of viewport width */
+            margin: 0 auto; /* Center the wrapper */
+            padding: 20px 0; /* Some vertical padding */
+        }
+
+        .carousel {
+            /* Basic styling for the carousel container */
+            position: relative;
+        }
+
+        /* Styling for individual image wrappers within Slick */
+        .image-wrapper {
+            margin: 0 10px; /* Space between images */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+            border-radius: 8px; /* Rounded corners */
+            overflow: hidden; /* Ensure image corners match wrapper */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            transform: scale(0.85); /* Smaller default for side images */
+            opacity: 0.7; /* Dimmer default for side images */
+        }
+
+        /* Active/Centered slide styling */
+        .slick-center .image-wrapper {
+            transform: scale(1); /* Full size for the centered image */
+            opacity: 1; /* Fully opaque for the centered image */
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* More prominent shadow for active slide */
+        }
+
+        .image-wrapper img {
+            display: block;
+            width: 100%;
+            /* Fixed aspect ratio for images using padding-top hack */
+            height: auto; /* Allow height to adjust based on width */
+            aspect-ratio: 16/10; /* Modern way to enforce aspect ratio */
+            object-fit: cover; /* Crop to fit the aspect ratio */
+        }
+
+        /* Navigation Arrows Styling */
+        .slick-prev, .slick-next {
+            font-size: 0; /* Hide default text */
+            line-height: 1;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            display: block;
+            width: 40px;
+            height: 40px;
+            padding: 0;
+            cursor: pointer;
+            color: transparent;
+            border: none;
+            outline: none;
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            border-radius: 50%; /* Circular buttons */
+            z-index: 10; /* Ensure arrows are above images */
+            transition: background-color 0.3s ease;
+        }
+        .slick-prev:hover, .slick-next:hover {
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .slick-prev {
+            left: -50px; /* Position relative to gallery-wrapper */
+        }
+        .slick-next {
+            right: -50px; /* Position relative to gallery-wrapper */
+        }
+
+        /* Custom arrow icons (using ::before for unicode characters or SVG) */
+        .slick-prev::before, .slick-next::before {
+            font-family: 'slick'; /* This is the font slick uses for arrows */
+            font-size: 24px;
+            line-height: 1;
+            color: white; /* White arrow icon */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .slick-prev::before {
+            content: '\2190'; /* Left arrow unicode */
+        }
+        .slick-next::before {
+            content: '\2192'; /* Right arrow unicode */
+        }
+
+        /* Responsive adjustments for arrows */
+        @media screen and (max-width: 768px) {
+            .slick-prev { left: 10px; }
+            .slick-next { right: 10px; }
+        }
+         @media screen and (max-width: 480px) {
+            .gallery-wrapper {
+                max-width: 100vw;
+                padding: 10px;
+            }
+            .image-wrapper {
+                margin: 0 5px;
+            }
+            .slick-prev, .slick-next {
+                width: 30px;
+                height: 30px;
+            }
+            .slick-prev::before, .slick-next::before {
+                font-size: 18px;
+            }
+        }
+    </style>
 
         <link rel="shortcut icon" href="https://www.wsg.pl/images/favicon.ico" type="image/x-icon">
         <link rel="icon" href="https://www.wsg.pl/images/favicon.ico" type="image/x-icon">
@@ -281,66 +404,27 @@
         </div>
 
 
-<div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-
-            <div class="carousel-item active">
-                <div class="image-wrapper">
-                    <a href="/images/ 4.JPG">
-                        <img src="/images/ 4.JPG" alt="Close-up of a vibrant flower">
-                    </a>
-                </div>
+<div class="gallery-wrapper">
+        <div class="carousel">
+            <div class="image-wrapper">
+                <img src="/images/ 4.JPG" alt="Wedding couple exchanging vows">
             </div>
-
-            <div class="carousel-item">
-                <div class="image-wrapper">
-                    <a href="/images/ 5.JPG">
-                        <img src="/images/ 5.JPG" alt="Mountain landscape at sunset">
-                    </a>
-                </div>
+            <div class="image-wrapper">
+                <img src="/images/ 5.JPG" alt="Close-up of bride and groom holding hands">
             </div>
-
-            <div class="carousel-item">
-                <div class="image-wrapper">
-                    <a href="/images/ 6.JPG">
-                        <img src="/images/ 6.JPG" alt="City skyline at night">
-                    </a>
-                </div>
+            <div class="image-wrapper">
+                <img src="/images/ 6.JPG" alt="Wedding rings and bridal bouquet">
             </div>
-
-            <div class="carousel-item">
-                <div class="image-wrapper">
-                    <a href="/images/ 13.JPG">
-                        <img src="/images/ 13.JPG" alt="Forest path in autumn">
-                    </a>
-                </div>
+            <div class="image-wrapper">
+                <img src="/images/ 13.JPG" alt="Guests celebrating at a wedding reception">
             </div>
-
-            <div class="carousel-item">
-                <div class="image-wrapper">
-                    <a href="/images/ 16.JPG">
-                        <img src="/images/ 16.JPG" alt="Abstract watercolor painting">
-                    </a>
-                </div>
+            <div class="image-wrapper">
+                <img src="/images/ 16.JPG" alt="Outdoor wedding ceremony arch">
             </div>
-
-            <div class="carousel-item">
-                <div class="image-wrapper">
-                    <a href="/images/ 9.JPG">
-                        <img src="/images/ 9.JPG" alt="Rustic wooden cabin in snow">
-                    </a>
-                </div>
+            <div class="image-wrapper">
+                <img src="/images/ 9.JPG" alt="Candid shot of wedding attendees">
             </div>
-
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
+            </div>
     </div>
 
 
@@ -709,6 +793,43 @@
         </script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.carousel').slick({
+                centerMode: true,          // Essential for the centered look
+                centerPadding: '60px',     // Space on either side of the center slide
+                slidesToShow: 3,           // Number of slides visible at once
+                infinite: true,            // Loop the carousel
+                speed: 500,                // Transition speed
+                autoplay: true,            // Auto-advance
+                autoplaySpeed: 3000,       // Time between slides (3 seconds)
+                prevArrow: '<button type="button" class="slick-prev">Previous</button>', // Custom previous arrow
+                nextArrow: '<button type="button" class="slick-next">Next</button>',     // Custom next arrow
+                responsive: [              // Adjust settings for different screen sizes
+                    {
+                      breakpoint: 768,
+                      settings: {
+                        arrows: false,      // Hide arrows on smaller screens
+                        centerMode: true,
+                        centerPadding: '40px',
+                        slidesToShow: 3
+                      }
+                    },
+                    {
+                      breakpoint: 480,
+                      settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '20px',
+                        slidesToShow: 1 // Only show one slide on very small screens
+                      }
+                    }
+                ]
+            });
+        });
+    </script>
     
     
     </body>
