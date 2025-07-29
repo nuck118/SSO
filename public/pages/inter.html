@@ -38,7 +38,7 @@
         fbq('track', 'PageView');
         </script>
         <!-- End Meta Pixel Code -->
-         <style>
+        <style>
         /* Optional: Custom styling for carousel images */
         .carousel-item img {
             max-height: 250px; /* Adjust as needed for image height */
@@ -53,6 +53,25 @@
         .carousel-control-prev-icon,
         .carousel-control-next-icon {
             filter: invert(100%); /* Makes icons white for better contrast */
+        }
+
+        /* FIX: Ensure flex behavior for the row inside carousel item */
+        .carousel-item .row {
+            display: flex; /* Explicitly set to flex */
+            flex-wrap: wrap; /* Allow items to wrap to the next line */
+            justify-content: center; /* Keep items centered */
+        }
+
+        /* FIX: Add some padding/margin to prevent images from touching */
+        .carousel-item .col {
+            padding: 5px; /* Add padding around each column */
+            margin-bottom: 10px; /* Add margin below each column for vertical spacing */
+        }
+
+        /* Optional: Ensure image itself doesn't cause overflow */
+        .carousel-item .col img {
+            max-width: 100%; /* Ensure image doesn't overflow its column */
+            height: auto; /* Maintain aspect ratio */
         }
     </style>
         <link rel="shortcut icon" href="https://www.wsg.pl/images/favicon.ico" type="image/x-icon">
