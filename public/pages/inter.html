@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.1.0/dist/cookieconsent.css">
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
         <!-- Google tag (gtag.js) -->
         <script async type="text/plain" src="https://www.googletagmanager.com/gtag/js?id=G-L4MEV9QCV0" data-category="analytics" data-service="Google Analytics"></script>
         <script type="text/plain" data-category="analytics" data-service="Google Analytics">
@@ -75,6 +76,7 @@
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
             transform: scale(0.85); /* Smaller default for side images */
             opacity: 0.7; /* Dimmer default for side images */
+            cursor: pointer; /* Indicate clickable */
         }
 
         /* Active/Centered slide styling */
@@ -87,8 +89,6 @@
         .image-wrapper img {
             display: block;
             width: 100%;
-            /* Fixed aspect ratio for images using padding-top hack */
-            height: auto; /* Allow height to adjust based on width */
             aspect-ratio: 16/10; /* Modern way to enforce aspect ratio */
             object-fit: cover; /* Crop to fit the aspect ratio */
         }
@@ -407,22 +407,34 @@
 <div class="gallery-wrapper">
         <div class="carousel">
             <div class="image-wrapper">
-                <img src="/images/ 4.JPG" alt="Wedding couple exchanging vows">
+                <a data-fancybox="gallery" href="/images/ 4.JPG" data-caption="">
+                    <img src="/images/ 4.JPG" alt="">
+                </a>
             </div>
             <div class="image-wrapper">
-                <img src="/images/ 5.JPG" alt="Close-up of bride and groom holding hands">
+                <a data-fancybox="gallery" href="/images/ 5.JPG" data-caption="">
+                    <img src="/images/ 5.JPG" alt="">
+                </a>
             </div>
             <div class="image-wrapper">
-                <img src="/images/ 6.JPG" alt="Wedding rings and bridal bouquet">
+                <a data-fancybox="gallery" href="/images/ 6.JPG" data-caption="">
+                    <img src="/images/ 6.JPG" alt="">
+                </a>
             </div>
             <div class="image-wrapper">
-                <img src="/images/ 13.JPG" alt="Guests celebrating at a wedding reception">
+                <a data-fancybox="gallery" href="/images/ 13.JPG" data-caption="">
+                    <img src="/images/ 13.JPG" alt="">
+                </a>
             </div>
             <div class="image-wrapper">
-                <img src="/images/ 16.JPG" alt="Outdoor wedding ceremony arch">
+                <a data-fancybox="gallery" href="/images/ 16.JPG" data-caption="">
+                    <img src="/images/ 16.JPG" alt="">
+                </a>
             </div>
             <div class="image-wrapper">
-                <img src="/images/ 9.JPG" alt="Candid shot of wedding attendees">
+                <a data-fancybox="gallery" href="/images/ 9.JPG" data-caption="">
+                    <img src="/images/ 9.JPG" alt="">
+                </a>
             </div>
             </div>
     </div>
@@ -795,23 +807,25 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
       <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
+            // Initialize Slick Carousel
             $('.carousel').slick({
-                centerMode: true,          // Essential for the centered look
-                centerPadding: '60px',     // Space on either side of the center slide
-                slidesToShow: 3,           // Number of slides visible at once
-                infinite: true,            // Loop the carousel
-                speed: 500,                // Transition speed
-                autoplay: true,            // Auto-advance
-                autoplaySpeed: 3000,       // Time between slides (3 seconds)
-                prevArrow: '<button type="button" class="slick-prev">Previous</button>', // Custom previous arrow
-                nextArrow: '<button type="button" class="slick-next">Next</button>',     // Custom next arrow
-                responsive: [              // Adjust settings for different screen sizes
+                centerMode: true,
+                centerPadding: '60px',
+                slidesToShow: 3,
+                infinite: true,
+                speed: 500,
+                autoplay: true,
+                autoplaySpeed: 3000,
+                prevArrow: '<button type="button" class="slick-prev">Previous</button>',
+                nextArrow: '<button type="button" class="slick-next">Next</button>',
+                responsive: [
                     {
                       breakpoint: 768,
                       settings: {
-                        arrows: false,      // Hide arrows on smaller screens
+                        arrows: false,
                         centerMode: true,
                         centerPadding: '40px',
                         slidesToShow: 3
@@ -823,10 +837,20 @@
                         arrows: false,
                         centerMode: true,
                         centerPadding: '20px',
-                        slidesToShow: 1 // Only show one slide on very small screens
+                        slidesToShow: 1
                       }
                     }
                 ]
+            });
+
+            // Initialize Fancybox on the image links
+            $('[data-fancybox="gallery"]').fancybox({
+                // Optional: Customize Fancybox options here
+                // For example, to show captions:
+                // caption: function(instance, item) {
+                //     return $(this).data('caption') || '';
+                // },
+                // loop: true // Allows looping through the gallery
             });
         });
     </script>
