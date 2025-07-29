@@ -11,6 +11,7 @@
         <link href="https://www.wsg.pl/css/simple-lightbox.css" rel="stylesheet">
         <link rel="stylesheet" href="https://www.wsg.pl/css/dselect.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.1.0/dist/cookieconsent.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
         <!-- Google tag (gtag.js) -->
         <script async type="text/plain" src="https://www.googletagmanager.com/gtag/js?id=G-L4MEV9QCV0" data-category="analytics" data-service="Google Analytics"></script>
         <script type="text/plain" data-category="analytics" data-service="Google Analytics">
@@ -38,6 +39,28 @@
         fbq('track', 'PageView');
         </script>
         <!-- End Meta Pixel Code -->
+         <style>
+        /* Optional: Custom styling for carousel images */
+        .carousel-item img {
+            max-height: 250px; /* Adjust as needed for image height */
+            object-fit: contain; /* Ensures images fit without cropping */
+            width: auto; /* Allow natural width */
+        }
+        /* Adjust carousel controls for better visibility if needed */
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 5%; /* Make controls narrower */
+        }
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            filter: invert(100%); /* Makes icons white for better contrast */
+        }
+    </style>
+        <link rel="shortcut icon" href="https://www.wsg.pl/images/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="https://www.wsg.pl/images/favicon.ico" type="image/x-icon">
+        <link rel="apple-touch-icon" href="https://www.wsg.pl/images/apple-touch-icon.png">
+        <link rel="apple-touch-icon-precomposed" href="https://www.wsg.pl/images/apple-touch-icon.png">
+        <link rel="stylesheet" href="https://www.wsg.pl/css/font-awesome.min.css">
     </head>
     <body>
         <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1660756701393536&ev=PageView&noscript=1" /></noscript>
@@ -530,6 +553,18 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
         <script src="https://www.wsg.pl/js/accessibility-menu.min.js"></script>
         <script src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.1.0/dist/cookieconsent.umd.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script>
+        // Initialize the carousel and set its auto-rotate interval
+        document.addEventListener('DOMContentLoaded', function () {
+            var myCarousel = document.querySelector('#imageCarousel');
+            var carousel = new bootstrap.Carousel(myCarousel, {
+                interval: 3000, // Time in milliseconds before the next slide (e.g., 3000 = 3 seconds)
+                ride: 'carousel' // Automatically start cycling through items
+            });
+        });
+    </script>
         <script>
             CookieConsent.run({
                 page_scripts: true,
