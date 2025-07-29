@@ -3,129 +3,153 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Auto-Rotating Image Carousel</title>
+    <title>Full-Width Auto-Rotating Image Carousel</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
-        /* Base styling for carousel images */
-        .carousel-item img {
-            display: block;
-            width: 100%; /* Ensure image fills its container */
-            height: 100%; /* Ensure image fills its container */
-            object-fit: cover; /* Crop/enlarge to fit the image-wrapper's aspect ratio */
+        body {
+            margin: 0; /* Remove default body margin */
+            overflow-x: hidden; /* Prevent horizontal scrollbar from carousel overflow */
         }
 
         /* Adjust carousel controls for better visibility if needed */
         .carousel-control-prev,
         .carousel-control-next {
             width: 5%;
+            /* Optional: Make controls larger or more prominent */
+            font-size: 2rem; /* Example: make icons bigger */
         }
         .carousel-control-prev-icon,
         .carousel-control-next-icon {
-            filter: invert(100%);
+            filter: invert(100%); /* Makes them white */
         }
 
-        /* Ensure flex behavior for the row inside carousel item */
+        /* Make the carousel and its inner content take full width */
+        #imageCarousel,
+        #imageCarousel .carousel-inner,
+        #imageCarousel .carousel-item {
+            width: 100vw; /* Take full viewport width */
+            /* You might set a specific height for the carousel or let content define it */
+            height: 100vh; /* Example: Take full viewport height */
+            overflow: hidden; /* Hide anything outside the carousel bounds */
+        }
+
+        /* Ensure images inside carousel items fill their space */
+        .carousel-item img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* This is key! It scales the image to fill the container, cropping if necessary */
+            object-position: center; /* Center the image within its frame */
+        }
+
+        /* For the full-width approach, we often don't want multiple images per slide
+           if the goal is one large image spanning the entire page.
+           If you still want multiple images, but for the *carousel slide itself* to be full screen,
+           you'd adapt the .row and .col styling.
+           Let's assume for now, each carousel-item will contain ONE large image.
+           If you want MULTIPLE images per full-width slide, we'll need a different approach.
+        */
         .carousel-item .row {
-            display: flex;
-            flex-wrap: wrap;
+            height: 100%; /* Ensure row takes full height of carousel-item */
+            align-items: center; /* Vertically center content if needed */
             justify-content: center;
         }
 
-        /* Container for each image with aspect ratio */
+        .carousel-item .col {
+            height: 100%; /* Make column fill height */
+            display: flex; /* For centering the image wrapper */
+            justify-content: center;
+            align-items: center;
+            padding: 0; /* Remove padding from columns so image can go edge to edge */
+        }
+
         .carousel-item .col .image-wrapper {
             position: relative;
             width: 100%;
-            padding-top: 62.5%; /* This creates the 16:10 aspect ratio (10 / 16 = 0.625) */
+            height: 100%; /* Now image-wrapper can take full height */
+            padding-top: 0; /* No need for padding-top trick when height is 100% */
             overflow: hidden;
             background-color: #f0f0f0;
         }
 
-        /* Add some padding/margin to prevent images from touching */
-        .carousel-item .col {
-            padding: 5px; /* Adjust padding between images */
-            margin-bottom: 10px; /* Space below columns */
-            display: flex; /* Centers content within the column */
-            justify-content: center;
-            align-items: center;
+        /* Ensure the anchor tag also spans the full image */
+        .carousel-item .col a {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Remove default Bootstrap margins if they interfere with full width/height */
+        .container, .mt-5 {
+            margin: 0 !important;
+            padding: 0 !important;
         }
     </style>
 </head>
 <body>
 
-    <div class="container mt-5">
-        <div class="row align-items-center">
-            <div class="col-12">
+    <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
 
-                <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-
-                        <div class="carousel-item active">
-                            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-lg-5 justify-content-center">
-                                <div class="col text-center">
-                                    <a href="/images/ 4.JPG">
-                                        <div class="image-wrapper">
-                                            <img class="rounded mx-auto d-block" src="/images/ 4.JPG" alt="Close-up of a vibrant flower">
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col text-center">
-                                    <a href="/images/ 5.JPG">
-                                        <div class="image-wrapper">
-                                            <img class="rounded mx-auto d-block" src="/images/ 5.JPG" alt="Mountain landscape at sunset">
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col text-center">
-                                    <a href="/images/ 6.JPG">
-                                        <div class="image-wrapper">
-                                            <img class="rounded mx-auto d-block" src="/images/ 6.JPG" alt="City skyline at night">
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="carousel-item">
-                            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-lg-5 justify-content-center">
-                                <div class="col text-center">
-                                    <a href="/images/ 13.JPG">
-                                        <div class="image-wrapper">
-                                            <img class="rounded mx-auto d-block" src="/images/ 13.JPG" alt="Forest path in autumn">
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col text-center">
-                                    <a href="/images/ 16.JPG">
-                                        <div class="image-wrapper">
-                                            <img class="rounded mx-auto d-block" src="/images/ 16.JPG" alt="Abstract watercolor painting">
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col text-center">
-                                    <a href="/images/ 9.JPG">
-                                        <div class="image-wrapper">
-                                            <img class="rounded mx-auto d-block" src="/images/ 9.JPG" alt="Rustic wooden cabin in snow">
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
+            <div class="carousel-item active">
+                <div class="image-wrapper">
+                    <a href="/images/4.JPG">
+                        <img src="/images/4.JPG" alt="Close-up of a vibrant flower">
+                    </a>
                 </div>
-
             </div>
+
+            <div class="carousel-item">
+                <div class="image-wrapper">
+                    <a href="/images/5.JPG">
+                        <img src="/images/5.JPG" alt="Mountain landscape at sunset">
+                    </a>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="image-wrapper">
+                    <a href="/images/6.JPG">
+                        <img src="/images/6.JPG" alt="City skyline at night">
+                    </a>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="image-wrapper">
+                    <a href="/images/13.JPG">
+                        <img src="/images/13.JPG" alt="Forest path in autumn">
+                    </a>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="image-wrapper">
+                    <a href="/images/16.JPG">
+                        <img src="/images/16.JPG" alt="Abstract watercolor painting">
+                    </a>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="image-wrapper">
+                    <a href="/images/9.JPG">
+                        <img src="/images/9.JPG" alt="Rustic wooden cabin in snow">
+                    </a>
+                </div>
+            </div>
+
         </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
@@ -135,8 +159,8 @@
         document.addEventListener('DOMContentLoaded', function () {
             var myCarousel = document.querySelector('#imageCarousel');
             var carousel = new bootstrap.Carousel(myCarousel, {
-                interval: 3000, // Auto-advances every 3 seconds
-                ride: 'carousel' // Starts carousel cycling when page loads
+                interval: 3000,
+                ride: 'carousel'
             });
         });
     </script>
