@@ -38,140 +38,7 @@
         fbq('track', 'PageView');
         </script>
         <!-- End Meta Pixel Code -->
-        <style>
-        /* --- General Body Styling (Optional, for better presentation) --- */
-        /*
-        body {
-            font-family: 'Inter', sans-serif; 
-            background-color: #f8f9fa; 
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh; 
-            margin: 0;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-        */
-
-        /* --- Custom Carousel Container Styling --- */
-        #imageCarousel {
-            background-color: #ffffff; /* White background for the carousel itself */
-            border-radius: 15px; /* Rounded corners for the entire carousel */
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
-            padding: 20px; /* Inner padding for the carousel content */
-            max-width: 1200px; /* Max width for the carousel */
-            width: 100%; /* Ensure it's responsive */
-            margin: auto; /* Center the carousel on the page */
-        }
-
-        /* --- Carousel Inner (where slides are) --- */
-        .carousel-inner {
-            border-radius: 10px; /* Slightly less rounded than outer container */
-            overflow: hidden; /* Ensures images don't spill out */
-        }
-
-        /* --- Styling for each Carousel Item (Slide) --- */
-        .carousel-item .row {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: stretch; /* Ensures columns stretch to same height if content varies */
-            margin: -5px; /* Counteract padding on cols for tight fit */
-        }
-
-        /* --- Styling for each Column containing an Image --- */
-        .carousel-item .col {
-            padding: 5px; /* Space between images */
-            margin-bottom: 10px; /* Space below images */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        /* --- Image Wrapper for Aspect Ratio --- */
-        .carousel-item .col .image-wrapper {
-            position: relative;
-            width: 100%;
-            padding-top: 62.5%; /* 16:10 aspect ratio (10 / 16 = 0.625) */
-            overflow: hidden;
-            border-radius: 8px; /* Rounded corners for individual image containers */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); /* Subtle shadow for images */
-            transition: transform 0.3s ease-in-out; /* Smooth transition for hover effect */
-        }
-
-        /* Image hover effect */
-        .carousel-item .col .image-wrapper:hover {
-            transform: translateY(-5px) scale(1.02); /* Slight lift and zoom on hover */
-        }
-
-        /* --- Image Styling (inside wrapper) --- */
-        .carousel-item .col .image-wrapper img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Crops or enlarges to fit 16:10, no empty space */
-            border-radius: 8px; /* Match wrapper border-radius */
-            transition: transform 0.3s ease-in-out; /* For potential future image-specific hover */
-        }
-
-        /* --- Custom Navigation Arrows --- */
-        .carousel-control-prev,
-        .carousel-control-next {
-            width: 40px; /* Fixed width for arrows */
-            height: 40px; /* Fixed height for arrows */
-            background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
-            border-radius: 50%; /* Circular arrows */
-            opacity: 0.7; /* Slightly less opaque by default */
-            transition: opacity 0.3s ease-in-out, background-color 0.3s ease-in-out;
-            top: 50%; /* Center vertically */
-            transform: translateY(-50%); /* Adjust for perfect vertical centering */
-        }
-
-        .carousel-control-prev:hover,
-        .carousel-control-next:hover {
-            opacity: 1; /* Fully opaque on hover */
-            background-color: rgba(0, 0, 0, 0.8); /* Darker on hover */
-        }
-
-        .carousel-control-prev-icon,
-        .carousel-control-next-icon {
-            width: 1.5rem; /* Size of the arrow icon */
-            height: 1.5rem; /* Size of the arrow icon */
-            filter: invert(100%) drop-shadow(0 0 2px rgba(0,0,0,0.5)); /* White icon with subtle shadow */
-        }
-
-        /* --- Custom Carousel Indicators (Dots) --- */
-        .carousel-indicators {
-            bottom: -40px; /* Position below the carousel */
-            margin-bottom: 0;
-        }
-
-        .carousel-indicators [data-bs-target] {
-            width: 10px; /* Size of the dot */
-            height: 10px; /* Size of the dot */
-            border-radius: 50%; /* Make them circular */
-            background-color: #6c757d; /* Default gray color */
-            opacity: 0.5; /* Less opaque by default */
-            border: none; /* Remove default border */
-            margin: 0 5px; /* Space between dots */
-            transition: opacity 0.3s ease-in-out, background-color 0.3s ease-in-out;
-        }
-
-        .carousel-indicators .active {
-            background-color: #007bff; /* Blue for active dot */
-            opacity: 1; /* Fully opaque for active dot */
-        }
-
-        /* --- Responsive Adjustments (Optional, Bootstrap handles much of this) --- */
-        @media (max-width: 767.98px) { /* Small devices (phones) */
-            .carousel-item .row {
-                /* No specific overrides here, Bootstrap's row-cols-* handles it */
-            }
-        }
-    </style>
+        
 
         <link rel="shortcut icon" href="https://www.wsg.pl/images/favicon.ico" type="image/x-icon">
         <link rel="icon" href="https://www.wsg.pl/images/favicon.ico" type="image/x-icon">
@@ -414,86 +281,27 @@
         </div>
 
 
-<div class="container mt-5">
-        <div class="row align-items-center">
-            <div class="col-12">
-
-                <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel">
-                    <!-- Carousel Indicators (Dots) - Re-added -->
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#imageCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                        <!-- Add a button for each .carousel-item you have -->
-                    </div>
-
-                    <div class="carousel-inner">
-
-                        <div class="carousel-item active">
-                            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-lg-5 justify-content-center">
-                                <div class="col text-center">
-                                    <a href="/images/%204.JPG">
-                                        <div class="image-wrapper">
-                                            <img class="rounded mx-auto d-block mt-3" src="/images/%204.JPG" alt="Image 1">
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col text-center">
-                                    <a href="/images/%205.JPG">
-                                        <div class="image-wrapper">
-                                            <img class="rounded mx-auto d-block mt-3" src="/images/%205.JPG" alt="Image 2">
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col text-center">
-                                    <a href="/images/%206.JPG">
-                                        <div class="image-wrapper">
-                                            <img class="rounded mx-auto d-block mt-3" src="/images/%206.JPG" alt="Image 3">
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="carousel-item">
-                            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-lg-5 justify-content-center">
-                                <div class="col text-center">
-                                    <a href="/images/%2013.JPG">
-                                        <div class="image-wrapper">
-                                            <img class="rounded mx-auto d-block mt-3" src="/images/%2013.JPG" alt="Image 4">
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col text-center">
-                                    <a href="/images/%2016.JPG">
-                                        <div class="image-wrapper">
-                                            <img class="rounded mx-auto d-block mt-3" src="/images/%2016.JPG" alt="Image 5">
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col text-center">
-                                    <a href="/images/%209.JPG">
-                                        <div class="image-wrapper">
-                                            <img class="rounded mx-auto d-block mt-3" src="/images/%209.JPG" alt="Image 6">
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div> <!-- Corrected closing tag for carousel-inner -->
-                    <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-
-            </div>
-        </div>
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="/images/ 11.JPG" class="d-block w-100" alt="...">
     </div>
+    <div class="carousel-item">
+      <img src="/images/ 12.JPG" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="/images/ 13.JPG" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
 
 
 
