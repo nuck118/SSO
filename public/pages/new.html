@@ -3,363 +3,422 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="pvozq84BKpcOGvnQxITqUidB6UKPy2l5IwQUtled">
-        <meta http-equiv="refresh" content="7200">
-        <title>Wyższa Szkoła Gospodarki - Bydgoszcz - Student Support Office</title>
-        <link href="https://www.wsg.pl/css/app.css" rel="stylesheet">
+        <meta name="csrf-token" content="XTLpgjOa52k23p9RYrE6i5Xfj8FKrEipMR3vGBm7">
+		<meta http-equiv="refresh" content="7200">
+		        <title>Wyższa Szkoła Gospodarki - Bydgoszcz - International Cooperation</title>
+		        <link href="https://www.wsg.pl/css/app.css" rel="stylesheet">
         <link href="https://www.wsg.pl/css/three-dots.min.css" rel="stylesheet">
-        <link href="https://www.wsg.pl/css/simple-lightbox.css" rel="stylesheet">
+		        <link href="https://www.wsg.pl/css/simple-lightbox.css" rel="stylesheet">
         <link rel="stylesheet" href="https://www.wsg.pl/css/dselect.min.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.1.0/dist/cookieconsent.css">
-        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
-        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
-        <!-- Google tag (gtag.js) -->
-        <script async type="text/plain" src="https://www.googletagmanager.com/gtag/js?id=G-L4MEV9QCV0" data-category="analytics" data-service="Google Analytics"></script>
-        <script type="text/plain" data-category="analytics" data-service="Google Analytics">
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-L4MEV9QCV0');
-        </script>
-        <script type="text/plain" data-category="analytics" data-service="Google Analytics">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-WV582FHV');</script>
-        <!-- Meta Pixel Code -->
-        <script type="text/plain" data-category="analytics" data-service="Facebook">
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '1660756701393536');
-        fbq('track', 'PageView');
-        </script>
-        <!-- End Meta Pixel Code -->
-        <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: sans-serif;
-            background-color: #f8f8f8; /* Light background similar to example */
-        }
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.1.0/dist/cookieconsent.css">
+		<!-- Google tag (gtag.js) -->
+<script async type="text/plain" src="https://www.googletagmanager.com/gtag/js?id=G-L4MEV9QCV0" data-category="analytics" data-service="Google Analytics"></script>
+<script type="text/plain" data-category="analytics" data-service="Google Analytics">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-        .header-title {
-            text-align: center;
-            margin: 40px 0 30px;
-            font-size: 2em;
-            color: #333;
-        }
-
-        .gallery-wrapper {
-            max-width: 90vw; /* Adjust max-width as needed, e.g., 90% of viewport width */
-            margin: 0 auto; /* Center the wrapper */
-            padding: 20px 0; /* Some vertical padding */
-        }
-
-        .carousel {
-            /* Basic styling for the carousel container */
-            position: relative;
-        }
-
-        /* Styling for individual image wrappers within Slick */
-        .image-wrapper {
-            margin: 0 10px; /* Space between images */
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow for depth */
-            border-radius: 8px; /* Rounded corners */
-            overflow: hidden; /* Ensure image corners match wrapper */
-            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, box-shadow 0.3s ease-in-out, filter 0.3s ease-in-out; /* Add filter to transition */
-            transform: scale(0.85); /* Smaller default for side images */
-            
-            cursor: pointer; /* Indicate clickable */
-            filter: blur(0); /* Apply a blur by default to side images */
-            
-        }
-
-        /* Active/Centered slide styling */
-        .slick-center .image-wrapper {
-            transform: scale(1); /* Full size for the centered image */
-            
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* More prominent shadow for active slide */
-           
-            -webkit-filter: blur(0); /* For Safari */
-        }
-
-        .image-wrapper img {
-            display: block;
-            width: 100%;
-            aspect-ratio: 16/10; /* Modern way to enforce aspect ratio */
-            object-fit: cover; /* Crop to fit the aspect ratio */
-        }
-
-        /* Navigation Arrows Styling */
-        .slick-prev, .slick-next {
-            font-size: 0; /* Hide default text */
-            line-height: 1;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            display: block;
-            width: 40px;
-            height: 40px;
-            padding: 0;
-            cursor: pointer;
-            color: transparent;
-            border: none;
-            outline: none;
-            background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-            border-radius: 50%; /* Circular buttons */
-            z-index: 10; /* Ensure arrows are above images */
-            transition: background-color 0.3s ease;
-        }
-        .slick-prev:hover, .slick-next:hover {
-            background: rgba(0, 0, 0, 0.7);
-        }
-
-        .slick-prev {
-            left: -50px; /* Position relative to gallery-wrapper */
-        }
-        .slick-next {
-            right: -50px; /* Position relative to gallery-wrapper */
-        }
-
-        /* Custom arrow icons (using ::before for unicode characters or SVG) */
-        .slick-prev::before, .slick-next::before {
-            font-family: 'slick'; /* This is the font slick uses for arrows */
-            font-size: 24px;
-            line-height: 1;
-            color: white; /* White arrow icon */
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-        .slick-prev::before {
-            content: '\2190'; /* Left arrow unicode */
-        }
-        .slick-next::before {
-            content: '\2192'; /* Right arrow unicode */
-        }
-
-        /* Responsive adjustments for arrows */
-        @media screen and (max-width: 768px) {
-            .slick-prev { left: 10px; }
-            .slick-next { right: 10px; }
-        }
-         @media screen and (max-width: 480px) {
-            .gallery-wrapper {
-                max-width: 100vw;
-                padding: 10px;
-            }
-            .image-wrapper {
-                margin: 0 5px;
-            }
-            .slick-prev, .slick-next {
-                width: 30px;
-                height: 30px;
-            }
-            .slick-prev::before, .slick-next::before {
-                font-size: 18px;
-            }
-        }
-    </style>
-
-        <link rel="shortcut icon" href="https://www.wsg.pl/images/favicon.ico" type="image/x-icon">
-        <link rel="icon" href="https://www.wsg.pl/images/favicon.ico" type="image/x-icon">
-        <link rel="apple-touch-icon" href="https://www.wsg.pl/images/apple-touch-icon.png">
-        <link rel="apple-touch-icon-precomposed" href="https://www.wsg.pl/images/apple-touch-icon.png">
-        <link rel="stylesheet" href="https://www.wsg.pl/css/font-awesome.min.css">
+  gtag('config', 'G-L4MEV9QCV0');
+</script>
+<script type="text/plain" data-category="analytics" data-service="Google Analytics">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WV582FHV');</script>
+<!-- Meta Pixel Code -->
+<script type="text/plain" data-category="analytics" data-service="Facebook">
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1660756701393536');
+fbq('track', 'PageView');
+</script>
+<!-- End Meta Pixel Code -->
     </head>
-    <body>
-        <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1660756701393536&ev=PageView&noscript=1" /></noscript>
-        <!-- Google Tag Manager (noscript) -->
-        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WV582FHV" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-        <!-- End Google Tag Manager (noscript) -->
+    <body >
+	<noscript><img height="1" width="1" style="display:none"
+src=https://www.facebook.com/tr?id=1660756701393536&ev=PageView&noscript=1
+/></noscript>
+	<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WV582FHV"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+        
+	
 
-        <div class="menuTop light p-3 d-none d-lg-block d-xl-block">
-            <div class="container">
-                <div class="row">
-                    <div class="col col-lg-3">
-                        <ul class="nav justify-content-start">
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Bydgoszcz</a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="https://www.wsg.pl/en/chojnice">Chojnice</a></li>
-                                    <li><a class="dropdown-item" href="https://www.wsg.pl/en/dzialdowo">Działdowo</a></li>
-                                    <li><a class="dropdown-item" href="https://www.wsg.pl/en/elk">Ełk</a></li>
-                                    <li><a class="dropdown-item" href="https://www.wsg.pl/en/inowroclaw">Inowrocław</a></li>
-                                    <li><a class="dropdown-item" href="https://www.wsg.pl/en/malbork">Malbork</a></li>
-                                    <li><a class="dropdown-item" href="https://www.wsg.pl/en/pila">Piła</a></li>
-                                    <li><a class="dropdown-item" href="https://www.wsg.pl/en/torun-medyczny">Toruń Medyczny</a></li>
-                                    <li><a class="dropdown-item" href="https://www.wsg.pl/en/torun-technical">Toruń Technical</a></li>
-                                    <li><a class="dropdown-item" href="https://www.wsg.pl/en/other-cities">Other cities</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col col-lg-9">
-                        <ul class="nav justify-content-end">
-                            <li class="nav-item">
-                                <form class="d-flex searchform">
-                                    <input type="search" id="search-box" placeholder="" />
-                                    <label for="search-box"><i class="fa fa-search fa-lg"></i></label>
-                                </form>
-                            </li>
-                            <li class="nav-item"><a class="nav-link" href="http://www.wsg.pl/en/contacts">Contact</a></li>
-                            <li class="nav-item"><a class="nav-link" href="https://new.isaps.pl">ISAPS</a></li>
-                            <li class="nav-item"><a class="nav-link" href="https://onte.wsg.byd.pl/moodle2.0/login/index.php?lang=en">ONTE</a></li>
-                            <li class="nav-item"><a class="nav-link" href="https://poczta.byd.pl/">WSG Mail</a></li>
-                            <li class="nav-item"><a class="nav-link" href="http://www.wsg.pl/en/press-and-media">Press and Media</a></li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">en</a>
-                                <ul class="dropdown-menu" style="min-width:1em">
-                                    <li><a class="dropdown-item" href="https://www.wsg.pl">pl</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item text-center" style="min-width: 100px;padding-top: 6px;">
-                                <a href="#" class="iFontsie" title="Czcionka" data-size=""><i class="fa fa-font fa-lg"></i><i class="fa fa-plus" aria-hidden="true"></i></a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" title="Kontrast domyślny" data-contrast="0" class="iContrast"><img src="https://www.wsg.pl/images/ico_contr_1.png" /></a>
-                                <a href="#" title="Kontrast czarno-biały" data-contrast="1" class="iContrast"><img src="https://www.wsg.pl/images/ico_contr_2.png" /></a>
-                                <a href="#" title="Kontrast żółto-czarny" data-contrast="2" class="iContrast"><img src="https://www.wsg.pl/images/ico_contr_3.png" /></a>
-                                <a href="#" title="Kontrast czarno-żółty" data-contrast="3" class="iContrast"><img src="https://www.wsg.pl/images/ico_contr_4.png" /></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div class="menuTop light p-3 d-none d-lg-block d-xl-block">  
+    <div class="container ">
+    <div class="row">
+        <div class="col col-lg-3">  
+            <ul class="nav justify-content-start">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Bydgoszcz</a>
+                    <ul class="dropdown-menu">
+                      					                         					                         					                         					                                                         
+                             <li><a class="dropdown-item" href="https://www.wsg.pl/en/chojnice">Chojnice</a></li>
+                            
+                          						                        					                         					                                                         
+                             <li><a class="dropdown-item" href="https://www.wsg.pl/en/dzialdowo">Działdowo</a></li>
+                            
+                          						                        					                                                         
+                             <li><a class="dropdown-item" href="https://www.wsg.pl/en/elk">Ełk</a></li>
+                            
+                          						                        					                         					                                                         
+                             <li><a class="dropdown-item" href="https://www.wsg.pl/en/inowroclaw">Inowrocław</a></li>
+                            
+                          						                        					                                                         
+                             <li><a class="dropdown-item" href="https://www.wsg.pl/en/malbork">Malbork</a></li>
+                            
+                          						                        					                                                         
+                             <li><a class="dropdown-item" href="https://www.wsg.pl/en/pila">Piła</a></li>
+                            
+                          						                        					                                                         
+                             <li><a class="dropdown-item" href="https://www.wsg.pl/en/torun-medyczny">Toruń Medyczny</a></li>
+                            
+                          						                        					                                                         
+                             <li><a class="dropdown-item" href="https://www.wsg.pl/en/torun-technical">Toruń Technical</a></li>
+                            
+                          						                        					                         					                                                         
+                             <li><a class="dropdown-item" href="https://www.wsg.pl/en/other-cities">Other cities</a></li>
+                            
+                          						                                            </ul>
+                  </li>
+            </ul>
+    </div>
 
-        <div class="mainBanner light sticky-top artMsticky">
-            <div class="container-lg">
-                <div class="row">
-                    <div class="col-12 my-3">
-                        <nav class="navbar navbar-expand-lg navbar-light">
-                            <div class="container-fluid px-0 px-md-2">
-                                <a class="navbar-brand" href="https://www.wsg.pl/en">
+    <div class="col col-lg-9">
+    <ul class="nav justify-content-end">
+
+          <li class="nav-item">
+            <form class="d-flex searchform">
+
+                  <input type="search" id="search-box" placeholder="" />
+                  <label for="search-box">
+                    
+                    <i class="fa fa-search fa-lg"></i>
+                  </label>
+              </form>
+          </li>
+                                  <li class="nav-item">
+                                                                                    <a class="nav-link" href="http://www.wsg.pl/en/contacts">Contact</a>
+
+                                                                                    </li>
+                                                <li class="nav-item">
+                                                                                    <a class="nav-link" href="https://new.isaps.pl">ISAPS</a>
+
+                                                                                    </li>
+                                                <li class="nav-item">
+                                                                                    <a class="nav-link" href="https://onte.wsg.byd.pl/moodle2.0/login/index.php?lang=en">ONTE</a>
+
+                                                                                    </li>
+                                                <li class="nav-item">
+                                                                                    <a class="nav-link" href="https://poczta.byd.pl/">WSG Mail</a>
+
+                                                                                    </li>
+                                                <li class="nav-item">
+                                                                                    <a class="nav-link" href="http://www.wsg.pl/en/press-and-media">Press and Media</a>
+
+                                                                                    </li>
+                                                
+        <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">en</a>
+                        <ul class="dropdown-menu" style="min-width:1em">
+
+                                        <li><a class="dropdown-item" href="https://www.wsg.pl">pl</a></li>
+                           
+            
+            </ul>
+          </li>
+          
+          <li class="nav-item text-center" style="min-width: 100px;padding-top: 6px;">
+          <a href="#" class="iFontsie" title="Czcionka" data-size=""><i class="fa fa-font fa-lg"></i><i class="fa fa-plus " aria-hidden="true"></i></a></li>
+          <li class="nav-item">
+          <a href="#" title="Kontrast domyślny" data-contrast="0" class=" iContrast"><img src="https://www.wsg.pl/images/ico_contr_1.png" /></a>
+          <a href="#" title="Kontrast czarno-biały" data-contrast="1" class="iContrast"><img src="https://www.wsg.pl/images/ico_contr_2.png" /></a>
+          <a href="#" title="Kontrast żółto-czarny" data-contrast="2" class="iContrast"><img src="https://www.wsg.pl/images/ico_contr_3.png" /></a>
+          <a href="#" title="Kontrast czarno-żółty" data-contrast="3" class="iContrast"><img src="https://www.wsg.pl/images/ico_contr_4.png" /></a></li>
+    </ul>
+    </div> 
+
+</div>     </div> 
+</div> 
+
+
+<div class="mainBanner light sticky-top artMsticky">
+    <div class="container-lg"  >
+        <div class="row"  >
+            <div class="col-12 my-3">
+
+            <nav class="navbar navbar-expand-lg navbar-light">
+                    <div class="container-fluid px-0 px-md-2">
+                    <a class="navbar-brand" href="https://www.wsg.pl/en">
                         <svg class="d-none d-md-block" version="1.0" xmlns="http://www.w3.org/2000/svg" width="178" height="47" viewBox="0 0 1977.000000 532.000000" preserveAspectRatio="xMidYMid meet"><g transform="translate(0.000000,532.000000) scale(0.100000,-0.100000)" fill="white" stroke="none"><path d="M1640 5294 c-210 -33 -308 -69 -428 -159 -57 -43 -152 -146 -152 -165 0 -4 22 -10 49 -14 45 -6 53 -3 102 30 86 57 265 140 374 173 132 39 194 51 317 59 l103 7 -27 19 c-15 10 -54 29 -85 42 -67 27 -115 29 -253 8z" /><path d="M2480 5192 c41 -47 52 -54 164 -93 67 -23 204 -84 306 -136 192 -97 197 -91 22 27 -125 84 -265 156 -392 203 -154 57 -149 57 -100 -1z" /><path d="M949 5042 c-93 -58 -227 -156 -293 -214 l-48 -43 54 0 c47 0 59 5 99 37 24 20 71 53 103 72 45 27 63 45 78 78 11 24 36 60 56 81 20 20 34 37 32 36 -3 0 -39 -21 -81 -47z" /><path d="M1840 5013 c-142 -15 -340 -49 -452 -77 -174 -44 -188 -50 -188 -79 0 -12 -9 -40 -20 -62 -11 -22 -20 -41 -20 -42 0 -2 26 -3 59 -3 126 0 375 -82 607 -200 l132 -67 40 61 c93 143 144 278 146 391 l1 80 -135 1 c-74 1 -151 -1 -170 -3z" /><path d="M2638 4831 c8 -175 -47 -349 -175 -553 l-61 -97 77 -59 c182 -142 444 -390 602 -570 l56 -64 45 64 c125 176 408 699 408 755 0 35 -242 245 -411 358 -178 118 -407 232 -520 260 l-26 6 5 -100z" /><path d="M561 4669 c-80 -40 -168 -122 -228 -212 -66 -101 -165 -294 -206 -407 -53 -145 -53 -153 3 -50 146 268 301 459 461 568 35 23 48 39 52 64 3 18 8 41 12 51 11 26 -22 22 -94 -14z" /><path d="M1023 4625 c-34 -24 -90 -54 -124 -66 l-61 -22 7 -96 c16 -237 75 -694 94 -729 16 -28 345 160 554 316 105 78 207 168 207 183 0 14 -484 376 -590 441 -24 15 -28 14 -87 -27z" /><path d="M616 4484 c-73 -88 -152 -200 -227 -319 -73 -116 -227 -420 -231 -455 -3 -20 6 -29 48 -52 77 -42 155 -58 279 -58 167 0 151 -20 158 193 7 195 22 328 63 545 15 75 29 149 31 163 4 22 0 27 -32 36 l-36 11 -53 -64z" /><path d="M6040 3715 l0 -347 218 4 c191 3 222 6 257 23 57 28 75 70 75 174 0 81 -1 84 -34 117 -19 19 -44 34 -57 34 -20 0 -18 4 16 23 50 28 69 77 62 158 -6 70 -28 114 -70 136 -27 15 -64 18 -249 21 l-218 3 0 -346z m392 217 c8 -8 13 -36 13 -68 0 -84 -17 -94 -161 -94 l-114 0 0 91 0 91 125 -4 c85 -2 128 -7 137 -16z m6 -278 c18 -13 22 -25 22 -71 0 -89 -8 -93 -162 -93 l-128 0 0 90 0 90 123 0 c95 0 128 -4 145 -16z" /><path d="M6633 4046 c3 -8 58 -103 122 -211 l115 -196 0 -134 0 -135 65 0 65 0 0 131 0 131 125 208 c69 114 125 211 125 214 0 3 -33 6 -73 6 l-72 0 -79 -140 c-43 -77 -82 -142 -86 -145 -4 -3 -43 59 -87 138 l-78 142 -74 3 c-62 2 -73 1 -68 -12z" /><path d="M7302 3718 l3 -343 205 0 c229 1 272 8 320 56 54 54 63 89 68 255 6 234 -16 301 -118 348 -40 19 -67 21 -263 24 l-217 4 2 -344z m391 221 c61 -16 71 -44 75 -189 4 -140 -7 -200 -43 -236 -23 -23 -30 -24 -160 -24 l-135 0 0 230 0 230 113 0 c61 0 129 -5 150 -11z" /><path d="M8093 4044 c-50 -18 -98 -69 -112 -121 -6 -21 -11 -114 -11 -208 0 -190 7 -230 52 -280 46 -53 111 -68 272 -63 231 7 265 39 266 251 l0 117 -150 0 -150 0 0 -50 0 -50 85 0 85 0 0 -49 c0 -64 -6 -79 -41 -96 -42 -22 -194 -20 -239 3 -46 23 -52 52 -48 243 4 206 1 203 161 207 102 3 115 2 139 -17 15 -12 28 -34 30 -49 3 -26 6 -27 66 -30 l62 -3 0 43 c-1 69 -32 125 -82 148 -37 17 -65 19 -193 19 -106 0 -162 -5 -192 -15z" /><path d="M8780 4054 c-71 -25 -93 -41 -113 -78 -20 -37 -22 -59 -25 -226 -5 -220 5 -276 53 -324 42 -42 97 -56 224 -56 143 0 198 14 243 61 51 54 61 106 57 314 -4 158 -6 174 -29 219 -39 78 -72 91 -250 93 -80 1 -152 0 -160 -3z m277 -128 c28 -24 28 -25 32 -161 4 -165 -3 -217 -33 -252 -22 -26 -30 -27 -124 -31 l-101 -4 -31 31 -31 31 3 181 3 181 28 24 c26 22 37 24 127 24 90 0 101 -2 127 -24z" /><path d="M9392 4046 c-19 -6 -44 -22 -57 -34 -30 -29 -49 -110 -42 -177 13 -124 60 -155 251 -165 118 -6 131 -9 148 -29 27 -34 24 -103 -6 -138 -24 -27 -27 -28 -124 -28 -115 0 -136 11 -147 76 l-7 39 -59 0 -59 0 0 -50 c0 -68 28 -122 77 -146 32 -16 61 -19 198 -19 180 0 211 9 249 75 29 49 34 192 9 240 -30 56 -65 70 -214 81 -78 6 -144 16 -161 25 -25 13 -28 20 -28 63 0 79 18 92 126 98 108 5 135 -6 148 -60 l10 -37 64 0 64 0 -7 48 c-11 74 -32 109 -79 132 -37 17 -61 20 -182 19 -82 0 -153 -6 -172 -13z" /><path d="M9910 4005 l0 -55 180 0 c99 0 180 -3 180 -6 0 -3 -86 -109 -190 -236 l-191 -230 3 -52 3 -51 273 -3 272 -2 0 60 0 60 -188 2 -189 3 189 228 188 229 0 54 0 54 -265 0 -265 0 0 -55z" /><path d="M10628 4044 c-104 -32 -132 -111 -126 -358 3 -158 5 -175 28 -220 37 -73 75 -90 218 -95 143 -4 212 5 254 33 44 29 61 68 66 149 l4 67 -66 0 -66 0 0 -44 c0 -28 -7 -52 -19 -67 -17 -22 -29 -24 -114 -27 -168 -6 -180 12 -175 261 l3 159 28 24 c26 22 37 24 125 24 122 0 142 -11 142 -76 l0 -44 65 0 65 0 0 53 c-1 78 -29 133 -82 157 -36 16 -65 19 -173 19 -83 0 -147 -6 -177 -15z" /><path d="M11140 4005 l0 -55 180 0 c99 0 180 -2 180 -5 0 -3 -86 -109 -191 -235 l-190 -231 3 -52 3 -52 273 -3 272 -2 0 60 0 60 -189 2 -189 3 189 229 189 229 0 53 0 54 -265 0 -265 0 0 -55z" /><path d="M3781 3829 c-64 -223 -166 -431 -299 -607 l-55 -74 34 -34 35 -35 65 30 c89 40 174 61 252 61 l65 0 7 87 c15 176 -12 425 -67 612 l-13 44 -24 -84z" /><path d="M2028 3786 c-261 -217 -608 -426 -874 -527 -46 -18 -84 -36 -84 -41 0 -23 92 -234 166 -378 86 -170 177 -321 267 -446 l51 -72 43 16 c25 10 43 23 43 32 0 8 -30 172 -66 363 -36 192 -64 350 -62 351 3 4 572 64 575 62 1 -1 21 -123 43 -271 22 -147 41 -269 43 -271 15 -15 31 45 67 241 22 127 43 238 46 248 5 15 23 17 199 17 l194 0 12 -55 c7 -31 15 -58 19 -60 6 -4 110 108 110 119 0 9 -141 178 -250 301 -110 123 -406 417 -438 434 -14 7 -35 -5 -104 -63z" /><path d="M10 3172 c0 -41 32 -220 55 -310 47 -187 147 -410 258 -579 l48 -71 67 -8 c72 -8 524 3 609 14 l52 7 -71 105 c-135 202 -281 533 -321 732 l-13 63 -55 -5 c-30 -3 -124 -5 -209 -4 -161 0 -274 17 -371 54 -45 17 -49 17 -49 2z" /><path d="M4742 3100 c-100 -27 -164 -63 -246 -140 -165 -154 -250 -361 -263 -640 -15 -317 70 -576 246 -750 203 -201 451 -228 749 -84 l92 44 0 445 0 445 -248 0 -247 0 -33 -182 c-18 -101 -33 -186 -32 -190 0 -5 41 -8 90 -8 l90 0 0 -74 c0 -83 -2 -86 -77 -86 -229 0 -329 464 -148 679 81 95 266 94 354 -3 14 -14 27 -26 31 -26 4 0 52 89 108 199 l102 199 -40 35 c-109 100 -221 146 -365 153 -69 3 -107 0 -163 -16z" /><path d="M15285 3104 c-306 -24 -418 -88 -476 -274 -29 -92 -36 -262 -15 -360 31 -146 90 -232 195 -281 101 -47 183 -60 444 -69 230 -8 252 -10 295 -32 26 -13 57 -39 70 -58 22 -33 23 -43 20 -150 -5 -145 -17 -171 -96 -208 -54 -26 -66 -27 -243 -30 -225 -5 -288 5 -335 52 -38 38 -54 89 -54 174 l0 62 -160 0 -160 0 0 -62 c1 -179 40 -297 122 -374 103 -96 185 -114 535 -114 278 0 380 9 480 41 118 39 195 139 229 299 21 99 14 341 -11 415 -65 186 -186 233 -650 253 -185 8 -217 12 -269 33 -88 36 -100 57 -100 182 -1 168 32 206 194 228 48 7 150 10 235 7 216 -7 245 -26 253 -169 l5 -79 161 2 161 3 -3 75 c-10 256 -103 377 -322 421 -49 9 -424 19 -505 13z" /><path d="M6030 2443 c0 -712 2 -731 60 -850 48 -97 125 -153 263 -191 95 -26 638 -25 751 2 106 24 156 47 207 93 52 47 82 94 111 175 23 63 23 63 26 741 l3 677 -165 0 -165 0 -3 -657 -3 -658 -24 -34 c-14 -20 -47 -44 -80 -60 -55 -26 -59 -26 -276 -26 l-220 0 -58 28 c-103 51 -97 2 -97 757 l0 650 -165 0 -165 0 0 -647z" /><path d="M7740 2240 l0 -850 166 0 167 0 -8 468 c-4 257 -10 577 -14 710 -3 134 -3 246 0 248 4 2 169 -317 367 -709 l361 -712 275 -3 276 -2 0 850 0 850 -166 0 -165 0 6 -237 c14 -540 24 -1177 20 -1182 -3 -2 -7 -2 -8 0 -2 2 -167 322 -366 712 l-363 707 -274 0 -274 0 0 -850z" /><path d="M9620 2240 l0 -850 165 0 165 0 0 850 0 850 -165 0 -165 0 0 -850z" /><path d="M10080 3084 c0 -4 113 -358 251 -788 138 -429 260 -809 270 -844 l20 -62 247 2 247 3 272 840 c150 462 273 843 273 848 0 4 -75 7 -167 7 l-168 0 -154 -483 c-289 -900 -303 -941 -311 -926 -6 11 -278 862 -422 1317 l-29 92 -164 0 c-91 0 -165 -3 -165 -6z" /><path d="M11770 2240 l0 -850 585 0 585 0 0 140 0 140 -425 0 -425 0 0 225 0 225 403 2 402 3 0 130 0 130 -403 3 -402 2 2 213 3 212 423 3 422 2 0 135 0 135 -585 0 -585 0 0 -850z" /><path d="M13190 2240 l0 -850 165 0 165 0 0 280 0 280 278 0 c344 -1 369 -7 415 -110 18 -39 21 -71 25 -247 l5 -203 159 0 160 0 -4 238 c-5 259 -14 312 -65 372 -29 35 -96 72 -162 90 l-44 12 65 22 c36 12 84 35 107 50 88 62 130 221 118 456 -15 287 -100 399 -336 444 -69 13 -167 16 -567 16 l-484 0 0 -850z m967 549 c77 -38 88 -71 88 -254 0 -140 -2 -153 -25 -200 -20 -39 -35 -55 -75 -75 -49 -25 -52 -25 -337 -28 l-288 -4 0 298 0 297 294 -5 c285 -5 295 -6 343 -29z" /><path d="M16370 2240 l0 -850 165 0 165 0 0 850 0 850 -165 0 -165 0 0 -850z" /><path d="M16860 2955 l0 -135 248 -2 247 -3 3 -713 2 -712 160 0 160 0 2 713 3 712 252 3 252 2 3 111 3 110 293 -497 292 -498 0 -328 0 -328 165 0 165 0 0 327 0 326 315 524 314 523 -188 0 -189 0 -203 -360 c-112 -198 -208 -358 -214 -356 -5 1 -99 163 -208 359 l-199 357 -839 0 -839 0 0 -135z" /><path d="M1800 3053 c-117 -13 -215 -25 -216 -26 -1 -1 67 -362 152 -802 85 -439 154 -801 154 -802 0 -2 94 -3 208 -3 l208 0 85 441 c51 267 87 433 91 422 6 -16 158 -837 158 -856 0 -4 94 -7 209 -7 l209 0 159 803 c116 586 155 803 146 805 -38 10 -419 48 -424 43 -4 -3 -37 -184 -73 -401 -37 -217 -71 -408 -75 -425 -7 -26 -10 -15 -26 70 -10 55 -43 240 -74 410 l-56 310 -148 3 c-81 1 -147 0 -147 -3 0 -16 -150 -808 -154 -812 -2 -2 -10 29 -16 69 -83 489 -137 782 -145 783 -5 2 -107 -8 -225 -22z" /><path d="M3712 3070 c-174 -37 -306 -181 -348 -381 -29 -137 -5 -315 56 -413 35 -57 138 -149 233 -209 116 -73 137 -93 137 -129 0 -61 -46 -98 -122 -98 -36 0 -220 37 -280 56 -17 5 -18 -6 -18 -229 l0 -234 38 -12 c20 -6 88 -17 150 -23 309 -31 504 70 583 302 27 80 38 276 20 360 -32 155 -124 264 -323 385 -43 25 -85 56 -93 68 -23 32 -18 70 11 98 23 22 34 24 107 23 61 0 102 -7 160 -27 42 -15 80 -27 82 -27 3 0 4 102 3 228 l-3 227 -70 18 c-82 21 -261 30 -323 17z" /><path d="M1305 1889 c-87 -26 -275 -41 -443 -36 -114 4 -170 2 -166 -5 13 -21 224 -153 329 -205 250 -126 501 -202 749 -227 45 -5 57 -4 53 6 -2 7 -10 46 -18 87 -12 67 -16 76 -48 98 -20 13 -116 79 -214 146 -98 67 -186 127 -195 133 -11 8 -27 9 -47 3z" /><path d="M7571 720 c-96 -20 -126 -65 -126 -192 0 -148 39 -177 257 -187 137 -7 141 -7 164 -34 20 -24 24 -39 24 -97 0 -58 -4 -73 -24 -97 -24 -28 -26 -28 -158 -31 -166 -4 -180 3 -188 94 l-5 59 -37 3 -38 3 0 -58 c0 -72 23 -120 70 -148 31 -18 52 -20 190 -20 175 0 211 10 245 68 16 26 20 50 20 132 0 165 -25 185 -240 195 -181 9 -205 23 -205 125 0 106 38 129 202 123 125 -4 146 -16 155 -87 6 -40 6 -41 45 -41 l40 0 -7 48 c-16 113 -65 145 -230 148 -60 2 -130 -1 -154 -6z" /><path d="M9545 715 c-58 -15 -101 -59 -112 -115 -5 -19 -8 -129 -8 -245 0 -205 1 -211 25 -254 43 -77 70 -86 250 -86 137 0 159 2 189 20 44 26 70 62 81 111 13 56 12 383 -1 446 -16 71 -56 111 -127 127 -71 15 -235 13 -297 -4z m291 -70 c57 -24 64 -55 64 -277 0 -283 -6 -290 -213 -286 -126 3 -129 4 -152 30 -31 36 -38 98 -33 305 4 185 10 206 61 228 45 20 227 20 273 0z" /><path d="M13547 721 c-48 -10 -86 -38 -112 -82 -18 -30 -20 -56 -23 -223 -5 -222 1 -283 31 -327 44 -65 74 -74 247 -74 185 0 209 9 250 90 24 49 25 55 25 265 0 209 -1 216 -25 264 -37 75 -72 89 -229 92 -69 2 -143 -1 -164 -5z m272 -72 c56 -20 65 -53 69 -239 5 -203 -2 -262 -33 -298 -23 -26 -26 -27 -152 -30 -145 -3 -168 4 -196 58 -16 31 -17 60 -15 246 4 275 2 272 189 273 58 1 120 -4 138 -10z" /><path d="M18489 721 c-49 -16 -82 -45 -105 -96 -22 -47 -24 -61 -24 -250 0 -223 7 -264 54 -311 47 -47 97 -57 266 -52 159 3 191 13 234 71 18 25 21 45 25 158 l3 129 -151 0 -151 0 0 -35 0 -35 110 0 110 0 0 -79 c0 -70 -3 -83 -24 -108 -24 -28 -25 -28 -159 -31 -155 -4 -195 7 -222 58 -14 26 -16 63 -13 245 l3 215 28 27 c27 27 31 28 154 31 198 6 233 -9 233 -93 l0 -45 40 0 40 0 0 46 c0 61 -24 109 -69 136 -33 21 -49 23 -196 25 -88 1 -172 -2 -186 -6z" /><path d="M540 370 l0 -350 230 0 230 0 0 30 0 30 -190 0 -190 0 0 135 0 135 180 0 180 0 0 30 0 30 -180 0 -180 0 0 120 0 120 188 2 187 3 3 33 3 32 -230 0 -231 0 0 -350z" /><path d="M1400 370 l0 -350 40 0 40 0 2 314 3 313 194 -313 195 -314 68 0 68 0 0 350 0 350 -40 0 -40 0 -1 -322 c0 -307 -1 -322 -17 -299 -9 14 -99 158 -198 320 l-181 296 -67 3 -66 3 0 -351z" /><path d="M2380 685 l0 -35 110 0 110 0 0 -315 0 -315 40 0 40 0 0 315 0 315 115 0 115 0 0 35 0 35 -265 0 -265 0 0 -35z" /><path d="M3260 370 l0 -350 225 0 225 0 0 30 0 30 -187 2 -188 3 0 130 0 130 178 3 177 2 0 30 0 30 -180 0 -180 0 0 120 0 120 190 0 190 0 0 35 0 35 -225 0 -225 0 0 -350z" /><path d="M4110 371 l0 -351 40 0 40 0 0 140 0 140 144 0 c81 0 157 -5 176 -11 46 -16 60 -57 60 -174 l0 -95 41 0 41 0 -4 119 c-3 111 -5 121 -28 146 -14 15 -36 31 -50 37 -24 9 -24 9 16 27 54 24 69 62 69 171 0 94 -16 135 -68 174 -27 20 -43 21 -253 24 l-224 3 0 -350z m424 268 c37 -17 49 -58 44 -141 -5 -65 -9 -75 -37 -100 l-31 -28 -160 0 -160 0 0 140 0 140 160 0 c97 0 169 -4 184 -11z" /><path d="M5060 370 l0 -350 40 0 40 0 0 134 0 134 174 4 c199 3 212 8 254 89 21 39 23 55 20 139 -5 108 -21 150 -71 180 -29 18 -51 20 -244 20 l-213 0 0 -350z m421 261 c22 -17 24 -29 27 -113 4 -89 2 -97 -21 -124 l-25 -29 -161 -3 -161 -4 0 146 0 146 159 0 c141 0 161 -2 182 -19z" /><path d="M5990 370 l0 -350 40 0 40 0 0 140 0 140 145 0 c155 0 204 -10 224 -48 6 -12 11 -68 11 -126 l0 -106 40 0 40 0 0 113 c0 128 -14 164 -70 187 l-32 13 33 11 c55 19 74 55 77 156 5 117 -17 171 -80 200 -38 17 -67 20 -255 20 l-213 0 0 -350z m452 250 c17 -21 19 -36 16 -112 -5 -132 -5 -132 -218 -136 l-170 -3 0 141 0 141 176 -3 c173 -3 176 -3 196 -28z" /><path d="M6960 370 l0 -350 40 0 40 0 0 350 0 350 -40 0 -40 0 0 -350z" /><path d="M8340 370 l0 -350 225 0 225 0 0 30 0 30 -185 0 -185 0 0 135 0 135 180 0 180 0 0 30 0 30 -180 0 -180 0 0 120 0 120 185 0 185 0 0 35 0 35 -225 0 -225 0 0 -350z" /><path d="M10380 370 l0 -350 40 0 40 0 0 160 0 160 175 0 175 0 0 30 0 30 -175 0 -175 0 0 125 0 125 175 0 175 0 0 35 0 35 -215 0 -215 0 0 -350z" /><path d="M11460 370 l0 -350 40 0 40 0 0 160 0 160 38 0 c35 0 47 -10 197 -160 l160 -160 49 0 49 0 -178 181 -178 181 79 81 c43 45 117 121 164 170 l85 87 -55 0 -55 0 -144 -155 c-130 -141 -147 -155 -177 -155 l-34 0 0 155 0 155 -40 0 -40 0 0 -350z" /><path d="M12390 370 l0 -350 40 0 c22 0 41 1 42 3 0 1 4 142 7 313 l6 311 194 -313 194 -314 69 0 68 0 0 350 0 350 -40 0 -40 0 -1 -322 c0 -307 -1 -322 -17 -299 -9 14 -99 158 -198 320 l-182 296 -71 3 -71 3 0 -351z" /><path d="M14312 708 c3 -7 51 -165 108 -350 l104 -338 61 0 61 0 88 303 c49 166 92 308 96 315 4 7 48 -129 98 -304 51 -174 94 -319 97 -322 2 -2 30 0 62 4 l58 9 107 340 c59 187 108 343 108 348 0 4 -18 7 -39 7 -38 0 -40 -1 -54 -47 -71 -242 -182 -592 -185 -588 -2 2 -45 144 -96 317 l-91 313 -61 3 -60 3 -94 -320 c-52 -176 -98 -314 -101 -308 -4 7 -37 113 -74 237 -36 124 -78 262 -91 308 l-25 82 -41 0 c-28 0 -39 -4 -36 -12z" /><path d="M15740 370 l0 -350 220 0 220 0 0 30 0 30 -180 0 -180 0 0 320 0 320 -40 0 -40 0 0 -350z" /><path d="M16530 370 l0 -350 230 0 230 0 0 30 0 30 -190 0 -190 0 0 135 0 135 180 0 180 0 0 30 0 30 -180 0 -180 0 0 120 0 120 188 2 187 3 3 33 3 32 -230 0 -231 0 0 -350z" /><path d="M17380 369 l0 -350 228 3 c225 3 229 3 266 28 23 16 47 46 64 80 25 52 27 64 30 217 4 182 -8 248 -55 304 -52 62 -83 69 -320 69 l-213 0 0 -351z m441 264 c16 -10 39 -37 50 -60 19 -39 20 -57 17 -215 -3 -153 -5 -177 -24 -208 -33 -57 -59 -64 -241 -68 l-163 -4 0 286 0 286 166 0 c139 0 171 -3 195 -17z" /><path d="M19310 370 l0 -350 230 0 230 0 0 30 0 30 -190 0 -190 0 0 135 0 135 180 0 180 0 0 30 0 30 -180 0 -180 0 0 120 0 120 188 2 187 3 3 33 3 32 -230 0 -231 0 0 -350z" /></g></svg>
                             
 
 							
                     														<svg class="d-block d-md-none" width="52" height="30" viewBox="0 0 82 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                                            <path d="M58.3828 21.4863C57.5719 25.135 55.9502 28.7836 53.923 31.6214C53.5176 32.4322 53.1121 32.8377 52.3013 33.6485L53.5176 34.8647C54.7339 34.0539 57.9774 32.8377 59.1937 33.2431C60.41 28.7836 59.5991 24.7296 58.3828 21.4863Z" fill="white"/>
-                                                                            <path d="M27.5694 57.5675C26.3531 56.7567 21.8933 53.9189 20.677 52.7026C16.6227 53.5134 12.9738 53.5134 10.1357 53.108C14.5955 56.7567 21.8933 59.9999 27.9749 59.9999L27.5694 57.5675Z" fill="white"/>
-                                                                            <path d="M32.4347 22.2974C28.3803 25.946 22.2988 30 16.2173 32.0271C16.6227 33.6487 19.0553 39.7298 23.9205 45.8108C24.326 45.8108 24.7314 45.4054 25.5423 45.4054L23.1097 34.4595L32.0292 33.6487L33.2455 42.1622C33.651 42.1622 33.651 41.7568 33.651 41.7568L34.8673 34.0541H40.9488L41.3542 36.0811C42.1651 35.2703 42.5705 34.8649 42.976 34.0541C40.5434 30.4054 35.6781 25.1352 32.4347 22.2974Z" fill="white"/>
-                                                                            <path d="M40.5434 5.67578C41.3543 9.72983 39.7326 13.3785 36.8945 17.4325C40.9489 20.6757 44.5978 23.919 48.2467 27.973C50.6793 25.1352 54.3282 17.8379 55.5445 15.4055C51.8956 11.3514 44.5978 6.89199 40.5434 5.67578Z" fill="white"/>
-                                                                            <path d="M37.2998 1.21631L38.9215 2.83793C42.5705 4.05414 45.0031 5.27035 48.652 7.29737C45.4085 4.45954 41.3542 2.02712 37.2998 1.21631Z" fill="white"/>
-                                                                            <path d="M17.8394 8.51345C21.0828 8.51345 26.3535 10.5405 30.0024 12.5675C31.6241 10.5405 33.6513 6.48643 32.8404 4.4594C28.7861 4.054 22.7046 5.27021 18.2448 6.48643C18.2448 7.70264 18.2448 8.10804 17.8394 8.51345Z" fill="white"/>
-                                                                            <path d="M17.4336 5.67566C21.0825 3.24324 25.9477 1.21621 30.8129 1.21621C30.0021 0.810809 29.5966 0.405404 27.9749 0C26.3531 0 22.2988 0.810809 21.0825 1.21621C19.0553 2.02702 17.0282 3.64864 16.2173 5.67566C16.6227 5.27026 17.0282 5.67566 17.4336 5.67566Z" fill="white"/>
-                                                                            <path d="M12.9741 11.7565C12.9741 14.9997 13.785 22.297 14.5959 24.7295C19.0556 22.7024 24.7317 18.6484 26.3535 17.0268C23.11 14.5943 19.8665 12.1619 16.623 9.72949C15.4067 10.9457 14.1904 11.7565 12.9741 11.7565Z" fill="white"/>
-                                                                            <path d="M10.136 11.7568C6.48712 15.8109 4.05452 19.8649 2.02734 25.1352C4.05452 26.3514 6.48712 26.7568 9.7306 26.3514C9.7306 21.8919 10.136 17.0271 11.3523 12.1622C10.9469 12.1622 10.5415 11.7568 10.136 11.7568Z" fill="white"/>
-                                                                            <path d="M9.73059 10.9458C5.67625 12.9729 2.43277 18.2431 0.811035 21.8918C2.02734 18.6485 3.64908 14.9999 5.67625 12.1621C7.70342 9.72962 9.73059 9.32422 10.136 9.32422C9.73059 9.72962 9.73059 10.5404 9.73059 10.9458Z" fill="white"/>
-                                                                            <path d="M14.1899 6.08099C14.1899 4.86478 15.0008 4.05397 16.2171 3.24316C13.7845 4.45938 11.3519 6.08099 9.32471 8.10802C9.73014 8.10802 10.1356 8.10802 10.9464 8.10802C11.3519 7.70261 12.1627 7.29721 12.5682 6.8918C13.3791 6.4864 13.7845 6.08099 14.1899 6.08099Z" fill="white"/>
-                                                                            <path d="M5.67608 47.8379C9.32499 48.2433 12.9739 48.2433 17.0282 47.4324C14.1902 43.7838 11.3522 38.1081 10.5413 33.6487C7.29782 34.0541 2.83804 34.0541 0 32.8379C0.405434 38.5136 2.43261 43.3784 5.67608 47.8379Z" fill="white"/>
-                                                                            <path d="M29.1914 60L24.3262 35.2703L31.2186 34.4595L33.6512 47.8378L36.0838 34.8649H40.5436L42.9762 47.8378L45.0033 34.4595L51.8957 35.2703L47.0305 60H40.5436L38.1109 46.2162L35.2729 60H29.1914Z" fill="white"/>
-                                                                            <path d="M51.8957 59.5944V52.7025C52.3011 52.7025 52.3011 52.7025 53.112 53.1079C54.7337 53.5133 56.3554 53.9188 56.7609 53.9188C57.1663 53.9188 57.5718 53.9188 57.9772 53.5133C58.3826 53.1079 58.3826 52.7025 58.3826 52.2971C58.3826 51.8917 57.9772 51.4863 57.1663 50.6755C56.7609 50.2701 56.3554 50.2701 56.3554 50.2701C54.7337 49.0539 53.5174 48.2431 52.7065 47.0269C51.8957 45.8107 51.4902 44.5945 51.4902 42.9728C51.4902 40.5404 52.3011 38.5134 53.5174 37.2972C54.7337 35.6756 56.7609 34.8647 58.7881 34.8647C59.5989 34.8647 60.4098 34.8647 61.2207 34.8647C62.0315 34.8647 62.8424 35.2701 63.2478 35.2701V42.162C62.437 41.7566 61.6261 41.7566 61.2207 41.3512C60.4098 41.3512 60.0044 40.9458 59.5989 40.9458C59.1935 40.9458 58.3826 40.9458 58.3826 41.3512C57.9772 41.7566 57.9772 41.7566 57.9772 42.162C57.9772 42.5674 58.3826 43.3782 59.5989 43.7836C60.0044 44.189 60.8152 44.189 60.8152 44.5945C62.437 45.8107 63.2478 46.6215 64.0587 47.8377C64.4641 49.0539 64.8696 50.2701 64.8696 51.8917C64.8696 54.7296 64.0587 56.7566 62.8424 57.9728C61.6261 59.5944 59.5989 59.9998 57.1663 59.9998C55.95 59.9998 55.1391 59.9998 54.3283 59.9998C53.112 59.9998 52.3011 59.9998 51.8957 59.5944Z" fill="white"/>
-                                                                            <path d="M81.8979 57.9728C80.6816 58.7836 79.4653 59.189 78.249 59.5945C77.0327 59.9999 75.8164 59.9999 75.0055 59.9999C73.7892 59.9999 72.1675 59.5945 70.9511 59.189C69.7348 58.3782 68.5185 57.5674 67.7077 56.3512C66.8968 55.135 66.0859 53.5134 65.6805 51.8918C65.2751 50.2702 64.8696 48.6485 64.8696 46.6215C64.8696 44.5945 65.2751 42.9729 65.6805 41.3513C66.0859 39.7296 66.8968 38.108 67.7077 36.8918C68.5185 35.6756 69.7348 34.8648 70.9511 34.054C72.1675 33.6486 73.3838 33.2432 75.0055 33.2432C76.2218 33.2432 77.4381 33.6486 78.6544 34.054C79.8707 34.4594 80.6816 35.2702 81.4924 36.4864L78.249 42.5675C77.8435 42.1621 77.0327 41.7567 76.6272 41.3513C76.2218 40.9458 75.4109 40.9459 75.0055 40.9459C73.7892 40.9459 72.9783 41.3513 72.1674 42.5675C71.3566 43.7837 70.9511 44.9999 70.9511 46.6215C70.9511 48.2431 71.3566 49.8647 72.1674 50.6756C72.9783 51.8918 73.7892 52.2972 75.0055 52.2972H75.4109H75.8164V49.8647H72.9783L74.1946 44.1891H81.8979V57.9728Z" fill="white"/>
-                                                                            </svg>
-                                                                            </a>
-                                <ul class="nav justify-content-start me-auto d-lg-none d-xl-none">
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Bydgoszcz</a>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="https://www.wsg.pl/en/chojnice">Chojnice</a></li>
-                                            <li><a class="dropdown-item" href="https://www.wsg.pl/en/dzialdowo">Działdowo</a></li>
-                                            <li><a class="dropdown-item" href="https://www.wsg.pl/en/elk">Ełk</a></li>
-                                            <li><a class="dropdown-item" href="https://www.wsg.pl/en/inowroclaw">Inowrocław</a></li>
-                                            <li><a class="dropdown-item" href="https://www.wsg.pl/en/malbork">Malbork</a></li>
-                                            <li><a class="dropdown-item" href="https://www.wsg.pl/en/pila">Piła</a></li>
-                                            <li><a class="dropdown-item" href="https://www.wsg.pl/en/torun-medyczny">Toruń Medyczny</a></li>
-                                            <li><a class="dropdown-item" href="https://www.wsg.pl/en/torun-technical">Toruń Technical</a></li>
-                                            <li><a class="dropdown-item" href="https://www.wsg.pl/en/other-cities">Other cities</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">en</a>
-                                        <ul class="dropdown-menu" style="min-width:1em">
-                                            <li><a class="dropdown-item" href="https://www.wsg.pl">pl</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                                    <span class="navbar-toggler-icon"></span>
-                                </button>
-                                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                                        <li class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle" href="https://www.wsg.pl/edukacja?filter[language]=Polski,Ukrai%C5%84ski/Polski&filter[city]=Bydgoszcz&sort=name" role="button" data-bs-toggle="dropdown" aria-expanded="false">For Candidate</a>
-                                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                                <li><a class="dropdown-item" href="https://www.wsg.pl/en/why-study-with-us">Making the Decision: Why Study With Us</a></li>
-                                                <li><a class="dropdown-item" href="https://www.wsg.pl/en/what-you-need">Before you join</a></li>
-                                                <li><a class="dropdown-item" href="https://www.wsg.pl/en/how-to-apply-for-a-refund">Fee Reimbursment</a></li>
-                                                <li><a class="dropdown-item" href="https://www.wsg.pl/en/education?filter[product]=Studies&filter[language]=English&filter[city]=Bydgoszcz&sort=name">Studies</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">About the university</a>
-                                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                                <li><a class="dropdown-item" href="https://www.wsg.pl/en/who-we-are">Who we are</a></li>
-                                                <li><a class="dropdown-item" href="https://www.wsg.pl/wladze-i-kadra">Authorities</a></li>
-                                                <li><a class="dropdown-item" href="https://www.wsg.pl/en/organizational-structure">Get to Know Our Units</a></li>
-                                                <li><a class="dropdown-item" href="https://www.wsg.pl/en/eu-projects">EU Projects</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">For Volunteer</a>
-                                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                                <li><a class="dropdown-item" href="https://www.wsg.pl/en/our-activities">Our Activities</a></li>
-                                                <li><a class="dropdown-item" href="https://www.wsg.pl/en/our-volunteers">Our Volunteers</a></li>
-                                                <li><a class="dropdown-item" href="https://www.wsg.pl/en/what-is-volunteering">What is Volunteering</a></li>
-                                                <li><a class="dropdown-item" href="https://www.wsg.pl/en/european-solidarity-corps">European Solidarity Corps</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">For Student</a>
-                                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                                <li><a class="dropdown-item" href="https://www.wsg.pl/en/scholarships-and-discounts">Scholarships and Discounts</a></li>
-                                                <li><a class="dropdown-item" href="https://www.wsg.pl/en/deans-office">Dean's Office</a></li>
-                                                <li><a class="dropdown-item" href="https://www.wsg.pl/en/student-financial-services">Financial Student Services</a></li>
-                                                <li><a class="dropdown-item" href="https://www.wsg.pl/en/library">Library</a></li>
-                                                <li><a class="dropdown-item" href="https://www.wsg.pl/en/academic-sports-association">Academic Sports Association</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="nav-item dropdown">
-                                            <a class="nav-link dropdown-toggle" href="http://eurostudies.pl/home.1.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">Internationalization</a>
-                                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                                <li><a class="dropdown-item" href="https://www.wsg.pl/en/welcome-center-en">Welcome Center</a></li>
-                                                <li><a class="dropdown-item" href="https://www.wsg.pl/en/international">International Cooperation</a></li>
-                                                <li><a class="dropdown-item" href="https://www.wsg.pl/en/center-for-ukrainian-language-and-culture">Center for Ukrainian Language and Culture</a></li>
-                                                <li><a class="dropdown-item" href="https://www.wsg.pl/en/ais-en">Association of International Students</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-lg-none d-xl-none">
-                                        <li class="nav-item"><a class="nav-link" href="http://www.wsg.pl/en/contacts">Contact</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="https://new.isaps.pl">ISAPS</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="https://onte.wsg.byd.pl/moodle2.0/login/index.php?lang=en">ONTE</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="https://poczta.byd.pl/">WSG Mail</a></li>
-                                        <li class="nav-item"><a class="nav-link" href="http://www.wsg.pl/en/press-and-media">Press and Media</a></li>
-                                        <li class="nav-item text-sm-left" style="min-width: 100px;padding-top: 6px;">
-                                            <a href="#" class="iFontsie" title="Czcionka" data-size=""><i class="fa fa-font fa-lg"></i><i class="fa fa-plus" aria-hidden="true"></i></a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="#" title="Kontrast domyślny" data-contrast="0" class="iContrast"><img src="https://www.wsg.pl/images/ico_contr_1.png" /></a>
-                                            <a href="#" title="Kontrast czarno-biały" data-contrast="1" class="iContrast"><img src="https://www.wsg.pl/images/ico_contr_2.png" /></a>
-                                            <a href="#" title="Kontrast żółto-czarny" data-contrast="2" class="iContrast"><img src="https://www.wsg.pl/images/ico_contr_3.png" /></a>
-                                            <a href="#" title="Kontrast czarno-żółty" data-contrast="3" class="iContrast"><img src="https://www.wsg.pl/images/ico_contr_4.png" /></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </nav>
+<path d="M58.3828 21.4863C57.5719 25.135 55.9502 28.7836 53.923 31.6214C53.5176 32.4322 53.1121 32.8377 52.3013 33.6485L53.5176 34.8647C54.7339 34.0539 57.9774 32.8377 59.1937 33.2431C60.41 28.7836 59.5991 24.7296 58.3828 21.4863Z" fill="white"/>
+<path d="M27.5694 57.5675C26.3531 56.7567 21.8933 53.9189 20.677 52.7026C16.6227 53.5134 12.9738 53.5134 10.1357 53.108C14.5955 56.7567 21.8933 59.9999 27.9749 59.9999L27.5694 57.5675Z" fill="white"/>
+<path d="M32.4347 22.2974C28.3803 25.946 22.2988 30 16.2173 32.0271C16.6227 33.6487 19.0553 39.7298 23.9205 45.8108C24.326 45.8108 24.7314 45.4054 25.5423 45.4054L23.1097 34.4595L32.0292 33.6487L33.2455 42.1622C33.651 42.1622 33.651 41.7568 33.651 41.7568L34.8673 34.0541H40.9488L41.3542 36.0811C42.1651 35.2703 42.5705 34.8649 42.976 34.0541C40.5434 30.4054 35.6781 25.1352 32.4347 22.2974Z" fill="white"/>
+<path d="M40.5434 5.67578C41.3543 9.72983 39.7326 13.3785 36.8945 17.4325C40.9489 20.6757 44.5978 23.919 48.2467 27.973C50.6793 25.1352 54.3282 17.8379 55.5445 15.4055C51.8956 11.3514 44.5978 6.89199 40.5434 5.67578Z" fill="white"/>
+<path d="M37.2998 1.21631L38.9215 2.83793C42.5705 4.05414 45.0031 5.27035 48.652 7.29737C45.4085 4.45954 41.3542 2.02712 37.2998 1.21631Z" fill="white"/>
+<path d="M17.8394 8.51345C21.0828 8.51345 26.3535 10.5405 30.0024 12.5675C31.6241 10.5405 33.6513 6.48643 32.8404 4.4594C28.7861 4.054 22.7046 5.27021 18.2448 6.48643C18.2448 7.70264 18.2448 8.10804 17.8394 8.51345Z" fill="white"/>
+<path d="M17.4336 5.67566C21.0825 3.24324 25.9477 1.21621 30.8129 1.21621C30.0021 0.810809 29.5966 0.405404 27.9749 0C26.3531 0 22.2988 0.810809 21.0825 1.21621C19.0553 2.02702 17.0282 3.64864 16.2173 5.67566C16.6227 5.27026 17.0282 5.67566 17.4336 5.67566Z" fill="white"/>
+<path d="M12.9741 11.7565C12.9741 14.9997 13.785 22.297 14.5959 24.7295C19.0556 22.7024 24.7317 18.6484 26.3535 17.0268C23.11 14.5943 19.8665 12.1619 16.623 9.72949C15.4067 10.9457 14.1904 11.7565 12.9741 11.7565Z" fill="white"/>
+<path d="M10.136 11.7568C6.48712 15.8109 4.05452 19.8649 2.02734 25.1352C4.05452 26.3514 6.48712 26.7568 9.7306 26.3514C9.7306 21.8919 10.136 17.0271 11.3523 12.1622C10.9469 12.1622 10.5415 11.7568 10.136 11.7568Z" fill="white"/>
+<path d="M9.73059 10.9458C5.67625 12.9729 2.43277 18.2431 0.811035 21.8918C2.02734 18.6485 3.64908 14.9999 5.67625 12.1621C7.70342 9.72962 9.73059 9.32422 10.136 9.32422C9.73059 9.72962 9.73059 10.5404 9.73059 10.9458Z" fill="white"/>
+<path d="M14.1899 6.08099C14.1899 4.86478 15.0008 4.05397 16.2171 3.24316C13.7845 4.45938 11.3519 6.08099 9.32471 8.10802C9.73014 8.10802 10.1356 8.10802 10.9464 8.10802C11.3519 7.70261 12.1627 7.29721 12.5682 6.8918C13.3791 6.4864 13.7845 6.08099 14.1899 6.08099Z" fill="white"/>
+<path d="M5.67608 47.8379C9.32499 48.2433 12.9739 48.2433 17.0282 47.4324C14.1902 43.7838 11.3522 38.1081 10.5413 33.6487C7.29782 34.0541 2.83804 34.0541 0 32.8379C0.405434 38.5136 2.43261 43.3784 5.67608 47.8379Z" fill="white"/>
+<path d="M29.1914 60L24.3262 35.2703L31.2186 34.4595L33.6512 47.8378L36.0838 34.8649H40.5436L42.9762 47.8378L45.0033 34.4595L51.8957 35.2703L47.0305 60H40.5436L38.1109 46.2162L35.2729 60H29.1914Z" fill="white"/>
+<path d="M51.8957 59.5944V52.7025C52.3011 52.7025 52.3011 52.7025 53.112 53.1079C54.7337 53.5133 56.3554 53.9188 56.7609 53.9188C57.1663 53.9188 57.5718 53.9188 57.9772 53.5133C58.3826 53.1079 58.3826 52.7025 58.3826 52.2971C58.3826 51.8917 57.9772 51.4863 57.1663 50.6755C56.7609 50.2701 56.3554 50.2701 56.3554 50.2701C54.7337 49.0539 53.5174 48.2431 52.7065 47.0269C51.8957 45.8107 51.4902 44.5945 51.4902 42.9728C51.4902 40.5404 52.3011 38.5134 53.5174 37.2972C54.7337 35.6756 56.7609 34.8647 58.7881 34.8647C59.5989 34.8647 60.4098 34.8647 61.2207 34.8647C62.0315 34.8647 62.8424 35.2701 63.2478 35.2701V42.162C62.437 41.7566 61.6261 41.7566 61.2207 41.3512C60.4098 41.3512 60.0044 40.9458 59.5989 40.9458C59.1935 40.9458 58.3826 40.9458 58.3826 41.3512C57.9772 41.7566 57.9772 41.7566 57.9772 42.162C57.9772 42.5674 58.3826 43.3782 59.5989 43.7836C60.0044 44.189 60.8152 44.189 60.8152 44.5945C62.437 45.8107 63.2478 46.6215 64.0587 47.8377C64.4641 49.0539 64.8696 50.2701 64.8696 51.8917C64.8696 54.7296 64.0587 56.7566 62.8424 57.9728C61.6261 59.5944 59.5989 59.9998 57.1663 59.9998C55.95 59.9998 55.1391 59.9998 54.3283 59.9998C53.112 59.9998 52.3011 59.9998 51.8957 59.5944Z" fill="white"/>
+<path d="M81.8979 57.9728C80.6816 58.7836 79.4653 59.189 78.249 59.5945C77.0327 59.9999 75.8164 59.9999 75.0055 59.9999C73.7892 59.9999 72.1675 59.5945 70.9511 59.189C69.7348 58.3782 68.5185 57.5674 67.7077 56.3512C66.8968 55.135 66.0859 53.5134 65.6805 51.8918C65.2751 50.2702 64.8696 48.6485 64.8696 46.6215C64.8696 44.5945 65.2751 42.9729 65.6805 41.3513C66.0859 39.7296 66.8968 38.108 67.7077 36.8918C68.5185 35.6756 69.7348 34.8648 70.9511 34.054C72.1675 33.6486 73.3838 33.2432 75.0055 33.2432C76.2218 33.2432 77.4381 33.6486 78.6544 34.054C79.8707 34.4594 80.6816 35.2702 81.4924 36.4864L78.249 42.5675C77.8435 42.1621 77.0327 41.7567 76.6272 41.3513C76.2218 40.9458 75.4109 40.9459 75.0055 40.9459C73.7892 40.9459 72.9783 41.3513 72.1674 42.5675C71.3566 43.7837 70.9511 44.9999 70.9511 46.6215C70.9511 48.2431 71.3566 49.8647 72.1674 50.6756C72.9783 51.8918 73.7892 52.2972 75.0055 52.2972H75.4109H75.8164V49.8647H72.9783L74.1946 44.1891H81.8979V57.9728Z" fill="white"/>
+</svg>
+                        </a>
+                    <ul class="nav justify-content-start me-auto d-lg-none d-xl-none">
+                    <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Bydgoszcz</a>
+                    <ul class="dropdown-menu">
+                      					                         					                         					                         					                                                         
+                             <li><a class="dropdown-item" href="https://www.wsg.pl/en/chojnice">Chojnice</a></li>
+                            
+                          						                        					                         					                                                         
+                             <li><a class="dropdown-item" href="https://www.wsg.pl/en/dzialdowo">Działdowo</a></li>
+                            
+                          						                        					                                                         
+                             <li><a class="dropdown-item" href="https://www.wsg.pl/en/elk">Ełk</a></li>
+                            
+                          						                        					                         					                                                         
+                             <li><a class="dropdown-item" href="https://www.wsg.pl/en/inowroclaw">Inowrocław</a></li>
+                            
+                          						                        					                                                         
+                             <li><a class="dropdown-item" href="https://www.wsg.pl/en/malbork">Malbork</a></li>
+                            
+                          						                        					                                                         
+                             <li><a class="dropdown-item" href="https://www.wsg.pl/en/pila">Piła</a></li>
+                            
+                          						                        					                                                         
+                             <li><a class="dropdown-item" href="https://www.wsg.pl/en/torun-medyczny">Toruń Medyczny</a></li>
+                            
+                          						                        					                                                         
+                             <li><a class="dropdown-item" href="https://www.wsg.pl/en/torun-technical">Toruń Technical</a></li>
+                            
+                          						                        					                         					                                                         
+                             <li><a class="dropdown-item" href="https://www.wsg.pl/en/other-cities">Other cities</a></li>
+                            
+                          						                                            </ul>
+                    </li>
+                    
+                    <li class="nav-item dropdown">
+                                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">en</a>
+                                                <ul class="dropdown-menu" style="min-width:1em">
+
+                                                                        <li><a class="dropdown-item" href="https://www.wsg.pl">pl</a></li>
+                                                 
+                        </ul>
+                    </li> 
+                    
+                    </ul>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+                                                <li class="nav-item">
+                                                                                    <a class="nav-link" href="https://www.wsg.pl/en/news/srebrna-perspektywa-zlote-mozliwosci">CONTEST</a>
+
+                                                                                    </li>
+                                                <li class="nav-item">
+                                                                                            <li class="nav-item dropdown">
+
+                                              
+                                                        <a class="nav-link dropdown-toggle" href="https://www.wsg.pl/edukacja?filter[language]=Polski,Ukrai%C5%84ski/Polski&amp;filter[city]=Bydgoszcz&amp;sort=name" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        For Candidate
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        
+                                                        <li><a class="dropdown-item" href="https://www.wsg.pl/en/education?filter[product]=Studies&amp;filter[language]=English&amp;filter[city]=Bydgoszcz&amp;sort=name">Studies</a></li>
+                            
+                           
+                                        
+                                                                                    <li><a class="dropdown-item" href="https://www.wsg.pl/en/why-study-with-us">Making the Decision: Why Study With Us</a></li>
+                                                        
+                           
+                                        
+                                                                                    <li><a class="dropdown-item" href="https://www.wsg.pl/en/what-you-need">Before you join</a></li>
+                                                        
+                           
+                                        
+                                                                                    <li><a class="dropdown-item" href="https://www.wsg.pl/en/apply-for-refund">Fee Reimbursment</a></li>
+                                                        
+                           
+                             
+                            </ul>
+                        </li>
+                                                                                                           </li>
+                                                <li class="nav-item">
+                                                                                               <li class="nav-item dropdown">
+
+                                              
+                                                        <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        About the university
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        
+                                                                                    <li><a class="dropdown-item" href="https://www.wsg.pl/en/who-we-are">Who we are</a></li>
+                                                        
+                           
+                                        
+                                                        <li><a class="dropdown-item" href="https://www.wsg.pl/wladze-i-kadra">Authorities</a></li>
+                            
+                           
+                                        
+                                                                                    <li><a class="dropdown-item" href="https://www.wsg.pl/en/organizational-structure">Get to Know Our Units</a></li>
+                                                        
+                           
+                                        
+                                                                                    <li><a class="dropdown-item" href="https://www.wsg.pl/en/eu-projects">EU Projects</a></li>
+                                                        
+                           
+                             
+                            </ul>
+                        </li>
+                                                                                                           </li>
+                                                <li class="nav-item">
+                                                                                               <li class="nav-item dropdown">
+
+                                              
+                                                        <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        For Volunteer
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        
+                                                                                    <li><a class="dropdown-item" href="https://www.wsg.pl/en/our-activities">Our Activities</a></li>
+                                                        
+                           
+                                        
+                                                                                    <li><a class="dropdown-item" href="https://www.wsg.pl/en/our-volunteers">Our Volunteers</a></li>
+                                                        
+                           
+                                        
+                                                                                    <li><a class="dropdown-item" href="https://www.wsg.pl/en/what-is-volunteering">What is Volunteering</a></li>
+                                                        
+                           
+                                        
+                                                                                    <li><a class="dropdown-item" href="https://www.wsg.pl/en/european-solidarity-corps">European Solidarity Corps</a></li>
+                                                        
+                           
+                             
+                            </ul>
+                        </li>
+                                                                                                           </li>
+                                                <li class="nav-item">
+                                                                                               <li class="nav-item dropdown">
+
+                                              
+                                                        <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        For Student
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        
+                                                                                    <li><a class="dropdown-item" href="https://www.wsg.pl/en/scholarships-and-discounts">Scholarships and Discounts</a></li>
+                                                        
+                           
+                                        
+                                                                                    <li><a class="dropdown-item" href="https://www.wsg.pl/en/deans-office">Dean&#039;s Office</a></li>
+                                                        
+                           
+                                        
+                                                                                    <li><a class="dropdown-item" href="https://www.wsg.pl/en/student-financial-services">Financial Student Services</a></li>
+                                                        
+                           
+                                        
+                                                                                    <li><a class="dropdown-item" href="https://www.wsg.pl/en/library">Library</a></li>
+                                                        
+                           
+                                        
+                                                                                    <li><a class="dropdown-item" href="https://www.wsg.pl/en/academic-sports-association">Academic Sports Association</a></li>
+                                                        
+                           
+                             
+                            </ul>
+                        </li>
+                                                                                                           </li>
+                                                <li class="nav-item">
+                                                                                            <li class="nav-item dropdown">
+
+                                              
+                                                        <a class="nav-link dropdown-toggle" href="http://eurostudies.pl/home.1.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        Internationalization
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        
+                                                                                    <li><a class="dropdown-item" href="https://www.wsg.pl/en/welcome-center-en">Welcome Center</a></li>
+                                                        
+                           
+                                        
+                                                                                    <li><a class="dropdown-item" href="https://www.wsg.pl/en/international">International Cooperation</a></li>
+                                                        
+                           
+                                        
+                                                                                    <li><a class="dropdown-item" href="https://www.wsg.pl/en/center-for-ukrainian-language-and-culture">Center for Ukrainian Language and Culture</a></li>
+                                                        
+                           
+                                        
+                                                                                    <li><a class="dropdown-item" href="https://www.wsg.pl/en/ais-en">Association of International Students</a></li>
+                                                        
+                           
+                             
+                            </ul>
+                        </li>
+                                                                                                           </li>
+                        
+                        </ul>
+
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-lg-none d-xl-none">
+                                                <li class="nav-item">
+                                                                                    <a class="nav-link" href="http://www.wsg.pl/en/contacts">Contact</a>
+
+                                                                                    </li>
+                                                <li class="nav-item">
+                                                                                    <a class="nav-link" href="https://new.isaps.pl">ISAPS</a>
+
+                                                                                    </li>
+                                                <li class="nav-item">
+                                                                                    <a class="nav-link" href="https://onte.wsg.byd.pl/moodle2.0/login/index.php?lang=en">ONTE</a>
+
+                                                                                    </li>
+                                                <li class="nav-item">
+                                                                                    <a class="nav-link" href="https://poczta.byd.pl/">WSG Mail</a>
+
+                                                                                    </li>
+                                                <li class="nav-item">
+                                                                                    <a class="nav-link" href="http://www.wsg.pl/en/press-and-media">Press and Media</a>
+
+                                                                                    </li>
+                                                <li class="nav-item text-sm-left" style="min-width: 100px;padding-top: 6px;">
+          <a href="#" class="iFontsie" title="Czcionka" data-size=""><i class="fa fa-font fa-lg"></i><i class="fa fa-plus " aria-hidden="true"></i></a></li>
+          <li class="nav-item">
+          <a href="#" title="Kontrast domyślny" data-contrast="0" class=" iContrast"><img src="https://www.wsg.pl/images/ico_contr_1.png" /></a>
+          <a href="#" title="Kontrast czarno-biały" data-contrast="1" class="iContrast"><img src="https://www.wsg.pl/images/ico_contr_2.png" /></a>
+          <a href="#" title="Kontrast żółto-czarny" data-contrast="2" class="iContrast"><img src="https://www.wsg.pl/images/ico_contr_3.png" /></a>
+          <a href="#" title="Kontrast czarno-żółty" data-contrast="3" class="iContrast"><img src="https://www.wsg.pl/images/ico_contr_4.png" /></a></li>
+                        </ul>
+                        
                     </div>
-                </div>
+                    </div>
+                </nav>               
             </div>
+            
         </div>
+    </div>        
+</div>
+
 
         <div class="container">
             <div class="row align-items-center">
