@@ -301,20 +301,20 @@
                                     </svg>
                                 </a>
                                 <ul class="nav justify-content-start me-auto d-lg-none d-xl-none">
-    <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Bydgoszcz</a>
-        <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="https://www.wsg.pl/pl/chojnice">Chojnice</a></li>
-            <li><a class="dropdown-item" href="https://www.wsg.pl/pl/dzialdowo">Działdowo</a></li>
-            <li><a class="dropdown-item" href="https://www.wsg.pl/pl/elk">Ełk</a></li>
-            <li><a class="dropdown-item" href="https://www.wsg.pl/pl/inowroclaw">Inowrocław</a></li>
-            <li><a class="dropdown-item" href="https://www.wsg.pl/pl/malbork">Malbork</a></li>
-            <li><a class="dropdown-item" href="https://www.wsg.pl/pl/pila">Piła</a></li>
-            <li><a class="dropdown-item" href="https://www.wsg.pl/pl/torun-medyczny">Toruń Medyczny</a></li>
-            <li><a class="dropdown-item" href="https://www.wsg.pl/pl/torun-technical">Toruń Techniczny</a></li>
-            <li><a class="dropdown-item" href="https://www.wsg.pl/pl/other-cities">Inne miasta</a></li>
-        </ul>
-    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Bydgoszcz</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="https://www.wsg.pl/pl/chojnice">Chojnice</a></li>
+                                            <li><a class="dropdown-item" href="https://www.wsg.pl/pl/dzialdowo">Działdowo</a></li>
+                                            <li><a class="dropdown-item" href="https://www.wsg.pl/pl/elk">Ełk</a></li>
+                                            <li><a class="dropdown-item" href="https://www.wsg.pl/pl/inowroclaw">Inowrocław</a></li>
+                                            <li><a class="dropdown-item" href="https://www.wsg.pl/pl/malbork">Malbork</a></li>
+                                            <li><a class="dropdown-item" href="https://www.wsg.pl/pl/pila">Piła</a></li>
+                                            <li><a class="dropdown-item" href="https://www.wsg.pl/pl/torun-medyczny">Toruń Medyczny</a></li>
+                                            <li><a class="dropdown-item" href="https://www.wsg.pl/pl/torun-technical">Toruń Techniczny</a></li>
+                                            <li><a class="dropdown-item" href="https://www.wsg.pl/pl/other-cities">Inne miasta</a></li>
+                                        </ul>
+                                    </li>
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">pl</a>
         <ul class="dropdown-menu" style="min-width:1em">
@@ -559,6 +559,7 @@
         </div>
     </div>
 </div>
+<div id="topBtn" style="display:none" class="fixed-bottom text-end"><i style="cursor:pointer" class="fa fa-chevron-circle-up fa-4x m-4"></i></div>
 <div class="container-fluid" style="background-color: #f8f9fa;">
     <div class="container py-5">
         <h2 class="text-center mb-5 h1">Najczęściej zadawane pytania</h2>
@@ -692,3 +693,201 @@
         </div>
     </div>
 </footer>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+<script src="https://www.wsg.pl/js/dselect.min.js"></script>
+<script src="https://www.wsg.pl/js/simple-lightbox.js"></script>
+<script src="https://www.wsg.pl/js/app.js?v1"></script>
+<script src="https://www.wsg.pl/js/accessibility-menu.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.1.0/dist/cookieconsent.umd.js"></script>
+<script>
+    CookieConsent.run({
+        page_scripts: true,
+        categories: {
+            necessary: {
+                enabled: true,
+                readOnly: true
+            },
+            analytics: {
+                autoClear: {
+                    cookies: [
+                        { name: /^_ga/ },
+                        { name: /^_fbp/ }
+                    ]
+                }
+            }
+        },
+        language: {
+            default: 'pl',
+            translations: {
+                en: {
+                    consentModal: {
+                        title: 'Cookie consent',
+                        description: 'Websites operated by the University of Economy in Bydgoszcz use cookies. If you do not want cookies to be saved on your disk, change your browser settings.',
+                        acceptAllBtn: 'Accept all',
+                        acceptNecessaryBtn: 'Reject all',
+                        showPreferencesBtn: 'Manage Individual preferences'
+                    },
+                    preferencesModal: {
+                        title: 'Manage cookie preferences',
+                        acceptAllBtn: 'Accept all',
+                        acceptNecessaryBtn: 'Reject all',
+                        savePreferencesBtn: 'Accept current selection',
+                        closeIconLabel: 'Close modal',
+                        sections: [
+                            {
+                                title: 'Strictly Necessary cookies',
+                                description: 'These cookies are essential for the proper functioning of the website and cannot be disabled.',
+                                linkedCategory: 'necessary',
+                                cookieTable: {
+                                    headers: {
+                                        name: 'Cookie',
+                                        domain: 'Domain',
+                                        desc: 'Description'
+                                    },
+                                    body: [
+                                        { name: '^contrast', domain: location.hostname, desc: 'Accessibility settings' },
+                                        { name: 'wyzsza_szkola_gospodarki_session', domain: location.hostname, desc: 'Session' },
+                                        { name: 'XSRF-TOKEN', domain: location.hostname, desc: 'Cross site request forgery protection' }
+                                    ]
+                                }
+                            },
+                            {
+                                title: 'Performance and Analytics',
+                                description: 'These cookies collect information about how you use our website. All of the data is anonymized and cannot be used to identify you.',
+                                linkedCategory: 'analytics',
+                                cookieTable: {
+                                    headers: {
+                                        name: 'Cookie',
+                                        domain: 'Domain',
+                                        desc: 'Description'
+                                    },
+                                    body: [
+                                        { name: '^_ga', domain: location.hostname, desc: 'Google analytics, tagmanager' },
+                                        { name: '^_fbp', domain: location.hostname, desc: 'Facebook Meta Pixel' }
+                                    ]
+                                }
+                            },
+                            {
+                                title: 'More information',
+                                description: 'A detailed description of the privacy policy can be found here <a href="https://www.wsg.pl/polityka-prywatnosci-wsg">more information</a>'
+                            }
+                        ]
+                    }
+                },
+                pl: {
+                    consentModal: {
+                        title: 'Zgoda na pliki cookies',
+                        description: 'Strony internetowe, których operatorem jest Wyższa Szkoła Gospodarki w Bydgoszczy używają plików cookies. Jeśli nie chcesz, by pliki cookies były zapisywane na Twoim dysku zmień ustawienia swojej przeglądarki.',
+                        acceptAllBtn: 'Zaakceptuj wszystkie',
+                        acceptNecessaryBtn: 'Odrzuć wszystkie',
+                        showPreferencesBtn: 'Zarządzaj indywidualnymi ustawieniami'
+                    },
+                    preferencesModal: {
+                        title: 'Zarządzaj preferencjami dotyczącymi plików cookie',
+                        acceptAllBtn: 'Zaakceptuj wszystkie',
+                        acceptNecessaryBtn: 'Odrzuć wszystkie',
+                        savePreferencesBtn: 'Zaakceptuj bieżący wybór',
+                        closeIconLabel: 'Zamknij',
+                        sections: [
+                            {
+                                title: 'Wymagane pliki cookie',
+                                description: 'Te pliki cookie są niezbędne do prawidłowego funkcjonowania witryny i nie można ich wyłączyć.',
+                                linkedCategory: 'necessary',
+                                cookieTable: {
+                                    headers: {
+                                        name: 'Cookie',
+                                        domain: 'Domena',
+                                        desc: 'Opis'
+                                    },
+                                    body: [
+                                        { name: '^contrast', domain: location.hostname, desc: 'Ustawienia dostępności' },
+                                        { name: 'wyzsza_szkola_gospodarki_session', domain: location.hostname, desc: 'Sesja strony' },
+                                        { name: 'XSRF-TOKEN', domain: location.hostname, desc: 'Ochrona przed fałszowaniem żądań między witrynami' }
+                                    ]
+                                }
+                            },
+                            {
+                                title: 'Wydajność i analityka',
+                                description: 'Te pliki cookie zbierają informacje o tym, jak korzystasz z naszej witryny. Wszystkie dane są anonimizowane i nie mogą być użyte do zidentyfikowania Ciebie.',
+                                linkedCategory: 'analytics',
+                                cookieTable: {
+                                    headers: {
+                                        name: 'Cookie',
+                                        domain: 'Domena',
+                                        desc: 'Opis'
+                                    },
+                                    body: [
+                                        { name: '^_ga', domain: location.hostname, desc: 'Google analytics, tagmanager' },
+                                        { name: '^_fbp', domain: location.hostname, desc: 'Facebook Meta Pixel' }
+                                    ]
+                                }
+                            },
+                            {
+                                title: 'Więcej informacji',
+                                description: 'Szczegółowy opis polityki prywatności znajdziesz pod tym adresem <a href="https://www.wsg.pl/polityka-prywatnosci-wsg">więcej informacji</a>'
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    });
+
+    $(document).ready(function(){
+        $(window).scroll(function(){
+            if($(this).scrollTop() > 40){
+                $('#topBtn').fadeIn();
+            } else {
+                $('#topBtn').fadeOut();
+            }
+        });
+        $("#topBtn i").click(function(){
+            $('html, body').animate({scrollTop: 0},800);
+        });
+
+        // Initialize Slick Carousel
+        $('.carousel').slick({
+            centerMode: true,
+            centerPadding: '60px',
+            slidesToShow: 3,
+            infinite: true,
+            speed: 500,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            prevArrow: '<button type="button" class="slick-prev">Previous</button>',
+            nextArrow: '<button type="button" class="slick-next">Next</button>',
+            responsive: [
+                {
+                  breakpoint: 768,
+                  settings: {
+                    arrows: false,
+                    centerMode: true,
+                    centerPadding: '40px',
+                    slidesToShow: 3
+                  }
+                },
+                {
+                  breakpoint: 480,
+                  settings: {
+                    arrows: false,
+                    centerMode: true,
+                    centerPadding: '20px',
+                    slidesToShow: 1
+                  }
+                }
+            ]
+        });
+
+        // Initialize Fancybox on the image links
+        $('[data-fancybox="gallery"]').fancybox({
+            // Optional: Customize Fancybox options here
+            // loop: true // Allows looping through the gallery
+        });
+    });
+</script>
+</html>
