@@ -1065,4 +1065,55 @@ fbq('track', 'PageView');
         });
     });
 </script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            // Initialize Slick Carousel
+            $('.carousel').slick({
+                centerMode: true,
+                centerPadding: '60px',
+                slidesToShow: 3,
+                infinite: true,
+                speed: 500,
+                autoplay: true,
+                autoplaySpeed: 3000,
+                prevArrow: '<button type="button" class="slick-prev">Previous</button>',
+                nextArrow: '<button type="button" class="slick-next">Next</button>',
+                responsive: [
+                    {
+                      breakpoint: 768,
+                      settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '40px',
+                        slidesToShow: 3
+                      }
+                    },
+                    {
+                      breakpoint: 480,
+                      settings: {
+                        arrows: false,
+                        centerMode: true,
+                        centerPadding: '20px',
+                        slidesToShow: 1
+                      }
+                    }
+                ]
+            });
+
+            // Initialize Fancybox on the image links
+            $('[data-fancybox="gallery"]').fancybox({
+                // Optional: Customize Fancybox options here
+                // For example, to show captions:
+                // caption: function(instance, item) {
+                //     return $(this).data('caption') || '';
+                // },
+                // loop: true // Allows looping through the gallery
+            });
+        });
+    </script>
+
+
 </body></html>
