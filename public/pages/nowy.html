@@ -1,32 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="XTLpgjOa52k23p9RYrE6i5Xfj8FKrEipMR3vGBm7">
-		<meta http-equiv="refresh" content="7200">
-		        <title>Wyższa Szkoła Gospodarki - Bydgoszcz - International Cooperation</title>
-		        <link href="https://www.wsg.pl/css/app.css" rel="stylesheet">
+        <meta name="csrf-token" content="4g7wNPzeWHmOHJ5hY0geCzNU6AsBj5qKSwmvn2F1">
+        <meta http-equiv="refresh" content="7200">
+        <title>Wyższa Szkoła Gospodarki - Bydgoszcz - Biuro Obsługi Studentów</title>
+        <link href="https://www.wsg.pl/css/app.css" rel="stylesheet">
         <link href="https://www.wsg.pl/css/three-dots.min.css" rel="stylesheet">
-		        <link href="https://www.wsg.pl/css/simple-lightbox.css" rel="stylesheet">
+        <link href="https://www.wsg.pl/css/simple-lightbox.css" rel="stylesheet">
         <link rel="stylesheet" href="https://www.wsg.pl/css/dselect.min.css">
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.1.0/dist/cookieconsent.css">
-		<!-- Google tag (gtag.js) -->
-<script async type="text/plain" src="https://www.googletagmanager.com/gtag/js?id=G-L4MEV9QCV0" data-category="analytics" data-service="Google Analytics"></script>
-<script type="text/plain" data-category="analytics" data-service="Google Analytics">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.1.0/dist/cookieconsent.css">
+
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
+        <!-- Google tag (gtag.js) -->
+        <script async type="text/plain" src="https://www.googletagmanager.com/gtag/js?id=G-L4MEV9QCV0" data-category="analytics" data-service="Google Analytics"></script>
+        <script type="text/plain" data-category="analytics" data-service="Google Analytics">
+            
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
   gtag('config', 'G-L4MEV9QCV0');
-</script>
-<script type="text/plain" data-category="analytics" data-service="Google Analytics">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+
+        </script>
+        <script type="text/plain" data-category="analytics" data-service="Google Analytics">
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-WV582FHV');</script>
-<!-- Meta Pixel Code -->
-<script type="text/plain" data-category="analytics" data-service="Facebook">
+})(window,document,'script','dataLayer','GTM-WV582FHV');
+        </script>
+        <!-- Meta Pixel Code -->
+        <script type="text/plain" data-category="analytics" data-service="Facebook">
+            
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -37,387 +46,465 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '1660756701393536');
 fbq('track', 'PageView');
-</script>
-<!-- End Meta Pixel Code -->
+
+        </script>
+        <!-- End Meta Pixel Code -->
+         <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background-color: #f8f8f8; /* Light background similar to example */
+        }
+
+        .header-title {
+            text-align: center;
+            margin: 40px 0 30px;
+            font-size: 2em;
+            color: #333;
+        }
+
+        .gallery-wrapper {
+            max-width: 90vw; /* Adjust max-width as needed, e.g., 90% of viewport width */
+            margin: 0 auto; /* Center the wrapper */
+            padding: 20px 0; /* Some vertical padding */
+        }
+
+        .carousel {
+            /* Basic styling for the carousel container */
+            position: relative;
+        }
+
+        /* Styling for individual image wrappers within Slick */
+        .image-wrapper {
+            margin: 0 10px; /* Space between images */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+            border-radius: 8px; /* Rounded corners */
+            overflow: hidden; /* Ensure image corners match wrapper */
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, box-shadow 0.3s ease-in-out, filter 0.3s ease-in-out; /* Add filter to transition */
+            transform: scale(0.85); /* Smaller default for side images */
+            
+            cursor: pointer; /* Indicate clickable */
+            filter: blur(0); /* Apply a blur by default to side images */
+            
+        }
+
+        /* Active/Centered slide styling */
+        .slick-center .image-wrapper {
+            transform: scale(1); /* Full size for the centered image */
+            
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2); /* More prominent shadow for active slide */
+           
+            -webkit-filter: blur(0); /* For Safari */
+        }
+
+        .image-wrapper img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 16/10; /* Modern way to enforce aspect ratio */
+            object-fit: cover; /* Crop to fit the aspect ratio */
+        }
+
+        /* Navigation Arrows Styling */
+        .slick-prev, .slick-next {
+            font-size: 0; /* Hide default text */
+            line-height: 1;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            display: block;
+            width: 40px;
+            height: 40px;
+            padding: 0;
+            cursor: pointer;
+            color: transparent;
+            border: none;
+            outline: none;
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            border-radius: 50%; /* Circular buttons */
+            z-index: 10; /* Ensure arrows are above images */
+            transition: background-color 0.3s ease;
+        }
+        .slick-prev:hover, .slick-next:hover {
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .slick-prev {
+            left: -50px; /* Position relative to gallery-wrapper */
+        }
+        .slick-next {
+            right: -50px; /* Position relative to gallery-wrapper */
+        }
+
+        /* Custom arrow icons (using ::before for unicode characters or SVG) */
+        .slick-prev::before, .slick-next::before {
+            font-family: 'slick'; /* This is the font slick uses for arrows */
+            font-size: 24px;
+            line-height: 1;
+            color: white; /* White arrow icon */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .slick-prev::before {
+            content: '\2190'; /* Left arrow unicode */
+        }
+        .slick-next::before {
+            content: '\2192'; /* Right arrow unicode */
+        }
+
+        /* Responsive adjustments for arrows */
+        @media screen and (max-width: 768px) {
+            .slick-prev { left: 10px; }
+            .slick-next { right: 10px; }
+        }
+         @media screen and (max-width: 480px) {
+            .gallery-wrapper {
+                max-width: 100vw;
+                padding: 10px;
+            }
+            .image-wrapper {
+                margin: 0 5px;
+            }
+            .slick-prev, .slick-next {
+                width: 30px;
+                height: 30px;
+            }
+            .slick-prev::before, .slick-next::before {
+                font-size: 18px;
+            }
+        }
+    </style>
     </head>
-    <body >
-	<noscript><img height="1" width="1" style="display:none"
-src=https://www.facebook.com/tr?id=1660756701393536&ev=PageView&noscript=1
-/></noscript>
-	<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WV582FHV"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-        
-	
-
-<div class="menuTop light p-3 d-none d-lg-block d-xl-block">  
-    <div class="container ">
-    <div class="row">
-        <div class="col col-lg-3">  
-            <ul class="nav justify-content-start">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Bydgoszcz</a>
-                    <ul class="dropdown-menu">
-                      					                         					                         					                         					                                                         
-                             <li><a class="dropdown-item" href="https://www.wsg.pl/en/chojnice">Chojnice</a></li>
-                            
-                          						                        					                         					                                                         
-                             <li><a class="dropdown-item" href="https://www.wsg.pl/en/dzialdowo">Działdowo</a></li>
-                            
-                          						                        					                                                         
-                             <li><a class="dropdown-item" href="https://www.wsg.pl/en/elk">Ełk</a></li>
-                            
-                          						                        					                         					                                                         
-                             <li><a class="dropdown-item" href="https://www.wsg.pl/en/inowroclaw">Inowrocław</a></li>
-                            
-                          						                        					                                                         
-                             <li><a class="dropdown-item" href="https://www.wsg.pl/en/malbork">Malbork</a></li>
-                            
-                          						                        					                                                         
-                             <li><a class="dropdown-item" href="https://www.wsg.pl/en/pila">Piła</a></li>
-                            
-                          						                        					                                                         
-                             <li><a class="dropdown-item" href="https://www.wsg.pl/en/torun-medyczny">Toruń Medyczny</a></li>
-                            
-                          						                        					                                                         
-                             <li><a class="dropdown-item" href="https://www.wsg.pl/en/torun-technical">Toruń Technical</a></li>
-                            
-                          						                        					                         					                                                         
-                             <li><a class="dropdown-item" href="https://www.wsg.pl/en/other-cities">Other cities</a></li>
-                            
-                          						                                            </ul>
-                  </li>
-            </ul>
-    </div>
-
-    <div class="col col-lg-9">
-    <ul class="nav justify-content-end">
-
-          <li class="nav-item">
-            <form class="d-flex searchform">
-
-                  <input type="search" id="search-box" placeholder="" />
-                  <label for="search-box">
-                    
-                    <i class="fa fa-search fa-lg"></i>
-                  </label>
-              </form>
-          </li>
-                                  <li class="nav-item">
-                                                                                    <a class="nav-link" href="http://www.wsg.pl/en/contacts">Contact</a>
-
-                                                                                    </li>
-                                                <li class="nav-item">
-                                                                                    <a class="nav-link" href="https://new.isaps.pl">ISAPS</a>
-
-                                                                                    </li>
-                                                <li class="nav-item">
-                                                                                    <a class="nav-link" href="https://onte.wsg.byd.pl/moodle2.0/login/index.php?lang=en">ONTE</a>
-
-                                                                                    </li>
-                                                <li class="nav-item">
-                                                                                    <a class="nav-link" href="https://poczta.byd.pl/">WSG Mail</a>
-
-                                                                                    </li>
-                                                <li class="nav-item">
-                                                                                    <a class="nav-link" href="http://www.wsg.pl/en/press-and-media">Press and Media</a>
-
-                                                                                    </li>
-                                                
-        <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">en</a>
-                        <ul class="dropdown-menu" style="min-width:1em">
-
-                                        <li><a class="dropdown-item" href="https://sso-psi-five.vercel.app/pages/new.html">en</a></li>
-                           
-            
-            </ul>
-          </li>
-          
-          <li class="nav-item text-center" style="min-width: 100px;padding-top: 6px;">
-          <a href="#" class="iFontsie" title="Czcionka" data-size=""><i class="fa fa-font fa-lg"></i><i class="fa fa-plus " aria-hidden="true"></i></a></li>
-          <li class="nav-item">
-          <a href="#" title="Kontrast domyślny" data-contrast="0" class=" iContrast"><img src="https://www.wsg.pl/images/ico_contr_1.png" /></a>
-          <a href="#" title="Kontrast czarno-biały" data-contrast="1" class="iContrast"><img src="https://www.wsg.pl/images/ico_contr_2.png" /></a>
-          <a href="#" title="Kontrast żółto-czarny" data-contrast="2" class="iContrast"><img src="https://www.wsg.pl/images/ico_contr_3.png" /></a>
-          <a href="#" title="Kontrast czarno-żółty" data-contrast="3" class="iContrast"><img src="https://www.wsg.pl/images/ico_contr_4.png" /></a></li>
-    </ul>
-    </div> 
-
-</div>     </div> 
-</div> 
-
-
-<div class="mainBanner light sticky-top artMsticky">
-    <div class="container-lg"  >
-        <div class="row"  >
-            <div class="col-12 my-3">
-
-            <nav class="navbar navbar-expand-lg navbar-light">
-                    <div class="container-fluid px-0 px-md-2">
-                    <a class="navbar-brand" href="https://www.wsg.pl/en">
-                        <svg class="d-none d-md-block" version="1.0" xmlns="http://www.w3.org/2000/svg" width="178" height="47" viewBox="0 0 1977.000000 532.000000" preserveAspectRatio="xMidYMid meet"><g transform="translate(0.000000,532.000000) scale(0.100000,-0.100000)" fill="white" stroke="none"><path d="M1640 5294 c-210 -33 -308 -69 -428 -159 -57 -43 -152 -146 -152 -165 0 -4 22 -10 49 -14 45 -6 53 -3 102 30 86 57 265 140 374 173 132 39 194 51 317 59 l103 7 -27 19 c-15 10 -54 29 -85 42 -67 27 -115 29 -253 8z" /><path d="M2480 5192 c41 -47 52 -54 164 -93 67 -23 204 -84 306 -136 192 -97 197 -91 22 27 -125 84 -265 156 -392 203 -154 57 -149 57 -100 -1z" /><path d="M949 5042 c-93 -58 -227 -156 -293 -214 l-48 -43 54 0 c47 0 59 5 99 37 24 20 71 53 103 72 45 27 63 45 78 78 11 24 36 60 56 81 20 20 34 37 32 36 -3 0 -39 -21 -81 -47z" /><path d="M1840 5013 c-142 -15 -340 -49 -452 -77 -174 -44 -188 -50 -188 -79 0 -12 -9 -40 -20 -62 -11 -22 -20 -41 -20 -42 0 -2 26 -3 59 -3 126 0 375 -82 607 -200 l132 -67 40 61 c93 143 144 278 146 391 l1 80 -135 1 c-74 1 -151 -1 -170 -3z" /><path d="M2638 4831 c8 -175 -47 -349 -175 -553 l-61 -97 77 -59 c182 -142 444 -390 602 -570 l56 -64 45 64 c125 176 408 699 408 755 0 35 -242 245 -411 358 -178 118 -407 232 -520 260 l-26 6 5 -100z" /><path d="M561 4669 c-80 -40 -168 -122 -228 -212 -66 -101 -165 -294 -206 -407 -53 -145 -53 -153 3 -50 146 268 301 459 461 568 35 23 48 39 52 64 3 18 8 41 12 51 11 26 -22 22 -94 -14z" /><path d="M1023 4625 c-34 -24 -90 -54 -124 -66 l-61 -22 7 -96 c16 -237 75 -694 94 -729 16 -28 345 160 554 316 105 78 207 168 207 183 0 14 -484 376 -590 441 -24 15 -28 14 -87 -27z" /><path d="M616 4484 c-73 -88 -152 -200 -227 -319 -73 -116 -227 -420 -231 -455 -3 -20 6 -29 48 -52 77 -42 155 -58 279 -58 167 0 151 -20 158 193 7 195 22 328 63 545 15 75 29 149 31 163 4 22 0 27 -32 36 l-36 11 -53 -64z" /><path d="M6040 3715 l0 -347 218 4 c191 3 222 6 257 23 57 28 75 70 75 174 0 81 -1 84 -34 117 -19 19 -44 34 -57 34 -20 0 -18 4 16 23 50 28 69 77 62 158 -6 70 -28 114 -70 136 -27 15 -64 18 -249 21 l-218 3 0 -346z m392 217 c8 -8 13 -36 13 -68 0 -84 -17 -94 -161 -94 l-114 0 0 91 0 91 125 -4 c85 -2 128 -7 137 -16z m6 -278 c18 -13 22 -25 22 -71 0 -89 -8 -93 -162 -93 l-128 0 0 90 0 90 123 0 c95 0 128 -4 145 -16z" /><path d="M6633 4046 c3 -8 58 -103 122 -211 l115 -196 0 -134 0 -135 65 0 65 0 0 131 0 131 125 208 c69 114 125 211 125 214 0 3 -33 6 -73 6 l-72 0 -79 -140 c-43 -77 -82 -142 -86 -145 -4 -3 -43 59 -87 138 l-78 142 -74 3 c-62 2 -73 1 -68 -12z" /><path d="M7302 3718 l3 -343 205 0 c229 1 272 8 320 56 54 54 63 89 68 255 6 234 -16 301 -118 348 -40 19 -67 21 -263 24 l-217 4 2 -344z m391 221 c61 -16 71 -44 75 -189 4 -140 -7 -200 -43 -236 -23 -23 -30 -24 -160 -24 l-135 0 0 230 0 230 113 0 c61 0 129 -5 150 -11z" /><path d="M8093 4044 c-50 -18 -98 -69 -112 -121 -6 -21 -11 -114 -11 -208 0 -190 7 -230 52 -280 46 -53 111 -68 272 -63 231 7 265 39 266 251 l0 117 -150 0 -150 0 0 -50 0 -50 85 0 85 0 0 -49 c0 -64 -6 -79 -41 -96 -42 -22 -194 -20 -239 3 -46 23 -52 52 -48 243 4 206 1 203 161 207 102 3 115 2 139 -17 15 -12 28 -34 30 -49 3 -26 6 -27 66 -30 l62 -3 0 43 c-1 69 -32 125 -82 148 -37 17 -65 19 -193 19 -106 0 -162 -5 -192 -15z" /><path d="M8780 4054 c-71 -25 -93 -41 -113 -78 -20 -37 -22 -59 -25 -226 -5 -220 5 -276 53 -324 42 -42 97 -56 224 -56 143 0 198 14 243 61 51 54 61 106 57 314 -4 158 -6 174 -29 219 -39 78 -72 91 -250 93 -80 1 -152 0 -160 -3z m277 -128 c28 -24 28 -25 32 -161 4 -165 -3 -217 -33 -252 -22 -26 -30 -27 -124 -31 l-101 -4 -31 31 -31 31 3 181 3 181 28 24 c26 22 37 24 127 24 90 0 101 -2 127 -24z" /><path d="M9392 4046 c-19 -6 -44 -22 -57 -34 -30 -29 -49 -110 -42 -177 13 -124 60 -155 251 -165 118 -6 131 -9 148 -29 27 -34 24 -103 -6 -138 -24 -27 -27 -28 -124 -28 -115 0 -136 11 -147 76 l-7 39 -59 0 -59 0 0 -50 c0 -68 28 -122 77 -146 32 -16 61 -19 198 -19 180 0 211 9 249 75 29 49 34 192 9 240 -30 56 -65 70 -214 81 -78 6 -144 16 -161 25 -25 13 -28 20 -28 63 0 79 18 92 126 98 108 5 135 -6 148 -60 l10 -37 64 0 64 0 -7 48 c-11 74 -32 109 -79 132 -37 17 -61 20 -182 19 -82 0 -153 -6 -172 -13z" /><path d="M9910 4005 l0 -55 180 0 c99 0 180 -3 180 -6 0 -3 -86 -109 -190 -236 l-191 -230 3 -52 3 -51 273 -3 272 -2 0 60 0 60 -188 2 -189 3 189 228 188 229 0 54 0 54 -265 0 -265 0 0 -55z" /><path d="M10628 4044 c-104 -32 -132 -111 -126 -358 3 -158 5 -175 28 -220 37 -73 75 -90 218 -95 143 -4 212 5 254 33 44 29 61 68 66 149 l4 67 -66 0 -66 0 0 -44 c0 -28 -7 -52 -19 -67 -17 -22 -29 -24 -114 -27 -168 -6 -180 12 -175 261 l3 159 28 24 c26 22 37 24 125 24 122 0 142 -11 142 -76 l0 -44 65 0 65 0 0 53 c-1 78 -29 133 -82 157 -36 16 -65 19 -173 19 -83 0 -147 -6 -177 -15z" /><path d="M11140 4005 l0 -55 180 0 c99 0 180 -2 180 -5 0 -3 -86 -109 -191 -235 l-190 -231 3 -52 3 -52 273 -3 272 -2 0 60 0 60 -189 2 -189 3 189 229 189 229 0 53 0 54 -265 0 -265 0 0 -55z" /><path d="M3781 3829 c-64 -223 -166 -431 -299 -607 l-55 -74 34 -34 35 -35 65 30 c89 40 174 61 252 61 l65 0 7 87 c15 176 -12 425 -67 612 l-13 44 -24 -84z" /><path d="M2028 3786 c-261 -217 -608 -426 -874 -527 -46 -18 -84 -36 -84 -41 0 -23 92 -234 166 -378 86 -170 177 -321 267 -446 l51 -72 43 16 c25 10 43 23 43 32 0 8 -30 172 -66 363 -36 192 -64 350 -62 351 3 4 572 64 575 62 1 -1 21 -123 43 -271 22 -147 41 -269 43 -271 15 -15 31 45 67 241 22 127 43 238 46 248 5 15 23 17 199 17 l194 0 12 -55 c7 -31 15 -58 19 -60 6 -4 110 108 110 119 0 9 -141 178 -250 301 -110 123 -406 417 -438 434 -14 7 -35 -5 -104 -63z" /><path d="M10 3172 c0 -41 32 -220 55 -310 47 -187 147 -410 258 -579 l48 -71 67 -8 c72 -8 524 3 609 14 l52 7 -71 105 c-135 202 -281 533 -321 732 l-13 63 -55 -5 c-30 -3 -124 -5 -209 -4 -161 0 -274 17 -371 54 -45 17 -49 17 -49 2z" /><path d="M4742 3100 c-100 -27 -164 -63 -246 -140 -165 -154 -250 -361 -263 -640 -15 -317 70 -576 246 -750 203 -201 451 -228 749 -84 l92 44 0 445 0 445 -248 0 -247 0 -33 -182 c-18 -101 -33 -186 -32 -190 0 -5 41 -8 90 -8 l90 0 0 -74 c0 -83 -2 -86 -77 -86 -229 0 -329 464 -148 679 81 95 266 94 354 -3 14 -14 27 -26 31 -26 4 0 52 89 108 199 l102 199 -40 35 c-109 100 -221 146 -365 153 -69 3 -107 0 -163 -16z" /><path d="M15285 3104 c-306 -24 -418 -88 -476 -274 -29 -92 -36 -262 -15 -360 31 -146 90 -232 195 -281 101 -47 183 -60 444 -69 230 -8 252 -10 295 -32 26 -13 57 -39 70 -58 22 -33 23 -43 20 -150 -5 -145 -17 -171 -96 -208 -54 -26 -66 -27 -243 -30 -225 -5 -288 5 -335 52 -38 38 -54 89 -54 174 l0 62 -160 0 -160 0 0 -62 c1 -179 40 -297 122 -374 103 -96 185 -114 535 -114 278 0 380 9 480 41 118 39 195 139 229 299 21 99 14 341 -11 415 -65 186 -186 233 -650 253 -185 8 -217 12 -269 33 -88 36 -100 57 -100 182 -1 168 32 206 194 228 48 7 150 10 235 7 216 -7 245 -26 253 -169 l5 -79 161 2 161 3 -3 75 c-10 256 -103 377 -322 421 -49 9 -424 19 -505 13z" /><path d="M6030 2443 c0 -712 2 -731 60 -850 48 -97 125 -153 263 -191 95 -26 638 -25 751 2 106 24 156 47 207 93 52 47 82 94 111 175 23 63 23 63 26 741 l3 677 -165 0 -165 0 -3 -657 -3 -658 -24 -34 c-14 -20 -47 -44 -80 -60 -55 -26 -59 -26 -276 -26 l-220 0 -58 28 c-103 51 -97 2 -97 757 l0 650 -165 0 -165 0 0 -647z" /><path d="M7740 2240 l0 -850 166 0 167 0 -8 468 c-4 257 -10 577 -14 710 -3 134 -3 246 0 248 4 2 169 -317 367 -709 l361 -712 275 -3 276 -2 0 850 0 850 -166 0 -165 0 6 -237 c14 -540 24 -1177 20 -1182 -3 -2 -7 -2 -8 0 -2 2 -167 322 -366 712 l-363 707 -274 0 -274 0 0 -850z" /><path d="M9620 2240 l0 -850 165 0 165 0 0 850 0 850 -165 0 -165 0 0 -850z" /><path d="M10080 3084 c0 -4 113 -358 251 -788 138 -429 260 -809 270 -844 l20 -62 247 2 247 3 272 840 c150 462 273 843 273 848 0 4 -75 7 -167 7 l-168 0 -154 -483 c-289 -900 -303 -941 -311 -926 -6 11 -278 862 -422 1317 l-29 92 -164 0 c-91 0 -165 -3 -165 -6z" /><path d="M11770 2240 l0 -850 585 0 585 0 0 140 0 140 -425 0 -425 0 0 225 0 225 403 2 402 3 0 130 0 130 -403 3 -402 2 2 213 3 212 423 3 422 2 0 135 0 135 -585 0 -585 0 0 -850z" /><path d="M13190 2240 l0 -850 165 0 165 0 0 280 0 280 278 0 c344 -1 369 -7 415 -110 18 -39 21 -71 25 -247 l5 -203 159 0 160 0 -4 238 c-5 259 -14 312 -65 372 -29 35 -96 72 -162 90 l-44 12 65 22 c36 12 84 35 107 50 88 62 130 221 118 456 -15 287 -100 399 -336 444 -69 13 -167 16 -567 16 l-484 0 0 -850z m967 549 c77 -38 88 -71 88 -254 0 -140 -2 -153 -25 -200 -20 -39 -35 -55 -75 -75 -49 -25 -52 -25 -337 -28 l-288 -4 0 298 0 297 294 -5 c285 -5 295 -6 343 -29z" /><path d="M16370 2240 l0 -850 165 0 165 0 0 850 0 850 -165 0 -165 0 0 -850z" /><path d="M16860 2955 l0 -135 248 -2 247 -3 3 -713 2 -712 160 0 160 0 2 713 3 712 252 3 252 2 3 111 3 110 293 -497 292 -498 0 -328 0 -328 165 0 165 0 0 327 0 326 315 524 314 523 -188 0 -189 0 -203 -360 c-112 -198 -208 -358 -214 -356 -5 1 -99 163 -208 359 l-199 357 -839 0 -839 0 0 -135z" /><path d="M1800 3053 c-117 -13 -215 -25 -216 -26 -1 -1 67 -362 152 -802 85 -439 154 -801 154 -802 0 -2 94 -3 208 -3 l208 0 85 441 c51 267 87 433 91 422 6 -16 158 -837 158 -856 0 -4 94 -7 209 -7 l209 0 159 803 c116 586 155 803 146 805 -38 10 -419 48 -424 43 -4 -3 -37 -184 -73 -401 -37 -217 -71 -408 -75 -425 -7 -26 -10 -15 -26 70 -10 55 -43 240 -74 410 l-56 310 -148 3 c-81 1 -147 0 -147 -3 0 -16 -150 -808 -154 -812 -2 -2 -10 29 -16 69 -83 489 -137 782 -145 783 -5 2 -107 -8 -225 -22z" /><path d="M3712 3070 c-174 -37 -306 -181 -348 -381 -29 -137 -5 -315 56 -413 35 -57 138 -149 233 -209 116 -73 137 -93 137 -129 0 -61 -46 -98 -122 -98 -36 0 -220 37 -280 56 -17 5 -18 -6 -18 -229 l0 -234 38 -12 c20 -6 88 -17 150 -23 309 -31 504 70 583 302 27 80 38 276 20 360 -32 155 -124 264 -323 385 -43 25 -85 56 -93 68 -23 32 -18 70 11 98 23 22 34 24 107 23 61 0 102 -7 160 -27 42 -15 80 -27 82 -27 3 0 4 102 3 228 l-3 227 -70 18 c-82 21 -261 30 -323 17z" /><path d="M1305 1889 c-87 -26 -275 -41 -443 -36 -114 4 -170 2 -166 -5 13 -21 224 -153 329 -205 250 -126 501 -202 749 -227 45 -5 57 -4 53 6 -2 7 -10 46 -18 87 -12 67 -16 76 -48 98 -20 13 -116 79 -214 146 -98 67 -186 127 -195 133 -11 8 -27 9 -47 3z" /><path d="M7571 720 c-96 -20 -126 -65 -126 -192 0 -148 39 -177 257 -187 137 -7 141 -7 164 -34 20 -24 24 -39 24 -97 0 -58 -4 -73 -24 -97 -24 -28 -26 -28 -158 -31 -166 -4 -180 3 -188 94 l-5 59 -37 3 -38 3 0 -58 c0 -72 23 -120 70 -148 31 -18 52 -20 190 -20 175 0 211 10 245 68 16 26 20 50 20 132 0 165 -25 185 -240 195 -181 9 -205 23 -205 125 0 106 38 129 202 123 125 -4 146 -16 155 -87 6 -40 6 -41 45 -41 l40 0 -7 48 c-16 113 -65 145 -230 148 -60 2 -130 -1 -154 -6z" /><path d="M9545 715 c-58 -15 -101 -59 -112 -115 -5 -19 -8 -129 -8 -245 0 -205 1 -211 25 -254 43 -77 70 -86 250 -86 137 0 159 2 189 20 44 26 70 62 81 111 13 56 12 383 -1 446 -16 71 -56 111 -127 127 -71 15 -235 13 -297 -4z m291 -70 c57 -24 64 -55 64 -277 0 -283 -6 -290 -213 -286 -126 3 -129 4 -152 30 -31 36 -38 98 -33 305 4 185 10 206 61 228 45 20 227 20 273 0z" /><path d="M13547 721 c-48 -10 -86 -38 -112 -82 -18 -30 -20 -56 -23 -223 -5 -222 1 -283 31 -327 44 -65 74 -74 247 -74 185 0 209 9 250 90 24 49 25 55 25 265 0 209 -1 216 -25 264 -37 75 -72 89 -229 92 -69 2 -143 -1 -164 -5z m272 -72 c56 -20 65 -53 69 -239 5 -203 -2 -262 -33 -298 -23 -26 -26 -27 -152 -30 -145 -3 -168 4 -196 58 -16 31 -17 60 -15 246 4 275 2 272 189 273 58 1 120 -4 138 -10z" /><path d="M18489 721 c-49 -16 -82 -45 -105 -96 -22 -47 -24 -61 -24 -250 0 -223 7 -264 54 -311 47 -47 97 -57 266 -52 159 3 191 13 234 71 18 25 21 45 25 158 l3 129 -151 0 -151 0 0 -35 0 -35 110 0 110 0 0 -79 c0 -70 -3 -83 -24 -108 -24 -28 -25 -28 -159 -31 -155 -4 -195 7 -222 58 -14 26 -16 63 -13 245 l3 215 28 27 c27 27 31 28 154 31 198 6 233 -9 233 -93 l0 -45 40 0 40 0 0 46 c0 61 -24 109 -69 136 -33 21 -49 23 -196 25 -88 1 -172 -2 -186 -6z" /><path d="M540 370 l0 -350 230 0 230 0 0 30 0 30 -190 0 -190 0 0 135 0 135 180 0 180 0 0 30 0 30 -180 0 -180 0 0 120 0 120 188 2 187 3 3 33 3 32 -230 0 -231 0 0 -350z" /><path d="M1400 370 l0 -350 40 0 40 0 2 314 3 313 194 -313 195 -314 68 0 68 0 0 350 0 350 -40 0 -40 0 -1 -322 c0 -307 -1 -322 -17 -299 -9 14 -99 158 -198 320 l-181 296 -67 3 -66 3 0 -351z" /><path d="M2380 685 l0 -35 110 0 110 0 0 -315 0 -315 40 0 40 0 0 315 0 315 115 0 115 0 0 35 0 35 -265 0 -265 0 0 -35z" /><path d="M3260 370 l0 -350 225 0 225 0 0 30 0 30 -187 2 -188 3 0 130 0 130 178 3 177 2 0 30 0 30 -180 0 -180 0 0 120 0 120 190 0 190 0 0 35 0 35 -225 0 -225 0 0 -350z" /><path d="M4110 371 l0 -351 40 0 40 0 0 140 0 140 144 0 c81 0 157 -5 176 -11 46 -16 60 -57 60 -174 l0 -95 41 0 41 0 -4 119 c-3 111 -5 121 -28 146 -14 15 -36 31 -50 37 -24 9 -24 9 16 27 54 24 69 62 69 171 0 94 -16 135 -68 174 -27 20 -43 21 -253 24 l-224 3 0 -350z m424 268 c37 -17 49 -58 44 -141 -5 -65 -9 -75 -37 -100 l-31 -28 -160 0 -160 0 0 140 0 140 160 0 c97 0 169 -4 184 -11z" /><path d="M5060 370 l0 -350 40 0 40 0 0 134 0 134 174 4 c199 3 212 8 254 89 21 39 23 55 20 139 -5 108 -21 150 -71 180 -29 18 -51 20 -244 20 l-213 0 0 -350z m421 261 c22 -17 24 -29 27 -113 4 -89 2 -97 -21 -124 l-25 -29 -161 -3 -161 -4 0 146 0 146 159 0 c141 0 161 -2 182 -19z" /><path d="M5990 370 l0 -350 40 0 40 0 0 140 0 140 145 0 c155 0 204 -10 224 -48 6 -12 11 -68 11 -126 l0 -106 40 0 40 0 0 113 c0 128 -14 164 -70 187 l-32 13 33 11 c55 19 74 55 77 156 5 117 -17 171 -80 200 -38 17 -67 20 -255 20 l-213 0 0 -350z m452 250 c17 -21 19 -36 16 -112 -5 -132 -5 -132 -218 -136 l-170 -3 0 141 0 141 176 -3 c173 -3 176 -3 196 -28z" /><path d="M6960 370 l0 -350 40 0 40 0 0 350 0 350 -40 0 -40 0 0 -350z" /><path d="M8340 370 l0 -350 225 0 225 0 0 30 0 30 -185 0 -185 0 0 135 0 135 180 0 180 0 0 30 0 30 -180 0 -180 0 0 120 0 120 185 0 185 0 0 35 0 35 -225 0 -225 0 0 -350z" /><path d="M10380 370 l0 -350 40 0 40 0 0 160 0 160 175 0 175 0 0 30 0 30 -175 0 -175 0 0 125 0 125 175 0 175 0 0 35 0 35 -215 0 -215 0 0 -350z" /><path d="M11460 370 l0 -350 40 0 40 0 0 160 0 160 38 0 c35 0 47 -10 197 -160 l160 -160 49 0 49 0 -178 181 -178 181 79 81 c43 45 117 121 164 170 l85 87 -55 0 -55 0 -144 -155 c-130 -141 -147 -155 -177 -155 l-34 0 0 155 0 155 -40 0 -40 0 0 -350z" /><path d="M12390 370 l0 -350 40 0 c22 0 41 1 42 3 0 1 4 142 7 313 l6 311 194 -313 194 -314 69 0 68 0 0 350 0 350 -40 0 -40 0 -1 -322 c0 -307 -1 -322 -17 -299 -9 14 -99 158 -198 320 l-182 296 -71 3 -71 3 0 -351z" /><path d="M14312 708 c3 -7 51 -165 108 -350 l104 -338 61 0 61 0 88 303 c49 166 92 308 96 315 4 7 48 -129 98 -304 51 -174 94 -319 97 -322 2 -2 30 0 62 4 l58 9 107 340 c59 187 108 343 108 348 0 4 -18 7 -39 7 -38 0 -40 -1 -54 -47 -71 -242 -182 -592 -185 -588 -2 2 -45 144 -96 317 l-91 313 -61 3 -60 3 -94 -320 c-52 -176 -98 -314 -101 -308 -4 7 -37 113 -74 237 -36 124 -78 262 -91 308 l-25 82 -41 0 c-28 0 -39 -4 -36 -12z" /><path d="M15740 370 l0 -350 220 0 220 0 0 30 0 30 -180 0 -180 0 0 320 0 320 -40 0 -40 0 0 -350z" /><path d="M16530 370 l0 -350 230 0 230 0 0 30 0 30 -190 0 -190 0 0 135 0 135 180 0 180 0 0 30 0 30 -180 0 -180 0 0 120 0 120 188 2 187 3 3 33 3 32 -230 0 -231 0 0 -350z" /><path d="M17380 369 l0 -350 228 3 c225 3 229 3 266 28 23 16 47 46 64 80 25 52 27 64 30 217 4 182 -8 248 -55 304 -52 62 -83 69 -320 69 l-213 0 0 -351z m441 264 c16 -10 39 -37 50 -60 19 -39 20 -57 17 -215 -3 -153 -5 -177 -24 -208 -33 -57 -59 -64 -241 -68 l-163 -4 0 286 0 286 166 0 c139 0 171 -3 195 -17z" /><path d="M19310 370 l0 -350 230 0 230 0 0 30 0 30 -190 0 -190 0 0 135 0 135 180 0 180 0 0 30 0 30 -180 0 -180 0 0 120 0 120 188 2 187 3 3 33 3 32 -230 0 -231 0 0 -350z" /></g></svg>
-                            
-
-							
-                    														<svg class="d-block d-md-none" width="52" height="30" viewBox="0 0 82 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M58.3828 21.4863C57.5719 25.135 55.9502 28.7836 53.923 31.6214C53.5176 32.4322 53.1121 32.8377 52.3013 33.6485L53.5176 34.8647C54.7339 34.0539 57.9774 32.8377 59.1937 33.2431C60.41 28.7836 59.5991 24.7296 58.3828 21.4863Z" fill="white"/>
-<path d="M27.5694 57.5675C26.3531 56.7567 21.8933 53.9189 20.677 52.7026C16.6227 53.5134 12.9738 53.5134 10.1357 53.108C14.5955 56.7567 21.8933 59.9999 27.9749 59.9999L27.5694 57.5675Z" fill="white"/>
-<path d="M32.4347 22.2974C28.3803 25.946 22.2988 30 16.2173 32.0271C16.6227 33.6487 19.0553 39.7298 23.9205 45.8108C24.326 45.8108 24.7314 45.4054 25.5423 45.4054L23.1097 34.4595L32.0292 33.6487L33.2455 42.1622C33.651 42.1622 33.651 41.7568 33.651 41.7568L34.8673 34.0541H40.9488L41.3542 36.0811C42.1651 35.2703 42.5705 34.8649 42.976 34.0541C40.5434 30.4054 35.6781 25.1352 32.4347 22.2974Z" fill="white"/>
-<path d="M40.5434 5.67578C41.3543 9.72983 39.7326 13.3785 36.8945 17.4325C40.9489 20.6757 44.5978 23.919 48.2467 27.973C50.6793 25.1352 54.3282 17.8379 55.5445 15.4055C51.8956 11.3514 44.5978 6.89199 40.5434 5.67578Z" fill="white"/>
-<path d="M37.2998 1.21631L38.9215 2.83793C42.5705 4.05414 45.0031 5.27035 48.652 7.29737C45.4085 4.45954 41.3542 2.02712 37.2998 1.21631Z" fill="white"/>
-<path d="M17.8394 8.51345C21.0828 8.51345 26.3535 10.5405 30.0024 12.5675C31.6241 10.5405 33.6513 6.48643 32.8404 4.4594C28.7861 4.054 22.7046 5.27021 18.2448 6.48643C18.2448 7.70264 18.2448 8.10804 17.8394 8.51345Z" fill="white"/>
-<path d="M17.4336 5.67566C21.0825 3.24324 25.9477 1.21621 30.8129 1.21621C30.0021 0.810809 29.5966 0.405404 27.9749 0C26.3531 0 22.2988 0.810809 21.0825 1.21621C19.0553 2.02702 17.0282 3.64864 16.2173 5.67566C16.6227 5.27026 17.0282 5.67566 17.4336 5.67566Z" fill="white"/>
-<path d="M12.9741 11.7565C12.9741 14.9997 13.785 22.297 14.5959 24.7295C19.0556 22.7024 24.7317 18.6484 26.3535 17.0268C23.11 14.5943 19.8665 12.1619 16.623 9.72949C15.4067 10.9457 14.1904 11.7565 12.9741 11.7565Z" fill="white"/>
-<path d="M10.136 11.7568C6.48712 15.8109 4.05452 19.8649 2.02734 25.1352C4.05452 26.3514 6.48712 26.7568 9.7306 26.3514C9.7306 21.8919 10.136 17.0271 11.3523 12.1622C10.9469 12.1622 10.5415 11.7568 10.136 11.7568Z" fill="white"/>
-<path d="M9.73059 10.9458C5.67625 12.9729 2.43277 18.2431 0.811035 21.8918C2.02734 18.6485 3.64908 14.9999 5.67625 12.1621C7.70342 9.72962 9.73059 9.32422 10.136 9.32422C9.73059 9.72962 9.73059 10.5404 9.73059 10.9458Z" fill="white"/>
-<path d="M14.1899 6.08099C14.1899 4.86478 15.0008 4.05397 16.2171 3.24316C13.7845 4.45938 11.3519 6.08099 9.32471 8.10802C9.73014 8.10802 10.1356 8.10802 10.9464 8.10802C11.3519 7.70261 12.1627 7.29721 12.5682 6.8918C13.3791 6.4864 13.7845 6.08099 14.1899 6.08099Z" fill="white"/>
-<path d="M5.67608 47.8379C9.32499 48.2433 12.9739 48.2433 17.0282 47.4324C14.1902 43.7838 11.3522 38.1081 10.5413 33.6487C7.29782 34.0541 2.83804 34.0541 0 32.8379C0.405434 38.5136 2.43261 43.3784 5.67608 47.8379Z" fill="white"/>
-<path d="M29.1914 60L24.3262 35.2703L31.2186 34.4595L33.6512 47.8378L36.0838 34.8649H40.5436L42.9762 47.8378L45.0033 34.4595L51.8957 35.2703L47.0305 60H40.5436L38.1109 46.2162L35.2729 60H29.1914Z" fill="white"/>
-<path d="M51.8957 59.5944V52.7025C52.3011 52.7025 52.3011 52.7025 53.112 53.1079C54.7337 53.5133 56.3554 53.9188 56.7609 53.9188C57.1663 53.9188 57.5718 53.9188 57.9772 53.5133C58.3826 53.1079 58.3826 52.7025 58.3826 52.2971C58.3826 51.8917 57.9772 51.4863 57.1663 50.6755C56.7609 50.2701 56.3554 50.2701 56.3554 50.2701C54.7337 49.0539 53.5174 48.2431 52.7065 47.0269C51.8957 45.8107 51.4902 44.5945 51.4902 42.9728C51.4902 40.5404 52.3011 38.5134 53.5174 37.2972C54.7337 35.6756 56.7609 34.8647 58.7881 34.8647C59.5989 34.8647 60.4098 34.8647 61.2207 34.8647C62.0315 34.8647 62.8424 35.2701 63.2478 35.2701V42.162C62.437 41.7566 61.6261 41.7566 61.2207 41.3512C60.4098 41.3512 60.0044 40.9458 59.5989 40.9458C59.1935 40.9458 58.3826 40.9458 58.3826 41.3512C57.9772 41.7566 57.9772 41.7566 57.9772 42.162C57.9772 42.5674 58.3826 43.3782 59.5989 43.7836C60.0044 44.189 60.8152 44.189 60.8152 44.5945C62.437 45.8107 63.2478 46.6215 64.0587 47.8377C64.4641 49.0539 64.8696 50.2701 64.8696 51.8917C64.8696 54.7296 64.0587 56.7566 62.8424 57.9728C61.6261 59.5944 59.5989 59.9998 57.1663 59.9998C55.95 59.9998 55.1391 59.9998 54.3283 59.9998C53.112 59.9998 52.3011 59.9998 51.8957 59.5944Z" fill="white"/>
-<path d="M81.8979 57.9728C80.6816 58.7836 79.4653 59.189 78.249 59.5945C77.0327 59.9999 75.8164 59.9999 75.0055 59.9999C73.7892 59.9999 72.1675 59.5945 70.9511 59.189C69.7348 58.3782 68.5185 57.5674 67.7077 56.3512C66.8968 55.135 66.0859 53.5134 65.6805 51.8918C65.2751 50.2702 64.8696 48.6485 64.8696 46.6215C64.8696 44.5945 65.2751 42.9729 65.6805 41.3513C66.0859 39.7296 66.8968 38.108 67.7077 36.8918C68.5185 35.6756 69.7348 34.8648 70.9511 34.054C72.1675 33.6486 73.3838 33.2432 75.0055 33.2432C76.2218 33.2432 77.4381 33.6486 78.6544 34.054C79.8707 34.4594 80.6816 35.2702 81.4924 36.4864L78.249 42.5675C77.8435 42.1621 77.0327 41.7567 76.6272 41.3513C76.2218 40.9458 75.4109 40.9459 75.0055 40.9459C73.7892 40.9459 72.9783 41.3513 72.1674 42.5675C71.3566 43.7837 70.9511 44.9999 70.9511 46.6215C70.9511 48.2431 71.3566 49.8647 72.1674 50.6756C72.9783 51.8918 73.7892 52.2972 75.0055 52.2972H75.4109H75.8164V49.8647H72.9783L74.1946 44.1891H81.8979V57.9728Z" fill="white"/>
-</svg>
-                        </a>
-                    <ul class="nav justify-content-start me-auto d-lg-none d-xl-none">
-                    <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Bydgoszcz</a>
-                    <ul class="dropdown-menu">
-                      					                         					                         					                         					                                                         
-                             <li><a class="dropdown-item" href="https://www.wsg.pl/en/chojnice">Chojnice</a></li>
-                            
-                          						                        					                         					                                                         
-                             <li><a class="dropdown-item" href="https://www.wsg.pl/en/dzialdowo">Działdowo</a></li>
-                            
-                          						                        					                                                         
-                             <li><a class="dropdown-item" href="https://www.wsg.pl/en/elk">Ełk</a></li>
-                            
-                          						                        					                         					                                                         
-                             <li><a class="dropdown-item" href="https://www.wsg.pl/en/inowroclaw">Inowrocław</a></li>
-                            
-                          						                        					                                                         
-                             <li><a class="dropdown-item" href="https://www.wsg.pl/en/malbork">Malbork</a></li>
-                            
-                          						                        					                                                         
-                             <li><a class="dropdown-item" href="https://www.wsg.pl/en/pila">Piła</a></li>
-                            
-                          						                        					                                                         
-                             <li><a class="dropdown-item" href="https://www.wsg.pl/en/torun-medyczny">Toruń Medyczny</a></li>
-                            
-                          						                        					                                                         
-                             <li><a class="dropdown-item" href="https://www.wsg.pl/en/torun-technical">Toruń Technical</a></li>
-                            
-                          						                        					                         					                                                         
-                             <li><a class="dropdown-item" href="https://www.wsg.pl/en/other-cities">Other cities</a></li>
-                            
-                          						                                            </ul>
-                    </li>
-                    
-                    <li class="nav-item dropdown">
-                                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">en</a>
-                                                <ul class="dropdown-menu" style="min-width:1em">
-
-                                                                        <li><a class="dropdown-item" href="https://www.wsg.pl">pl</a></li>
-                                                 
+    <body>
+        <noscript>
+            <img height="1" width="1" style="display:none" src=https://www.facebook.com/tr?id= 1660756701393536&ev=PageView&noscript= 1/>
+        </noscript>
+        <!-- Google Tag Manager (noscript) -->
+        <noscript>
+            <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WV582FHV" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+        </noscript>
+        <!-- End Google Tag Manager (noscript) -->
+        <div class="menuTop light p-3 d-none d-lg-block d-xl-block">
+            <div class="container ">
+                <div class="row">
+                    <div class="col col-lg-3">
+                        <ul class="nav justify-content-start">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Bydgoszcz</a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a class="dropdown-item" href="https://www.wsg.pl/chojnice">Chojnice</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="https://www.wsg.pl/dzialdowo">Działdowo</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="https://www.wsg.pl/elk">Ełk</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="https://www.wsg.pl/inowroclaw">Inowrocław</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="https://www.wsg.pl/malbork">Malbork</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="https://www.wsg.pl/pila">Piła</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="https://www.wsg.pl/torun-medyczny">Toruń Medyczny</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="https://www.wsg.pl/torun-techniczny">Toruń Techniczny</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="https://www.wsg.pl/pozostale-miasta">Pozostałe miasta</a>
+                                    </li>
+                                </ul>
+                            </li>
                         </ul>
-                    </li> 
-                    
-                    </ul>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-
-                                                <li class="nav-item">
-                                                                                    <a class="nav-link" href="https://www.wsg.pl/en/news/srebrna-perspektywa-zlote-mozliwosci">CONTEST</a>
-
-                                                                                    </li>
-                                                <li class="nav-item">
-                                                                                            <li class="nav-item dropdown">
-
-                                              
-                                                        <a class="nav-link dropdown-toggle" href="https://www.wsg.pl/edukacja?filter[language]=Polski,Ukrai%C5%84ski/Polski&amp;filter[city]=Bydgoszcz&amp;sort=name" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                        For Candidate
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        
-                                                        <li><a class="dropdown-item" href="https://www.wsg.pl/en/education?filter[product]=Studies&amp;filter[language]=English&amp;filter[city]=Bydgoszcz&amp;sort=name">Studies</a></li>
-                            
-                           
-                                        
-                                                                                    <li><a class="dropdown-item" href="https://www.wsg.pl/en/why-study-with-us">Making the Decision: Why Study With Us</a></li>
-                                                        
-                           
-                                        
-                                                                                    <li><a class="dropdown-item" href="https://www.wsg.pl/en/what-you-need">Before you join</a></li>
-                                                        
-                           
-                                        
-                                                                                    <li><a class="dropdown-item" href="https://www.wsg.pl/en/apply-for-refund">Fee Reimbursment</a></li>
-                                                        
-                           
-                             
-                            </ul>
-                        </li>
-                                                                                                           </li>
-                                                <li class="nav-item">
-                                                                                               <li class="nav-item dropdown">
-
-                                              
-                                                        <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                        About the university
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        
-                                                                                    <li><a class="dropdown-item" href="https://www.wsg.pl/en/who-we-are">Who we are</a></li>
-                                                        
-                           
-                                        
-                                                        <li><a class="dropdown-item" href="https://www.wsg.pl/wladze-i-kadra">Authorities</a></li>
-                            
-                           
-                                        
-                                                                                    <li><a class="dropdown-item" href="https://www.wsg.pl/en/organizational-structure">Get to Know Our Units</a></li>
-                                                        
-                           
-                                        
-                                                                                    <li><a class="dropdown-item" href="https://www.wsg.pl/en/eu-projects">EU Projects</a></li>
-                                                        
-                           
-                             
-                            </ul>
-                        </li>
-                                                                                                           </li>
-                                                <li class="nav-item">
-                                                                                               <li class="nav-item dropdown">
-
-                                              
-                                                        <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                        For Volunteer
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        
-                                                                                    <li><a class="dropdown-item" href="https://www.wsg.pl/en/our-activities">Our Activities</a></li>
-                                                        
-                           
-                                        
-                                                                                    <li><a class="dropdown-item" href="https://www.wsg.pl/en/our-volunteers">Our Volunteers</a></li>
-                                                        
-                           
-                                        
-                                                                                    <li><a class="dropdown-item" href="https://www.wsg.pl/en/what-is-volunteering">What is Volunteering</a></li>
-                                                        
-                           
-                                        
-                                                                                    <li><a class="dropdown-item" href="https://www.wsg.pl/en/european-solidarity-corps">European Solidarity Corps</a></li>
-                                                        
-                           
-                             
-                            </ul>
-                        </li>
-                                                                                                           </li>
-                                                <li class="nav-item">
-                                                                                               <li class="nav-item dropdown">
-
-                                              
-                                                        <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                        For Student
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        
-                                                                                    <li><a class="dropdown-item" href="https://www.wsg.pl/en/scholarships-and-discounts">Scholarships and Discounts</a></li>
-                                                        
-                           
-                                        
-                                                                                    <li><a class="dropdown-item" href="https://www.wsg.pl/en/deans-office">Dean&#039;s Office</a></li>
-                                                        
-                           
-                                        
-                                                                                    <li><a class="dropdown-item" href="https://www.wsg.pl/en/student-financial-services">Financial Student Services</a></li>
-                                                        
-                           
-                                        
-                                                                                    <li><a class="dropdown-item" href="https://www.wsg.pl/en/library">Library</a></li>
-                                                        
-                           
-                                        
-                                                                                    <li><a class="dropdown-item" href="https://www.wsg.pl/en/academic-sports-association">Academic Sports Association</a></li>
-                                                        
-                           
-                             
-                            </ul>
-                        </li>
-                                                                                                           </li>
-                                                <li class="nav-item">
-                                                                                            <li class="nav-item dropdown">
-
-                                              
-                                                        <a class="nav-link dropdown-toggle" href="http://eurostudies.pl/home.1.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                                        Internationalization
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        
-                                                                                    <li><a class="dropdown-item" href="https://www.wsg.pl/en/welcome-center-en">Welcome Center</a></li>
-                                                        
-                           
-                                        
-                                                                                    <li><a class="dropdown-item" href="https://www.wsg.pl/en/international">International Cooperation</a></li>
-                                                        
-                           
-                                        
-                                                                                    <li><a class="dropdown-item" href="https://www.wsg.pl/en/center-for-ukrainian-language-and-culture">Center for Ukrainian Language and Culture</a></li>
-                                                        
-                           
-                                        
-                                                                                    <li><a class="dropdown-item" href="https://www.wsg.pl/en/ais-en">Association of International Students</a></li>
-                                                        
-                           
-                             
-                            </ul>
-                        </li>
-                                                                                                           </li>
-                        
-                        </ul>
-
-                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-lg-none d-xl-none">
-                                                <li class="nav-item">
-                                                                                    <a class="nav-link" href="http://www.wsg.pl/en/contacts">Contact</a>
-
-                                                                                    </li>
-                                                <li class="nav-item">
-                                                                                    <a class="nav-link" href="https://new.isaps.pl">ISAPS</a>
-
-                                                                                    </li>
-                                                <li class="nav-item">
-                                                                                    <a class="nav-link" href="https://onte.wsg.byd.pl/moodle2.0/login/index.php?lang=en">ONTE</a>
-
-                                                                                    </li>
-                                                <li class="nav-item">
-                                                                                    <a class="nav-link" href="https://poczta.byd.pl/">WSG Mail</a>
-
-                                                                                    </li>
-                                                <li class="nav-item">
-                                                                                    <a class="nav-link" href="http://www.wsg.pl/en/press-and-media">Press and Media</a>
-
-                                                                                    </li>
-                                                <li class="nav-item text-sm-left" style="min-width: 100px;padding-top: 6px;">
-          <a href="#" class="iFontsie" title="Czcionka" data-size=""><i class="fa fa-font fa-lg"></i><i class="fa fa-plus " aria-hidden="true"></i></a></li>
-          <li class="nav-item">
-          <a href="#" title="Kontrast domyślny" data-contrast="0" class=" iContrast"><img src="https://www.wsg.pl/images/ico_contr_1.png" /></a>
-          <a href="#" title="Kontrast czarno-biały" data-contrast="1" class="iContrast"><img src="https://www.wsg.pl/images/ico_contr_2.png" /></a>
-          <a href="#" title="Kontrast żółto-czarny" data-contrast="2" class="iContrast"><img src="https://www.wsg.pl/images/ico_contr_3.png" /></a>
-          <a href="#" title="Kontrast czarno-żółty" data-contrast="3" class="iContrast"><img src="https://www.wsg.pl/images/ico_contr_4.png" /></a></li>
-                        </ul>
-                        
                     </div>
+                    <div class="col col-lg-9">
+                        <ul class="nav justify-content-end">
+                            <li class="nav-item">
+                                <form class="d-flex searchform">
+                                    <input type="search" id="search-box" placeholder=""/>
+                                    <label for="search-box">
+                                        <i class="fa fa-search fa-lg"></i>
+                                    </label>
+                                </form>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="http://www.wsg.pl/kontakty">Kontakt</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://new.isaps.pl">ISAPS</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://onte.byd.pl/">ONTE</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://poczta.byd.pl/">Poczta WSG</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://praca.byd.pl/id,1/witamy">Praca w WSG</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="http://www.wsg.pl/dla-mediow">Dla mediów</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">pl</a>
+                                <ul class="dropdown-menu" style="min-width:1em">
+                                    <li>
+                                        <a class="dropdown-item" href="https://sso-psi-five.vercel.app/pages/inter.html">en</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item text-center" style="min-width: 100px;padding-top: 6px;">
+                                <a href="#" class="iFontsie" title="Czcionka" data-size="">
+                                    <i class="fa fa-font fa-lg"></i>
+                                    <i class="fa fa-plus " aria-hidden="true"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" title="Kontrast domyślny" data-contrast="0" class=" iContrast">
+                                    <img src="https://www.wsg.pl/images/ico_contr_1.png"/>
+                                </a>
+                                <a href="#" title="Kontrast czarno-biały" data-contrast="1" class="iContrast">
+                                    <img src="https://www.wsg.pl/images/ico_contr_2.png"/>
+                                </a>
+                                <a href="#" title="Kontrast żółto-czarny" data-contrast="2" class="iContrast">
+                                    <img src="https://www.wsg.pl/images/ico_contr_3.png"/>
+                                </a>
+                                <a href="#" title="Kontrast czarno-żółty" data-contrast="3" class="iContrast">
+                                    <img src="https://www.wsg.pl/images/ico_contr_4.png"/>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
-                </nav>               
+                </div>
             </div>
-            
         </div>
-    </div>        
-</div>
+        <div class="mainBanner light sticky-top artMsticky">
+            <div class="container-lg">
+                <div class="row">
+                    <div class="col-12 my-3">
+                        <nav class="navbar navbar-expand-lg navbar-light">
+                            <div class="container-fluid px-0 px-md-2">
+                                <a class="navbar-brand" href="https://www.wsg.pl">
+                                    <svg class="d-none d-md-block" width="178" viewBox="0 0 178 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M42.5446 54.1418C42.5446 55.2402 42.4771 56.0979 42.3419 56.7046C42.1197 57.6875 41.6945 58.41 41.0765 58.8821C40.7094 59.1519 40.2554 59.3738 39.6949 59.5374C39.154 59.711 38.526 59.8264 37.8303 59.9034C37.5211 59.9322 37.0767 59.9613 36.4971 59.9709C35.9174 59.9901 35.473 59.9997 35.1734 59.9997C33.3091 59.9997 31.9855 59.8839 31.174 59.6624C30.3722 59.4505 29.7155 59.094 29.2033 58.6123C28.1891 57.7355 27.6865 56.117 27.6865 53.7755V49.5261C27.6865 48.1196 27.8026 47.0113 28.0344 46.2019C28.2761 45.3925 28.6431 44.7276 29.1646 44.2171C29.7829 43.5813 30.7005 43.1475 31.918 42.9161C32.7199 42.7716 33.8114 42.6946 35.1929 42.6946H36.4488C37.5403 42.6946 38.3422 42.7332 38.864 42.8103C39.8011 42.9455 40.5547 43.2342 41.1148 43.668C41.5496 44.0148 41.9067 44.5061 42.158 45.1323C42.4189 45.7585 42.5443 46.5296 42.5443 47.4355V47.9847H39.2889C39.2889 47.5126 39.2406 47.1178 39.144 46.7997C39.0475 46.4817 38.8831 46.2218 38.6418 46.0095C38.41 45.7976 38.0333 45.6528 37.5307 45.5856C37.0185 45.5182 36.3136 45.4894 35.4247 45.4894C33.454 45.4894 32.2077 45.7014 31.6862 46.1444C31.464 46.3759 31.2901 46.7128 31.1648 47.1757C31.0487 47.6382 30.9813 48.3319 30.9813 49.2567V53.3423C30.9813 54.9515 31.2035 56.002 31.6479 56.5025C31.8314 56.6665 32.0728 56.8014 32.3724 56.9168C32.672 57.0326 32.9907 57.1096 33.3287 57.1579C33.5218 57.1579 33.8409 57.1579 34.2753 57.1579C34.7102 57.1579 35.0289 57.1579 35.2416 57.1579C35.4347 57.1579 35.6278 57.1579 35.8116 57.1579C35.9955 57.1579 36.1886 57.1866 36.4009 57.2445C36.9322 57.2445 37.3667 57.1962 37.7146 57.1C38.0525 57.0038 38.3617 56.8302 38.6418 56.5796C38.9218 56.329 39.1054 55.9821 39.1827 55.5295C39.2505 55.0861 39.2892 54.4982 39.2892 53.7758V53.2941H34.9902V50.8275H42.5446V54.1418ZM162.102 14.1836C161.609 16.4865 160.421 19.0978 159.204 20.7837C158.885 21.2268 158.556 21.6606 158.199 22.1036C158.266 22.0457 158.933 22.8551 159.01 22.7973C159.889 22.1998 161.87 21.5832 162.826 21.8626C163.348 18.9917 162.74 16.4574 162.102 14.1836ZM141.603 37.9638C140.82 37.4533 137.971 35.5935 136.966 34.7937C134.348 35.4295 131.991 35.3525 130.087 35.1019C133.169 37.5879 137.922 39.573 141.941 39.7364L141.603 37.9638ZM144.878 14.7906C142.057 17.2863 138.067 19.9551 134.145 21.2559C134.474 22.306 136.096 26.4782 139.13 30.4674C139.487 30.3616 139.729 30.2458 140.077 30.1205L138.666 22.6915L144.588 22.0748L145.428 27.7115C145.564 27.6345 145.583 27.5475 145.718 27.4705L146.626 22.4987L150.597 22.47L150.916 23.7128C151.36 23.2985 151.679 22.8647 152.114 22.4313C150.297 20.0801 147.061 16.5056 144.878 14.7906ZM150.094 3.87339C150.635 6.57137 149.515 9.01873 147.776 11.514C150.567 13.6532 152.983 15.8596 155.282 18.6058C156.789 16.7463 159.397 11.7838 159.977 10.2229C157.735 7.54477 153.002 4.55781 150.094 3.87339ZM148.066 0.693669L149.089 1.78245C151.418 2.52439 153.147 3.34338 155.456 4.68278C153.417 2.88116 150.684 1.42603 148.066 0.693669ZM135.082 5.70411C137.343 5.6079 140.791 7.07262 143.216 8.47913C144.327 7.09179 145.515 4.59616 145.168 3.00613C142.279 2.81337 138.415 3.41083 135.488 4.38388C135.536 5.04913 135.313 5.27065 135.082 5.70411ZM135.014 3.76759C137.458 2.04266 140.569 0.857671 143.824 0.944294C143.081 0.452974 142.839 0.318074 141.757 0C140.723 0.0482761 138.086 0.443044 137.227 0.848084C135.961 1.42603 134.686 2.40901 133.99 3.63269C134.405 3.594 134.734 3.6231 135.014 3.76759ZM131.875 7.87209C131.807 9.99178 132.493 14.9735 132.86 16.4669C135.864 15.1566 139.613 12.497 140.704 11.2446C138.589 9.56791 136.512 7.96864 134.328 6.55185C133.643 7.16883 132.763 7.65056 131.875 7.87209ZM130.136 7.74677C127.759 10.4543 126.184 13.2294 124.755 16.4861C126.001 17.4883 127.749 17.681 129.769 17.363C129.711 14.3086 130.174 11.0905 130.88 7.9974C130.58 7.96864 130.319 7.90119 130.136 7.74677ZM129.836 7.27497C127.257 8.63355 125.132 12.2084 124.001 14.5883C124.571 12.3624 125.75 9.93426 127.112 8.07478C128.435 6.4464 129.846 6.22488 130.068 6.19578C129.856 6.57137 129.778 6.97607 129.836 7.27497ZM132.705 3.96994C132.792 3.30503 133.41 2.61136 134 2.15839C132.444 2.99688 130.744 4.14318 129.421 5.45383C129.788 5.3381 130.165 5.30934 130.58 5.473C130.889 5.11658 131.304 4.75982 131.778 4.46126C132.087 4.25891 132.396 4.09491 132.705 3.96994ZM127.073 31.6335C129.546 31.8163 131.923 31.7684 134.531 31.4695C132.609 28.9448 130.889 25.3703 130.339 22.2388C128.146 22.634 125.257 22.4799 123.344 21.6414C123.644 25.4473 124.986 28.7041 127.073 31.6335ZM142.578 39.7079L139.4 23.2698L144.047 22.7689L145.583 31.6623L147.177 23.1061H150.152L151.707 31.6623L153.224 22.7689L157.754 23.2698L154.48 39.7079H150.249L148.568 30.5735L146.81 39.7079H142.578ZM157.63 39.4957V34.7646C157.784 34.8033 158.016 34.8516 158.315 34.9286C159.523 35.2371 160.353 35.3915 160.798 35.3915C161.155 35.3915 161.446 35.295 161.667 35.1022C161.889 34.9094 161.996 34.6684 161.996 34.3698C161.996 34.0518 161.706 33.7436 161.136 33.4355C160.875 33.2906 160.663 33.1749 160.518 33.0787C159.378 32.3563 158.586 31.6239 158.141 30.8724C157.697 30.1304 157.465 29.1961 157.465 28.0878C157.465 26.5073 157.91 25.2261 158.788 24.2432C159.658 23.2506 160.807 22.7497 162.237 22.7497C162.797 22.7497 163.319 22.798 163.822 22.875C164.314 22.9616 164.778 23.0773 165.213 23.2314V27.895C164.672 27.6735 164.179 27.5095 163.764 27.4034C163.329 27.2972 162.943 27.2397 162.585 27.2397C162.18 27.2397 161.88 27.3167 161.667 27.4612C161.465 27.6057 161.359 27.818 161.359 28.0878C161.359 28.4442 161.667 28.791 162.295 29.1283C162.682 29.3402 162.991 29.5234 163.223 29.6871C164.247 30.4194 164.942 31.1323 165.319 31.8359C165.696 32.5295 165.88 33.416 165.88 34.5047C165.88 36.2584 165.445 37.6078 164.566 38.5421C163.696 39.4864 162.431 39.9486 160.779 39.9486C160.054 39.9486 159.436 39.9103 158.943 39.8333C158.441 39.7658 158.006 39.6501 157.63 39.4957ZM177.597 38.4839C176.815 38.9657 176.051 39.3221 175.308 39.5631C174.554 39.8134 173.83 39.9291 173.124 39.9291C172.216 39.9291 171.357 39.7268 170.555 39.3221C169.753 38.9078 169.038 38.3199 168.41 37.5396C167.763 36.7203 167.27 35.7764 166.942 34.6972C166.613 33.6276 166.449 32.433 166.449 31.1319C166.449 29.8408 166.613 28.6459 166.942 27.5766C167.27 26.507 167.763 25.5531 168.41 24.7437C169.038 23.9535 169.753 23.356 170.555 22.9517C171.357 22.547 172.216 22.3446 173.124 22.3446C173.984 22.3446 174.767 22.5086 175.472 22.8264C176.167 23.154 176.844 23.6454 177.471 24.3199L175.385 28.4343C175.037 28.0491 174.69 27.7598 174.322 27.5769C173.955 27.3941 173.549 27.2976 173.124 27.2976C172.322 27.2976 171.675 27.6444 171.192 28.348C170.709 29.0513 170.468 29.9764 170.468 31.1326C170.468 32.2406 170.709 33.1657 171.192 33.898C171.675 34.64 172.283 35.006 172.998 35.006C173.104 35.006 173.22 34.9865 173.336 34.9676C173.462 34.9385 173.578 34.9098 173.694 34.8615V33.3198H171.819L172.534 29.4751H177.596V38.4839H177.597ZM2.71442 40.4208L0 30.0048H2.01904L4.19283 38.802H4.25069L6.64669 30.0048H8.95539L11.2932 38.802H11.351L13.6118 30.0048H15.6113L12.8099 40.4204H9.90174L7.81525 32.4717H7.75739L5.59352 40.4208H2.71442ZM19.1759 40.4208V36.432L15.3891 30.0048H17.6786L20.1517 34.4465H20.2095L22.75 30.0048H25.0591L21.1853 36.4317V40.4204H19.1759V40.4208ZM25.4939 30.0048H33.4831V31.7102L27.716 38.6863L33.57 38.7154V40.4204H25.2138V38.7441L30.9909 31.7681V31.7102H25.4939V30.0048ZM28.8366 27.278H30.5755V28.7619H28.8366V27.278ZM38.3521 29.9182C38.69 29.9182 39.0283 29.9182 39.3567 29.9278C39.685 29.9278 40.0137 29.9469 40.342 29.976C40.9895 30.0627 41.4822 30.2362 41.8201 30.5156C42.1485 30.7947 42.3806 31.1706 42.4963 31.6523C42.5833 31.9896 42.622 32.4617 42.622 33.0691H40.6029V32.6545C40.6029 32.4521 40.5933 32.2885 40.5742 32.1728C40.5454 32.0574 40.4872 31.9516 40.4002 31.8454C40.3037 31.7393 40.1585 31.6623 39.9654 31.6239C39.7723 31.5948 39.4919 31.5756 39.1444 31.5756H38.3233C37.5314 31.5756 37.0192 31.6623 36.7778 31.8547C36.6522 31.9417 36.5652 32.0666 36.5073 32.221C36.4591 32.3751 36.43 32.5966 36.43 32.9051C36.43 33.2037 36.4395 33.4351 36.4591 33.5984C36.4878 33.772 36.6039 33.9069 36.8261 34.0223C37.0387 34.138 37.3092 34.2151 37.6376 34.2634C37.9659 34.3017 38.362 34.3212 38.826 34.3212C39.5022 34.3212 40.1397 34.3695 40.7385 34.4657C41.3377 34.5619 41.7917 34.7259 42.1105 34.967C42.4292 35.2172 42.6418 35.6124 42.748 36.1328C42.8154 36.4313 42.8445 36.8651 42.8445 37.4047C42.8445 38.0018 42.7671 38.5127 42.6031 38.9557C42.4391 39.3991 42.207 39.7268 41.9074 39.948C41.6078 40.1695 41.1925 40.3239 40.6611 40.3913C40.1298 40.4687 39.5405 40.5071 38.8931 40.5071H38.1395C37.4246 40.5071 36.9127 40.478 36.6035 40.4396C35.9948 40.3434 35.512 40.1506 35.1642 39.8422C34.8163 39.5436 34.5845 39.1488 34.4784 38.6476C34.4106 38.3394 34.3818 37.8283 34.3818 37.1154H36.343C36.343 37.2407 36.343 37.3369 36.343 37.414C36.343 37.7221 36.3625 37.9632 36.4108 38.1367C36.4495 38.31 36.5364 38.4548 36.6717 38.5798C36.8069 38.6955 37 38.7821 37.2418 38.8304C37.4931 38.8787 37.7923 38.9075 38.1402 38.9075C38.3333 38.9075 38.4784 38.9075 38.575 38.9075C38.9999 38.9075 39.3573 38.8879 39.6569 38.8496C39.9565 38.8013 40.1979 38.7246 40.3814 38.6185C40.5649 38.5028 40.6906 38.3391 40.7484 38.1268C40.7967 37.9053 40.8258 37.6352 40.8258 37.327C40.8258 37.0767 40.8162 36.8744 40.7775 36.72C40.7488 36.5659 40.6618 36.4214 40.5266 36.2961C40.3818 36.1711 40.1886 36.0842 39.9469 36.0359C39.696 35.9975 39.3577 35.978 38.9229 35.978C38.0631 35.978 37.4253 35.9493 37.01 35.8914C36.2564 35.7952 35.6962 35.5928 35.3097 35.2939C35.0296 35.082 34.8074 34.7639 34.6626 34.3401C34.5078 33.9258 34.4308 33.4827 34.4308 33.0202C34.4308 32.3939 34.5082 31.8835 34.6434 31.488C34.7882 31.0932 34.9817 30.7847 35.2326 30.5728C35.5418 30.3225 35.9766 30.1489 36.508 30.0623C37.048 29.9661 37.666 29.9182 38.3521 29.9182ZM43.9066 30.0048H51.9054V31.7102L46.1379 38.6863L51.9824 38.7154V40.4204H43.6265V38.7441L49.4132 31.7681V31.7102H43.9066V30.0048ZM55.4703 36.9521H59.0735L57.2767 31.5178L55.4703 36.9521ZM55.7599 30.0048H58.7061L62.271 40.4204H60.2229L59.5467 38.4644H55.0255L54.3589 40.4204H52.282L54.678 33.1941L55.7599 30.0048ZM70.946 29.9182C71.2939 29.9182 71.6222 29.9182 71.9605 29.9278C72.2888 29.9278 72.6172 29.9469 72.9363 29.976C73.593 30.0627 74.0857 30.2362 74.4143 30.5156C74.7526 30.7947 74.9748 31.1706 75.1001 31.6523C75.1775 31.9896 75.2258 32.4617 75.2258 33.0691H73.2068V32.6545C73.2068 32.4521 73.1872 32.2885 73.1681 32.1728C73.1486 32.0574 73.0907 31.9516 72.9941 31.8454C72.8976 31.7393 72.7623 31.6623 72.5593 31.6239C72.3662 31.5948 72.0957 31.5756 71.7383 31.5756H70.9172C70.1253 31.5756 69.6131 31.6623 69.3717 31.8547C69.2557 31.9417 69.1591 32.0666 69.1108 32.221C69.053 32.3751 69.0239 32.5966 69.0239 32.9051C69.0239 33.2037 69.0334 33.4351 69.0625 33.5984C69.0821 33.772 69.2074 33.9069 69.42 34.0223C69.6422 34.138 69.9127 34.2151 70.2314 34.2634C70.5598 34.3017 70.9559 34.3212 71.4199 34.3212C72.0961 34.3212 72.7336 34.3695 73.3324 34.4657C73.9316 34.5619 74.3952 34.7259 74.7043 34.967C75.0231 35.2172 75.2357 35.6124 75.3514 36.1328C75.4093 36.4313 75.448 36.8651 75.448 37.4047C75.448 38.0018 75.361 38.5127 75.2066 38.9557C75.0423 39.3991 74.8105 39.7268 74.5013 39.948C74.2017 40.1695 73.7864 40.3239 73.255 40.3913C72.7336 40.4687 72.144 40.5071 71.487 40.5071H70.7334C70.0185 40.5071 69.5162 40.478 69.207 40.4396C68.5887 40.3434 68.1155 40.1506 67.7677 39.8422C67.4102 39.5436 67.188 39.1488 67.0723 38.6476C67.0045 38.3394 66.9757 37.8283 66.9757 37.1154H68.9369C68.9369 37.2407 68.9369 37.3369 68.9369 37.414C68.9369 37.7221 68.9657 37.9632 69.0047 38.1367C69.0434 38.31 69.1303 38.4548 69.2656 38.5798C69.4008 38.6955 69.5939 38.7821 69.8356 38.8304C70.087 38.8787 70.3862 38.9075 70.7341 38.9075C70.9371 38.9075 71.0819 38.9075 71.1689 38.9075C71.5941 38.9075 71.9612 38.8879 72.2604 38.8496C72.5504 38.8013 72.7918 38.7246 72.9849 38.6185C73.1684 38.5028 73.2845 38.3391 73.3423 38.1268C73.4002 37.9053 73.4293 37.6352 73.4293 37.327C73.4293 37.0767 73.4101 36.8744 73.381 36.72C73.3423 36.5659 73.2554 36.4214 73.1201 36.2961C72.9849 36.1711 72.7918 36.0842 72.5405 36.0359C72.2988 35.9975 71.9512 35.978 71.5164 35.978C70.6663 35.978 70.0288 35.9493 69.6131 35.8914C68.8595 35.7952 68.2898 35.5928 67.9128 35.2939C67.6228 35.082 67.4006 34.7639 67.2561 34.3401C67.1113 33.9258 67.0339 33.4827 67.0339 33.0202C67.0339 32.3939 67.1014 31.8835 67.2366 31.488C67.3814 31.0932 67.5749 30.7847 67.8259 30.5728C68.1446 30.3225 68.5695 30.1489 69.1105 30.0623C69.6419 29.9661 70.2602 29.9182 70.946 29.9182ZM76.5012 30.0048H84.4999V31.7102L78.7328 38.6863L84.5869 38.7154V40.4204H76.2307V38.7441L82.0077 31.7681V31.7102H76.5012V30.0048ZM85.8233 30.0048H87.8423V34.2637H88.789L92.2765 30.0048H94.73L90.5084 35.1019L95.1553 40.4204H92.6339L88.789 35.9784H87.8423V40.4204H85.8233V30.0048ZM99.8791 31.6236C99.2416 31.6236 98.7486 31.6719 98.4011 31.7681C98.0436 31.8547 97.8217 32.0283 97.7153 32.2693C97.6088 32.51 97.5317 32.7511 97.4931 32.9917C97.4448 33.2324 97.4256 33.4639 97.4256 33.6953V34.0134V36.4895C97.4256 36.9904 97.4547 37.376 97.503 37.6362C97.5612 37.906 97.6286 38.1083 97.7252 38.2528C97.8509 38.4456 98.0535 38.5901 98.3144 38.6866C98.5753 38.7832 99.0776 38.8219 99.8216 38.8219C100.923 38.8219 101.628 38.6387 101.947 38.2532C102.179 37.9063 102.295 37.3763 102.295 36.6635V33.8884V33.5125C102.295 33.127 102.256 32.8284 102.198 32.6165C102.14 32.4046 102.063 32.231 101.957 32.106C101.841 31.9807 101.686 31.8745 101.483 31.7979C101.28 31.7109 101.077 31.653 100.865 31.6243H99.8791V31.6236ZM99.8404 29.9182C100.72 29.9182 101.425 29.9664 101.946 30.0722C102.787 30.2362 103.357 30.5444 103.656 31.0066C103.859 31.325 104.004 31.6332 104.091 31.9317C104.236 32.4521 104.313 33.0109 104.313 33.618V36.9809C104.313 37.6071 104.236 38.1371 104.091 38.561C103.995 38.8308 103.84 39.1197 103.628 39.4183C103.28 39.8904 102.681 40.2085 101.831 40.3629C101.328 40.4591 100.575 40.5074 99.57 40.5074C98.5558 40.5074 97.8118 40.43 97.3383 40.276C96.8648 40.1219 96.4981 39.9 96.2276 39.6015C95.9475 39.3121 95.7349 38.9174 95.6189 38.397C95.4935 37.8765 95.4353 37.2982 95.4353 36.672V33.82C95.4353 33.1842 95.4644 32.6928 95.5223 32.3457C95.6093 31.8061 95.7835 31.3435 96.0345 30.9775C96.3629 30.5245 96.9233 30.2164 97.7348 30.0623C98.208 29.9661 98.9133 29.9182 99.8404 29.9182ZM105.743 37.3085L104.835 37.8098V36.3064L105.743 35.815V30.0048H107.762V34.6975L109.617 33.6858V35.1984L107.762 36.2102V38.7154H112.669V40.4204H105.743V37.3085ZM115.848 36.9521H119.451L117.654 31.5178L115.848 36.9521ZM116.138 30.0048H119.075L122.639 40.4204H120.591L119.925 38.4644H115.404L114.727 40.4204H112.651L115.056 33.1941L116.138 30.0048ZM51.6352 45.4891C50.592 45.4891 49.7805 45.5661 49.2105 45.7103C48.6308 45.8643 48.2638 46.1341 48.0898 46.5296C47.9159 46.9244 47.7998 47.3198 47.7228 47.7146C47.655 48.1097 47.6263 48.4952 47.6263 48.8712V49.3916V53.4382C47.6263 54.2476 47.6649 54.8738 47.7519 55.3076C47.8389 55.7414 47.9549 56.0783 48.0998 56.3194C48.3124 56.6374 48.6407 56.8686 49.0756 57.0226C49.5005 57.1767 50.3314 57.2441 51.539 57.2441C53.3358 57.2441 54.4852 56.936 54.9974 56.3098C55.3836 55.7507 55.5675 54.8838 55.5675 53.7179V49.1796V48.5627C55.5675 47.946 55.5192 47.4547 55.4227 47.1079C55.3261 46.7515 55.1909 46.4817 55.0169 46.2697C54.843 46.0674 54.592 45.8938 54.2538 45.7589C53.9254 45.624 53.5871 45.5278 53.2396 45.4894H51.6352V45.4891ZM51.5674 42.6946C53.0068 42.6946 54.1469 42.7815 54.9971 42.9452C56.3786 43.215 57.3154 43.7255 57.7985 44.4674C58.1367 44.9974 58.3685 45.4983 58.5038 45.9897C58.7452 46.8278 58.8708 47.7529 58.8708 48.7359V54.2281C58.8708 55.2594 58.7452 56.117 58.5038 56.8199C58.3589 57.2537 58.1076 57.7259 57.7598 58.2268C57.1897 58.9975 56.2143 59.508 54.8232 59.7682C54.0021 59.9226 52.775 59.9997 51.1329 59.9997C49.4618 59.9997 48.2443 59.8743 47.4811 59.6237C46.7083 59.3734 46.1095 59.0071 45.6651 58.5158C45.2015 58.0532 44.8632 57.3883 44.6701 56.5406C44.4671 55.6925 44.3705 54.7578 44.3705 53.7268V49.0728C44.3705 48.032 44.4188 47.2229 44.5058 46.6638C44.6605 45.7774 44.9406 45.0258 45.3463 44.4188C45.8777 43.6769 46.8049 43.1756 48.1285 42.9154C48.9013 42.7719 50.0411 42.6946 51.5674 42.6946ZM66.9949 42.6946C67.5554 42.6946 68.1059 42.6946 68.6469 42.7041C69.1879 42.7137 69.7192 42.7428 70.2506 42.7815C71.3134 42.9164 72.1248 43.2153 72.6658 43.668C73.2163 44.1206 73.5837 44.7472 73.7864 45.5278C73.9217 46.077 73.9894 46.8477 73.9894 47.8498H70.6854V47.1657C70.6854 46.8285 70.6663 46.5683 70.6276 46.3855C70.5889 46.1927 70.492 46.0095 70.3475 45.8363C70.1928 45.6627 69.961 45.547 69.6422 45.4894C69.3234 45.422 68.8694 45.3929 68.2994 45.3929H66.9565C65.662 45.3929 64.8218 45.547 64.4256 45.8459C64.2325 45.9999 64.0874 46.2023 63.9908 46.4526C63.9039 46.7032 63.8556 47.0788 63.8556 47.58C63.8556 48.0618 63.8751 48.4377 63.9134 48.7075C63.9521 48.9865 64.1452 49.218 64.5027 49.4012C64.8601 49.5939 65.3046 49.7192 65.8359 49.7863C66.3673 49.8538 67.0144 49.8925 67.768 49.8925C68.879 49.8925 69.9223 49.9699 70.8981 50.1335C71.8835 50.2876 72.6271 50.5574 73.1489 50.9333C73.6611 51.3572 74.0086 51.9934 74.1921 52.8411C74.2986 53.342 74.3469 54.0357 74.3469 54.9317C74.3469 55.9051 74.2212 56.7432 73.9508 57.4657C73.6899 58.1789 73.3037 58.728 72.811 59.0845C72.3183 59.4505 71.6421 59.6915 70.7724 59.8172C69.9127 59.9325 68.9465 60 67.8841 60H66.6573C65.4884 60 64.6574 59.9617 64.1552 59.8843C63.1503 59.7302 62.3679 59.4121 61.7979 58.9208C61.2278 58.4295 60.8512 57.7742 60.6676 56.9555C60.5615 56.4543 60.5132 55.6161 60.5132 54.4599H63.7203C63.7203 54.6526 63.7203 54.8163 63.7203 54.9416C63.7203 55.4425 63.7494 55.8476 63.8268 56.1266C63.8946 56.4159 64.0394 56.647 64.2521 56.8398C64.4743 57.0326 64.7834 57.1767 65.1892 57.2541C65.5949 57.3407 66.078 57.3794 66.6576 57.3794C66.9764 57.3794 67.2082 57.3794 67.363 57.3794C68.0587 57.3794 68.6575 57.3503 69.1406 57.2828C69.6237 57.2157 70.0195 57.0901 70.3191 56.9072C70.6283 56.7241 70.8214 56.4543 70.9183 56.0979C71.0052 55.7414 71.0535 55.3076 71.0535 54.7971C71.0535 54.3825 71.0247 54.0552 70.9761 53.8046C70.9183 53.5543 70.7731 53.3228 70.5509 53.1109C70.3191 52.899 70.0099 52.7641 69.6042 52.6966C69.2081 52.6295 68.6479 52.5905 67.933 52.5905C66.5323 52.5905 65.4987 52.5521 64.8125 52.4556C63.5858 52.2916 62.6583 51.9639 62.0399 51.4822C61.5664 51.1353 61.209 50.6153 60.9676 49.9212C60.7258 49.2372 60.6005 48.5144 60.6005 47.7533C60.6005 46.7415 60.7163 45.913 60.9385 45.2576C61.1703 44.6119 61.489 44.111 61.8947 43.7642C62.4162 43.3499 63.1119 43.0705 63.9912 42.9161C64.8697 42.7719 65.8743 42.6946 66.9949 42.6946ZM79.6309 54.3633V59.8555H76.356V42.8295H83.8237C85.1857 42.8295 86.2194 42.9161 86.9151 43.0993C88.1032 43.4074 88.9246 43.9953 89.3786 44.8721C89.6199 45.4213 89.7843 45.9996 89.8617 46.6063C89.9486 47.2233 89.987 47.8878 89.987 48.601C89.987 49.8343 89.9 50.7882 89.7165 51.4336C89.533 52.0889 89.2721 52.6189 88.9246 53.0428C88.5671 53.4666 87.9971 53.794 87.1952 54.0254C86.3837 54.2469 85.524 54.3626 84.616 54.3626H79.6309V54.3633ZM79.6309 51.5691H83.7751C84.3257 51.5691 84.7992 51.54 85.195 51.4726C85.6007 51.4055 85.8904 51.2798 86.0739 51.1162C86.3735 50.856 86.5666 50.5766 86.644 50.2585C86.7213 49.9404 86.7597 49.4299 86.7597 48.7363C86.7597 48.11 86.7309 47.6475 86.6922 47.3297C86.644 47.0117 86.5375 46.7128 86.3735 46.4238C86.1995 46.1444 85.9195 45.9421 85.5233 45.8168C85.1368 45.6918 84.5766 45.624 83.8617 45.624H79.6306V51.5691H79.6309ZM98.8646 45.4891C97.831 45.4891 97.0195 45.5661 96.4495 45.7103C95.8702 45.8643 95.5028 46.1341 95.3292 46.5296C95.1553 46.9244 95.0296 47.3198 94.9622 47.7146C94.8944 48.1097 94.8656 48.4952 94.8656 48.8712V49.3916V53.4382C94.8656 54.2476 94.904 54.8738 94.9909 55.3076C95.0683 55.7414 95.184 56.0783 95.3388 56.3194C95.5514 56.6374 95.8798 56.8686 96.305 57.0226C96.7398 57.1767 97.5609 57.2441 98.778 57.2441C100.565 57.2441 101.724 56.936 102.237 56.3098C102.613 55.7507 102.807 54.8838 102.807 53.7179V49.1796V48.5627C102.807 47.946 102.758 47.4547 102.662 47.1079C102.565 46.7515 102.43 46.4817 102.256 46.2697C102.082 46.0674 101.821 45.8938 101.492 45.7589C101.164 45.624 100.826 45.5278 100.478 45.4894H98.8646V45.4891ZM98.7972 42.6946C100.246 42.6946 101.386 42.7815 102.236 42.9452C103.618 43.215 104.555 43.7255 105.038 44.4674C105.376 44.9974 105.608 45.4983 105.743 45.9897C105.985 46.8278 106.11 47.7529 106.11 48.7359V54.2281C106.11 55.2594 105.985 56.117 105.743 56.8199C105.589 57.2537 105.337 57.7259 104.99 58.2268C104.429 58.9975 103.454 59.508 102.053 59.7682C101.232 59.9226 100.005 59.9997 98.3726 59.9997C96.7011 59.9997 95.4839 59.8743 94.7112 59.6237C93.948 59.3734 93.3492 59.0071 92.9051 58.5158C92.4316 58.0532 92.1033 57.3883 91.9002 56.5406C91.7071 55.6925 91.6102 54.7578 91.6102 53.7268V49.0728C91.6102 48.032 91.6489 47.2229 91.7458 46.6638C91.9002 45.7774 92.1806 45.0258 92.586 44.4188C93.1174 43.6769 94.0449 43.1756 95.3586 42.9154C96.1406 42.7719 97.2804 42.6946 98.7972 42.6946ZM116.601 57.0709C117.287 57.0709 117.79 57.0038 118.128 56.8881C118.582 56.7145 118.978 56.3964 119.316 55.9054C119.509 55.6356 119.664 55.2501 119.789 54.7489C119.915 54.248 119.973 53.5444 119.973 52.6387V51.4825V49.5748C119.973 48.1104 119.809 47.1277 119.471 46.6457C118.997 45.9616 117.963 45.6243 116.379 45.6243H111.665V57.0712H116.601V57.0709ZM117.258 59.8555H108.38V42.8295H116.601C118.108 42.8295 119.345 43.0222 120.311 43.4173C121.287 43.8121 122.002 44.4291 122.475 45.2576C122.736 45.7298 122.929 46.3272 123.064 47.0497C123.2 47.782 123.277 48.5719 123.277 49.4392V53.0715C123.277 54.4493 123.113 55.5867 122.794 56.5019C122.388 57.6488 121.683 58.5158 120.697 59.1132C120.32 59.3252 119.789 59.4987 119.113 59.6432C118.447 59.7881 117.828 59.8555 117.258 59.8555ZM129.285 54.1802H135.179L132.242 45.3059L129.285 54.1802ZM129.759 42.8298H134.56L140.395 59.8559H137.043L135.951 56.6566H128.551L127.46 59.8559H124.069L127.982 48.0522L129.759 42.8298ZM149.592 45.624H144.965V51.4342H149.678C150.684 51.4342 151.398 51.2127 151.823 50.7789C151.997 50.5478 152.123 50.2106 152.19 49.7675C152.268 49.3241 152.297 48.8715 152.297 48.4185C152.297 47.8118 152.277 47.3585 152.229 47.0599C152.181 46.7706 152.075 46.4916 151.91 46.2314C151.698 45.9808 151.418 45.8075 151.06 45.7397C150.703 45.6623 150.21 45.624 149.592 45.624ZM150.085 42.8298C151.119 42.8298 152.027 42.9359 152.799 43.1379C153.572 43.3403 154.161 43.668 154.577 44.1206C154.934 44.5352 155.205 45.0553 155.359 45.6914C155.514 46.3276 155.601 47.0596 155.601 47.8882C155.601 48.6784 155.572 49.3046 155.504 49.7768C155.397 50.6153 155.185 51.2223 154.847 51.6174C154.393 52.1762 153.63 52.5518 152.568 52.7254C153.591 52.8986 154.345 53.2554 154.847 53.8237C155.011 54.0935 155.156 54.4883 155.282 55.0087C155.398 55.5295 155.466 56.0979 155.466 56.7046V59.8555H152.162V57.2924C152.162 56.6279 152.142 56.1845 152.114 55.9725C152.036 55.4908 151.881 55.1149 151.64 54.8547C151.399 54.5852 151.119 54.4212 150.809 54.3442C150.49 54.2671 150.075 54.2284 149.544 54.2284H149.205H144.965V59.8559H141.69V42.8298H150.085ZM158.219 42.8298H161.513V49.7963H163.068L168.758 42.8298H172.767L165.86 51.1644L173.472 59.8559H169.347L163.068 52.5905H161.512V59.8559H158.218V42.8298H158.219ZM174.497 42.8298H177.791V59.8559H174.497V42.8298Z" fill="white"/>
+                                    </svg>
+                                    <svg class="d-block d-md-none" width="52" height="30" viewBox="0 0 82 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M58.3828 21.4863C57.5719 25.135 55.9502 28.7836 53.923 31.6214C53.5176 32.4322 53.1121 32.8377 52.3013 33.6485L53.5176 34.8647C54.7339 34.0539 57.9774 32.8377 59.1937 33.2431C60.41 28.7836 59.5991 24.7296 58.3828 21.4863Z" fill="white"/>
+                                        <path d="M27.5694 57.5675C26.3531 56.7567 21.8933 53.9189 20.677 52.7026C16.6227 53.5134 12.9738 53.5134 10.1357 53.108C14.5955 56.7567 21.8933 59.9999 27.9749 59.9999L27.5694 57.5675Z" fill="white"/>
+                                        <path d="M32.4347 22.2974C28.3803 25.946 22.2988 30 16.2173 32.0271C16.6227 33.6487 19.0553 39.7298 23.9205 45.8108C24.326 45.8108 24.7314 45.4054 25.5423 45.4054L23.1097 34.4595L32.0292 33.6487L33.2455 42.1622C33.651 42.1622 33.651 41.7568 33.651 41.7568L34.8673 34.0541H40.9488L41.3542 36.0811C42.1651 35.2703 42.5705 34.8649 42.976 34.0541C40.5434 30.4054 35.6781 25.1352 32.4347 22.2974Z" fill="white"/>
+                                        <path d="M40.5434 5.67578C41.3543 9.72983 39.7326 13.3785 36.8945 17.4325C40.9489 20.6757 44.5978 23.919 48.2467 27.973C50.6793 25.1352 54.3282 17.8379 55.5445 15.4055C51.8956 11.3514 44.5978 6.89199 40.5434 5.67578Z" fill="white"/>
+                                        <path d="M37.2998 1.21631L38.9215 2.83793C42.5705 4.05414 45.0031 5.27035 48.652 7.29737C45.4085 4.45954 41.3542 2.02712 37.2998 1.21631Z" fill="white"/>
+                                        <path d="M17.8394 8.51345C21.0828 8.51345 26.3535 10.5405 30.0024 12.5675C31.6241 10.5405 33.6513 6.48643 32.8404 4.4594C28.7861 4.054 22.7046 5.27021 18.2448 6.48643C18.2448 7.70264 18.2448 8.10804 17.8394 8.51345Z" fill="white"/>
+                                        <path d="M17.4336 5.67566C21.0825 3.24324 25.9477 1.21621 30.8129 1.21621C30.0021 0.810809 29.5966 0.405404 27.9749 0C26.3531 0 22.2988 0.810809 21.0825 1.21621C19.0553 2.02702 17.0282 3.64864 16.2173 5.67566C16.6227 5.27026 17.0282 5.67566 17.4336 5.67566Z" fill="white"/>
+                                        <path d="M12.9741 11.7565C12.9741 14.9997 13.785 22.297 14.5959 24.7295C19.0556 22.7024 24.7317 18.6484 26.3535 17.0268C23.11 14.5943 19.8665 12.1619 16.623 9.72949C15.4067 10.9457 14.1904 11.7565 12.9741 11.7565Z" fill="white"/>
+                                        <path d="M10.136 11.7568C6.48712 15.8109 4.05452 19.8649 2.02734 25.1352C4.05452 26.3514 6.48712 26.7568 9.7306 26.3514C9.7306 21.8919 10.136 17.0271 11.3523 12.1622C10.9469 12.1622 10.5415 11.7568 10.136 11.7568Z" fill="white"/>
+                                        <path d="M9.73059 10.9458C5.67625 12.9729 2.43277 18.2431 0.811035 21.8918C2.02734 18.6485 3.64908 14.9999 5.67625 12.1621C7.70342 9.72962 9.73059 9.32422 10.136 9.32422C9.73059 9.72962 9.73059 10.5404 9.73059 10.9458Z" fill="white"/>
+                                        <path d="M14.1899 6.08099C14.1899 4.86478 15.0008 4.05397 16.2171 3.24316C13.7845 4.45938 11.3519 6.08099 9.32471 8.10802C9.73014 8.10802 10.1356 8.10802 10.9464 8.10802C11.3519 7.70261 12.1627 7.29721 12.5682 6.8918C13.3791 6.4864 13.7845 6.08099 14.1899 6.08099Z" fill="white"/>
+                                        <path d="M5.67608 47.8379C9.32499 48.2433 12.9739 48.2433 17.0282 47.4324C14.1902 43.7838 11.3522 38.1081 10.5413 33.6487C7.29782 34.0541 2.83804 34.0541 0 32.8379C0.405434 38.5136 2.43261 43.3784 5.67608 47.8379Z" fill="white"/>
+                                        <path d="M29.1914 60L24.3262 35.2703L31.2186 34.4595L33.6512 47.8378L36.0838 34.8649H40.5436L42.9762 47.8378L45.0033 34.4595L51.8957 35.2703L47.0305 60H40.5436L38.1109 46.2162L35.2729 60H29.1914Z" fill="white"/>
+                                        <path d="M51.8957 59.5944V52.7025C52.3011 52.7025 52.3011 52.7025 53.112 53.1079C54.7337 53.5133 56.3554 53.9188 56.7609 53.9188C57.1663 53.9188 57.5718 53.9188 57.9772 53.5133C58.3826 53.1079 58.3826 52.7025 58.3826 52.2971C58.3826 51.8917 57.9772 51.4863 57.1663 50.6755C56.7609 50.2701 56.3554 50.2701 56.3554 50.2701C54.7337 49.0539 53.5174 48.2431 52.7065 47.0269C51.8957 45.8107 51.4902 44.5945 51.4902 42.9728C51.4902 40.5404 52.3011 38.5134 53.5174 37.2972C54.7337 35.6756 56.7609 34.8647 58.7881 34.8647C59.5989 34.8647 60.4098 34.8647 61.2207 34.8647C62.0315 34.8647 62.8424 35.2701 63.2478 35.2701V42.162C62.437 41.7566 61.6261 41.7566 61.2207 41.3512C60.4098 41.3512 60.0044 40.9458 59.5989 40.9458C59.1935 40.9458 58.3826 40.9458 58.3826 41.3512C57.9772 41.7566 57.9772 41.7566 57.9772 42.162C57.9772 42.5674 58.3826 43.3782 59.5989 43.7836C60.0044 44.189 60.8152 44.189 60.8152 44.5945C62.437 45.8107 63.2478 46.6215 64.0587 47.8377C64.4641 49.0539 64.8696 50.2701 64.8696 51.8917C64.8696 54.7296 64.0587 56.7566 62.8424 57.9728C61.6261 59.5944 59.5989 59.9998 57.1663 59.9998C55.95 59.9998 55.1391 59.9998 54.3283 59.9998C53.112 59.9998 52.3011 59.9998 51.8957 59.5944Z" fill="white"/>
+                                        <path d="M81.8979 57.9728C80.6816 58.7836 79.4653 59.189 78.249 59.5945C77.0327 59.9999 75.8164 59.9999 75.0055 59.9999C73.7892 59.9999 72.1675 59.5945 70.9511 59.189C69.7348 58.3782 68.5185 57.5674 67.7077 56.3512C66.8968 55.135 66.0859 53.5134 65.6805 51.8918C65.2751 50.2702 64.8696 48.6485 64.8696 46.6215C64.8696 44.5945 65.2751 42.9729 65.6805 41.3513C66.0859 39.7296 66.8968 38.108 67.7077 36.8918C68.5185 35.6756 69.7348 34.8648 70.9511 34.054C72.1675 33.6486 73.3838 33.2432 75.0055 33.2432C76.2218 33.2432 77.4381 33.6486 78.6544 34.054C79.8707 34.4594 80.6816 35.2702 81.4924 36.4864L78.249 42.5675C77.8435 42.1621 77.0327 41.7567 76.6272 41.3513C76.2218 40.9458 75.4109 40.9459 75.0055 40.9459C73.7892 40.9459 72.9783 41.3513 72.1674 42.5675C71.3566 43.7837 70.9511 44.9999 70.9511 46.6215C70.9511 48.2431 71.3566 49.8647 72.1674 50.6756C72.9783 51.8918 73.7892 52.2972 75.0055 52.2972H75.4109H75.8164V49.8647H72.9783L74.1946 44.1891H81.8979V57.9728Z" fill="white"/>
+                                    </svg>
+                                </a>
+                                <ul class="nav justify-content-start me-auto d-lg-none d-xl-none">
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Bydgoszcz</a>
+                                        <ul class="dropdown-menu">
+                                            <li>
+                                                <a class="dropdown-item" href="https://www.wsg.pl/chojnice">Chojnice</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="https://www.wsg.pl/dzialdowo">Działdowo</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="https://www.wsg.pl/elk">Ełk</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="https://www.wsg.pl/inowroclaw">Inowrocław</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="https://www.wsg.pl/malbork">Malbork</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="https://www.wsg.pl/pila">Piła</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="https://www.wsg.pl/torun-medyczny">Toruń Medyczny</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="https://www.wsg.pl/torun-techniczny">Toruń Techniczny</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="https://www.wsg.pl/pozostale-miasta">Pozostałe miasta</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">pl</a>
+                                        <ul class="dropdown-menu" style="min-width:1em">
+                                            <li>
+                                                <a class="dropdown-item" href="https://www.wsg.pl/en">en</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                                        <li class="nav-item">
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" href="https://www.wsg.pl/edukacja?filter[language]=Polski,Ukrai%C5%84ski/Polski&amp;filter[city]=Bydgoszcz&amp;sort=name" role="button" data-bs-toggle="dropdown" aria-expanded="false">Nasza Oferta
+                            </a>
+                                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                <li>
+                                                    <a class="dropdown-item" href="https://www.wsg.pl/edukacja?filter[product]=Studia%20wy%C5%BCsze&amp;filter[language]=Polski,Ukrai%C5%84ski/Polski&amp;filter[city]=Bydgoszcz&amp;sort=name">Studia wyższe</a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="https://certyfikaty.byd.pl/">Kursy i szkolenia</a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="https://podyplomowe.byd.pl">Studia podyplomowe</a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="https://new.isaps.pl/Rekrutacja/Specjalistyczne">Kształcenie specjalistyczne</a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="https://www.wsg.pl/znizki-dla-kandydata">Wsparcie na start</a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="https://www.wsg.pl/rekrutacja-caloroczna">Zasady rekrutacji i przyjęcia na studia</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+</li><li class="nav-item">
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">O Uczelni
+                            </a>
+    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <li>
+            <a class="dropdown-item" href="https://www.wsg.pl/kim-jestesmy">Kim jesteśmy</a>
+        </li>
+        <li>
+            <a class="dropdown-item" href="https://www.wsg.pl/wladze-i-kadra">Nasze władze</a>
+        </li>
+        <li>
+            <a class="dropdown-item" href="https://www.wsg.pl/struktura-ogranizacyjna-uczelni">Poznaj nasze jednostki</a>
+        </li>
+        <li>
+            <a class="dropdown-item" href="https://www.wsg.pl/dzial-nauki">Nauka</a>
+        </li>
+        <li>
+            <a class="dropdown-item" href="https://www.wsg.pl/projekty">Projekty europejskie</a>
+        </li>
+    </ul>
+</li>
+</li><li class="nav-item">
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">Współpraca i usługi
+                            </a>
+    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <li>
+            <a class="dropdown-item" href="https://www.wsg.pl/uslugi-byd">Usługi</a>
+        </li>
+        <li>
+            <a class="dropdown-item" href="https://www.wsg.pl/profesjonalny-rozwoj-w-srodowisku-akademickim">Szkoły</a>
+        </li>
+        <li>
+            <a class="dropdown-item" href="https://www.wsg.pl/partnerstwo">Partnerstwo</a>
+        </li>
+    </ul>
+</li>
+</li><li class="nav-item">
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">Student
+                            </a>
+    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <li>
+            <a class="dropdown-item" href="https://www.wsg.pl/dziekanat">Dziekanat</a>
+        </li>
+        <li>
+            <a class="dropdown-item" href="https://www.wsg.pl/finansowa-obsluga-studenta">Finansowa Obsługa Studenta</a>
+        </li>
+        <li>
+            <a class="dropdown-item" href="https://www.wsg.pl/biblioteka">Biblioteka</a>
+        </li>
+        <li>
+            <a class="dropdown-item" href="https://sso-psi-five.vercel.app/pages/pl.html">Biuro Obsługi Studentów</a>
+        </li>
+        <li>
+            <a class="dropdown-item" href="https://www.wsg.pl/akademicki-zwiazek-sportowy">Akademicki Związek Sportowy</a>
+        </li>
+    </ul>
+</li>
+</li><li class="nav-item">
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="https://cwz.byd.pl/o-dziale.1.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">Umiędzynarodowienie
+                            </a>
+    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <li>
+            <a class="dropdown-item" href="https://www.wsg.pl/welcome-center-pl">Welcome Center</a>
+        </li>
+        <li>
+            <a class="dropdown-item" href="https://www.wsg.pl/wspolpraca-miedzynarodowa">Współpraca międzynarodowa</a>
+        </li>
+        <li>
+            <a class="dropdown-item" href="https://www.wsg.pl/centrum-jezyka-i-kultury-ukrainskiej">Centrum Języka i Kultury Ukraińskiej</a>
+        </li>
+        <li>
+            <a class="dropdown-item" href="https://www.wsg.pl/ais-pl">Zrzeszenie Studentów z Zagranicy</a>
+        </li>
+    </ul>
+</li>
+</li></ul>
+<ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-lg-none d-xl-none">
+    <li class="nav-item">
+        <a class="nav-link" href="http://www.wsg.pl/kontakty">Kontakt</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="https://new.isaps.pl">ISAPS</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="https://onte.byd.pl/">ONTE</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="https://poczta.byd.pl/">Poczta WSG</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="https://praca.byd.pl/id,1/witamy">Praca w WSG</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="http://www.wsg.pl/dla-mediow">Dla mediów</a>
+    </li>
+    <li class="nav-item text-sm-left" style="min-width: 100px;padding-top: 6px;">
+        <a href="#" class="iFontsie" title="Czcionka" data-size="">
+            <i class="fa fa-font fa-lg"></i>
+            <i class="fa fa-plus " aria-hidden="true"></i>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a href="#" title="Kontrast domyślny" data-contrast="0" class=" iContrast">
+            <img src="https://www.wsg.pl/images/ico_contr_1.png"/>
+        </a>
+        <a href="#" title="Kontrast czarno-biały" data-contrast="1" class="iContrast">
+            <img src="https://www.wsg.pl/images/ico_contr_2.png"/>
+        </a>
+        <a href="#" title="Kontrast żółto-czarny" data-contrast="2" class="iContrast">
+            <img src="https://www.wsg.pl/images/ico_contr_3.png"/>
+        </a>
+        <a href="#" title="Kontrast czarno-żółty" data-contrast="3" class="iContrast">
+            <img src="https://www.wsg.pl/images/ico_contr_4.png"/>
+        </a>
+    </li>
+</ul>
+</div></div></nav></div></div></div></div>
 <div class="container">
             <div class="row align-items-center">
                 <div class="col col-12">
