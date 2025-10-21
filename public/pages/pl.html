@@ -858,6 +858,16 @@ fbq('track', 'PageView');
         </div>
     </div>
 </footer>
+  <script>
+        // Initialize the carousel and set its auto-rotate interval
+        document.addEventListener('DOMContentLoaded', function () {
+            var myCarousel = document.querySelector('#imageCarousel');
+            var carousel = new bootstrap.Carousel(myCarousel, {
+                interval: 3000, // Time in milliseconds before the next slide (e.g., 3000 = 3 seconds)
+                ride: 'carousel' // Automatically start cycling through items
+            });
+        });
+    </script>
 <script src="https://www.wsg.pl/js/dselect.min.js"></script>
 <script src="https://www.wsg.pl/js/simple-lightbox.js"></script>
 <script src="https://www.wsg.pl/js/app.js?v1"></script>
