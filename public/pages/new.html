@@ -443,6 +443,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
         </div>
 
+
+
         <div class="container-fluid templateGrey py-5">
   <div class="container">
     <h1 class="mb-4">Contact Us</h1>
@@ -502,34 +504,63 @@ document.getElementById("contactForm").addEventListener("submit", async function
   const formData = new FormData(form);
   const status = document.getElementById("formStatus");
 
-  // Simple client-side validation
+  // client validation
   if (!form.checkValidity()) {
     form.classList.add('was-validated');
+    status.innerHTML = `<div class="alert alert-warning" role="alert">⚠️ Please complete the form first.</div>`;
     return;
   }
 
-  status.innerHTML = `<div class="alert alert-info" role="alert"><i class="fa fa-spinner fa-spin"></i> Sending your message...</div>`;
+  status.innerHTML = `<div class="alert alert-info" role="alert">⏳ Sending your message...</div>`;
 
   try {
-    const response = await fetch(
+    const resp = await fetch(
       "https://script.google.com/macros/s/AKfycbwXFvd-suu8hFA4LCW4R7IcANB0j3koVurd_jhIztjkE-1gio-gLVJ0GCe657-xxggp/exec",
       { method: "POST", body: formData }
     );
-    const result = await response.json();
 
-    if (result.success) {
-      status.innerHTML = `<div class="alert alert-success" role="alert"><i class="fa fa-check"></i> Your message has been sent successfully!</div>`;
+    // get raw text (useful if script returns HTML or error page)
+    const text = await resp.text();
+
+    let json;
+    try {
+      json = JSON.parse(text);
+    } catch (parseErr) {
+      // response wasn't JSON — show the raw response for debugging
+      status.innerHTML = `<div class="alert alert-danger" role="alert">
+        ❌ Server did not return JSON. HTTP ${resp.status}. Response:
+        <pre style="white-space:pre-wrap; max-height:200px; overflow:auto;">${escapeHtml(text)}</pre>
+      </div>`;
+      console.error("Non-JSON response:", text);
+      return;
+    }
+
+    // Now we have JSON
+    if (json.success) {
+      status.innerHTML = `<div class="alert alert-success" role="alert">✅ ${escapeHtml(json.message || "Message sent.")}</div>`;
       form.reset();
       form.classList.remove('was-validated');
     } else {
-      status.innerHTML = `<div class="alert alert-warning" role="alert"><i class="fa fa-exclamation-triangle"></i> Something went wrong. Please try again later.</div>`;
+      // show server-provided error info if available
+      const errMsg = json.error || json.message || "Unknown server error";
+      const stack = json.stack ? `<pre style="white-space:pre-wrap; max-height:120px; overflow:auto;">${escapeHtml(JSON.stringify(json.stack))}</pre>` : "";
+      status.innerHTML = `<div class="alert alert-warning" role="alert">⚠️ ${escapeHtml(errMsg)} ${stack}</div>`;
+      console.warn("Server error JSON:", json);
     }
-  } catch (error) {
-    console.error("Error:", error);
-    status.innerHTML = `<div class="alert alert-danger" role="alert"><i class="fa fa-times"></i> Network error. Please check your connection and try again.</div>`;
+
+  } catch (networkErr) {
+    console.error("Network error:", networkErr);
+    status.innerHTML = `<div class="alert alert-danger" role="alert">❌ Network error. Check your connection. (${escapeHtml(networkErr.message || "")})</div>`;
+  }
+
+  // helper to avoid raw HTML injection
+  function escapeHtml(s) {
+    if (!s) return "";
+    return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
   }
 });
 </script>
+
 
 
         <footer class="container-fluid">
