@@ -451,36 +451,41 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h1 class="mb-4">Contact the Student Support Office</h1>
 
     <form id="contactForm" class="needs-validation" novalidate>
+      <!-- Reason -->
       <div class="mb-3">
         <label for="reason" class="form-label">Reason for Contact</label>
         <select class="form-select" id="reason" name="reason" required>
           <option value="" disabled selected>Select a reason</option>
-          <option value="admissions">Admissions Inquiry</option>
-          <option value="academic">Academic Support</option>
-          <option value="financial">Financial Aid</option>
-          <option value="technical">Technical Support</option>
-          <option value="other">Other</option>
+          <option value="Admissions Inquiry">Admissions Inquiry</option>
+          <option value="Academic Support">Academic Support</option>
+          <option value="Financial Aid">Financial Aid</option>
+          <option value="Technical Support">Technical Support</option>
+          <option value="Other">Other</option>
         </select>
         <div class="invalid-feedback">Please select a reason for contact.</div>
       </div>
 
+      <!-- Name -->
       <div class="mb-3">
         <label for="name" class="form-label">Full Name</label>
         <input type="text" class="form-control" id="name" name="name" required>
         <div class="invalid-feedback">Please enter your full name.</div>
       </div>
 
+      <!-- Student ID -->
       <div class="mb-3">
         <label for="student_id" class="form-label">Student ID (optional)</label>
         <input type="text" class="form-control" id="student_id" name="student_id">
       </div>
 
+      <!-- Email -->
       <div class="mb-3">
         <label for="email" class="form-label">Email Address</label>
         <input type="email" class="form-control" id="email" name="email" required>
         <div class="invalid-feedback">Please enter a valid email address.</div>
       </div>
 
+      <!-- Message -->
       <div class="mb-3">
         <label for="message" class="form-label">Message</label>
         <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
@@ -489,60 +494,53 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <button type="submit" class="btn btn-primary">Submit</button>
 
-      <!-- Inline Confirmation UI -->
+      <!-- Inline confirmation -->
       <div id="formStatus" class="mt-3"></div>
     </form>
   </div>
 </div>
 
 
+
 <!-- JavaScript -->
 <script>
-document.getElementById("contactForm").addEventListener("submit", async function(e) {
+document.getElementById("contactForm").addEventListener("submit", function(e) {
   e.preventDefault();
-  const form = e.target;
-  const formData = new FormData(form);
-  const status = document.getElementById("formStatus");
+  var form = e.target;
+  var status = document.getElementById("formStatus");
 
   // Bootstrap validation
   if (!form.checkValidity()) {
     form.classList.add('was-validated');
-    status.innerHTML = `<div class="alert alert-warning">Please complete all required fields.</div>`;
+    status.innerHTML = '<div class="alert alert-warning">Please complete all required fields.</div>';
     return;
   }
 
-  status.innerHTML = `<div class="alert alert-info">Sending your message...</div>`;
+  status.innerHTML = '<div class="alert alert-info">Sending your message...</div>';
 
-  try {
-    const resp = await fetch("https://script.google.com/macros/s/AKfycbwXFvd-suu8hFA4LCW4R7IcANB0j3koVurd_jhIztjkE-1gio-gLVJ0GCe657-xxggp/exec", { // replace with your deployed script URL
-      method: "POST",
-      body: formData
-    });
+  var formData = new FormData(form);
 
-    const text = await resp.text();
-    let json;
-    try {
-      json = JSON.parse(text);
-    } catch {
-      status.innerHTML = `<div class="alert alert-danger">Unexpected server response. Please try again later.</div>`;
-      console.error("Server response:", text);
-      return;
-    }
-
+  fetch("https://script.google.com/macros/s/AKfycbwXFvd-suu8hFA4LCW4R7IcANB0j3koVurd_jhIztjkE-1gio-gLVJ0GCe657-xxggp/exec", { // replace with your Apps Script /exec URL
+    method: "POST",
+    body: formData
+  })
+  .then(function(resp) { return resp.json(); })
+  .then(function(json) {
     if (json.success) {
-      status.innerHTML = `<div class="alert alert-success">${json.message}</div>`;
+      status.innerHTML = '<div class="alert alert-success">' + json.message + '</div>';
       form.reset();
       form.classList.remove('was-validated');
     } else {
-      status.innerHTML = `<div class="alert alert-danger">${json.message || "Submission failed."}</div>`;
+      status.innerHTML = '<div class="alert alert-danger">' + (json.message || 'Submission failed.') + '</div>';
     }
-
-  } catch (err) {
-    status.innerHTML = `<div class="alert alert-danger">Network error. Please check your connection and try again.</div>`;
-    console.error("Fetch error:", err);
-  }
+  })
+  .catch(function(err) {
+    status.innerHTML = '<div class="alert alert-danger">Network error. Please try again later.</div>';
+    console.error(err);
+  });
 });
 </script>
+
 
 
 
