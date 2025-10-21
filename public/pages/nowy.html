@@ -531,45 +531,98 @@ fbq('track', 'PageView');
 
 
 <div class="container-fluid templateGrey py-5">
-    <div class="container">
-        <h1 class="mb-4">Skontaktuj się z nami</h1>
-        <form action="/submit-contact" method="POST" class="needs-validation" novalidate>
-            <input type="hidden" name="_token" value="pvozq84BKpcOGvnQxITqUidB6UKPy2l5IwQUtled">
-            <div class="mb-3">
-                <label for="reason" class="form-label">Powód kontaktu</label>
-                <select class="form-select" id="reason" name="reason" required>
-                    <option value="" disabled selected>Wybierz powód</option>
-                    <option value="admissions">Zapytanie rekrutacyjne</option>
-                    <option value="academic">Wsparcie akademickie</option>
-                    <option value="financial">Pomoc finansowa</option>
-                    <option value="technical">Wsparcie techniczne</option>
-                    <option value="other">Inne</option>
-                </select>
-                <div class="invalid-feedback">Proszę wybrać powód kontaktu.</div>
-            </div>
-            <div class="mb-3">
-                <label for="name" class="form-label">Imię i nazwisko</label>
-                <input type="text" class="form-control" id="name" name="name" required>
-                <div class="invalid-feedback">Proszę podać imię i nazwisko.</div>
-            </div>
-            <div class="mb-3">
-                <label for="student_id" class="form-label">Numer albumu (opcjonalnie)</label>
-                <input type="text" class="form-control" id="student_id" name="student_id">
-            </div>
-            <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" name="email" required>
-                <div class="invalid-feedback">Proszę podać prawidłowy adres e-mail.</div>
-            </div>
-            <div class="mb-3">
-                <label for="message" class="form-label">Twoja wiadomość</label>
-                <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
-                <div class="invalid-feedback">Proszę wpisać swoją wiadomość.</div>
-            </div>
-            <button type="submit" class="btn btn-primary">Wyślij</button>
-        </form>
-    </div>
+  <div class="container">
+    <h1 class="mb-4">Skontaktuj się z nami</h1>
+
+    <form id="contactForm" class="needs-validation" novalidate>
+      <!-- Powód kontaktu -->
+      <div class="mb-3">
+        <label for="reason" class="form-label">Powód kontaktu</label>
+        <select class="form-select" id="reason" name="reason" required>
+          <option value="" disabled selected>Wybierz powód</option>
+          <option value="Zapytanie rekrutacyjne">Zapytanie rekrutacyjne</option>
+          <option value="Wsparcie akademickie">Wsparcie akademickie</option>
+          <option value="Pomoc finansowa">Pomoc finansowa</option>
+          <option value="Wsparcie techniczne">Wsparcie techniczne</option>
+          <option value="Inne">Inne</option>
+        </select>
+        <div class="invalid-feedback">Proszę wybrać powód kontaktu.</div>
+      </div>
+
+      <!-- Imię i nazwisko -->
+      <div class="mb-3">
+        <label for="name" class="form-label">Imię i nazwisko</label>
+        <input type="text" class="form-control" id="name" name="name" required>
+        <div class="invalid-feedback">Proszę podać imię i nazwisko.</div>
+      </div>
+
+      <!-- Numer albumu -->
+      <div class="mb-3">
+        <label for="student_id" class="form-label">Numer albumu (opcjonalnie)</label>
+        <input type="text" class="form-control" id="student_id" name="student_id">
+      </div>
+
+      <!-- Email -->
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" name="email" required>
+        <div class="invalid-feedback">Proszę podać prawidłowy adres e-mail.</div>
+      </div>
+
+      <!-- Wiadomość -->
+      <div class="mb-3">
+        <label for="message" class="form-label">Twoja wiadomość</label>
+        <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+        <div class="invalid-feedback">Proszę wpisać swoją wiadomość.</div>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Wyślij</button>
+
+      <!-- Inline confirmation -->
+      <div id="formStatus" class="mt-3"></div>
+    </form>
+  </div>
 </div>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+  var form = e.target;
+  var status = document.getElementById("formStatus");
+
+  // Bootstrap validation
+  if (!form.checkValidity()) {
+    form.classList.add('was-validated');
+    status.innerHTML = '<div class="alert alert-warning">Proszę uzupełnić wszystkie wymagane pola.</div>';
+    return;
+  }
+
+  status.innerHTML = '<div class="alert alert-info">Wysyłanie wiadomości...</div>';
+
+  var formData = new FormData(form);
+
+  // Use your deployed Google Apps Script URL
+  fetch("https://script.google.com/macros/s/AKfycbxyYXI6Jlo0u8E3DVRgEHtsoxci3fAa-wABoZzEPK-LGXwyksiWR72lj9QOvoQhdbYUpw/exec", {
+    method: "POST",
+    body: formData
+  })
+  .then(function(resp) { return resp.json(); })
+  .then(function(json) {
+    if (json.success) {
+      status.innerHTML = '<div class="alert alert-success">' + json.message + '</div>';
+      form.reset();
+      form.classList.remove('was-validated');
+    } else {
+      status.innerHTML = '<div class="alert alert-danger">' + (json.message || 'Wystąpił błąd podczas wysyłania.') + '</div>';
+    }
+  })
+  .catch(function(err) {
+    status.innerHTML = '<div class="alert alert-danger">Błąd sieci. Spróbuj ponownie później.</div>';
+    console.error(err);
+  });
+});
+</script>
+
 
 <footer class="container-fluid">
     <div class="container">
