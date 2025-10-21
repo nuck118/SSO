@@ -500,9 +500,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </div>
 
-
-
-<!-- JavaScript -->
 <script>
 document.getElementById("contactForm").addEventListener("submit", function(e) {
   e.preventDefault();
@@ -520,7 +517,8 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
 
   var formData = new FormData(form);
 
-  fetch("https://script.google.com/macros/s/AKfycbwXFvd-suu8hFA4LCW4R7IcANB0j3koVurd_jhIztjkE-1gio-gLVJ0GCe657-xxggp/exec", { // replace with your Apps Script /exec URL
+  // Use your deployed Google Apps Script URL
+  fetch("https://script.google.com/macros/s/AKfycbwXFvd-suu8hFA4LCW4R7IcANB0j3koVurd_jhIztjkE-1gio-gLVJ0GCe657-xxggp/exec", {
     method: "POST",
     body: formData
   })
@@ -540,6 +538,7 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
   });
 });
 </script>
+
 
 
 
