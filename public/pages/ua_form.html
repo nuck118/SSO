@@ -555,15 +555,7 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
         </div>
     </div>
 </footer>
-        <script src="https://www.wsg.pl/js/dselect.min.js"></script>
-        <script src="https://www.wsg.pl/js/simple-lightbox.js"></script>
-        <script src="https://www.wsg.pl/js/app.js?v1"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-        <script src="https://www.wsg.pl/js/accessibility-menu.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.1.0/dist/cookieconsent.umd.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
-    
-    <script>
+        <script>
         // Initialize the carousel and set its auto-rotate interval
         document.addEventListener('DOMContentLoaded', function () {
             var myCarousel = document.querySelector('#imageCarousel');
@@ -573,173 +565,215 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
             });
         });
     </script>
-    <script>
-        // Show/hide back-to-top button based on scroll position
-        window.addEventListener('scroll', () => {
-            const topBtn = document.getElementById('topBtn');
-            topBtn.style.display = window.scrollY > 200 ? 'block' : 'none';
-        });
-    </script>
-        <script>
-            CookieConsent.run({
-                page_scripts: true,
-                categories: {
-                    necessary: {
-                        enabled: true,
-                        readOnly: true
+<script src="https://www.wsg.pl/js/dselect.min.js"></script>
+<script src="https://www.wsg.pl/js/simple-lightbox.js"></script>
+<script src="https://www.wsg.pl/js/app.js?v1"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="https://www.wsg.pl/js/accessibility-menu.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.1.0/dist/cookieconsent.umd.js"></script>
+<script>
+
+    CookieConsent.run({
+        guiOptions: {
+            consentModal: {
+                layout: 'box',
+                position: 'middle right',
+                flipButtons: false,
+                equalWeightButtons: true
+            },
+            preferencesModal: {
+                layout: 'box',
+                // position: 'left right',
+                flipButtons: false,
+                equalWeightButtons: true
+            }
+        },
+        page_scripts: true,
+        categories: {
+            necessary: {
+                enabled: true,
+                // this category is enabled by default
+                readOnly: true // this category cannot be disabled
+            },
+            analytics: {
+                autoClear: {
+                    cookies: [{
+                        name: /^_ga/,
+                        // regex: match all cookies starting with '_ga'
+                    }, {
+                        name: /^_fbp/,
+                        // string: exact cookie name
+                    }]
+                },
+
+            }
+        },
+
+        language: {
+            default: 'pl',
+
+            translations: {
+                en: {
+                    consentModal: {
+                        title: 'Cookie consent',
+                        description: 'Websites operated by the University of Economy in Bydgoszcz use cookies. If you do not want cookies to be saved on your disk, change your browser settings.',
+                        acceptAllBtn: 'Accept all',
+                        acceptNecessaryBtn: 'Reject all',
+                        showPreferencesBtn: 'Manage Individual preferences'
                     },
-                    analytics: {
-                        autoClear: {
-                            cookies: [
-                                { name: /^_ga/ },
-                                { name: /^_fbp/ }
-                            ]
-                        }
+                    preferencesModal: {
+                        title: 'Manage cookie preferences',
+                        acceptAllBtn: 'Accept all',
+                        acceptNecessaryBtn: 'Reject all',
+                        savePreferencesBtn: 'Accept current selection',
+                        closeIconLabel: 'Close modal',
+                        sections: [
+                        {
+                            title: 'Strictly Necessary cookies',
+                            description: 'These cookies are essential for the proper functioning of the website and cannot be disabled.',
+
+                            //this field will generate a toggle linked to the 'necessary' category
+                            linkedCategory: 'necessary',
+                            cookieTable: {
+
+                                headers: {
+                                    name: 'Cookie',
+                                    domain: 'Domain',
+                                    desc: 'Description'
+                                },
+                                body: [{
+                                    name: '^contrast',
+                                    domain: location.hostname,
+                                    desc: 'Accessibility settings',
+                                }, {
+                                    name: 'wyzsza_szkola_gospodarki_session',
+                                    domain: location.hostname,
+                                    desc: 'Session',
+                                }, {
+                                    name: 'XSRF-TOKEN',
+                                    domain: location.hostname,
+                                    desc: 'Cross site request forgery protection',
+                                }]
+                            }
+                        }, {
+                            title: 'Performance and Analytics',
+                            description: 'These cookies collect information about how you use our website. All of the data is anonymized and cannot be used to identify you.',
+                            linkedCategory: 'analytics',
+                            cookieTable: {
+
+                                headers: {
+                                    name: 'Cookie',
+                                    domain: 'Domain',
+                                    desc: 'Description'
+                                },
+                                body: [{
+                                    name: '^_ga',
+                                    domain: location.hostname,
+                                    desc: 'Google analytics, tagmanager',
+                                }, {
+                                    name: '^_fbp',
+                                    domain: location.hostname,
+                                    desc: 'Facebook Meta Pixel',
+                                }]
+                            }
+                        }, {
+                            title: 'More information',
+                            description: 'A detailed description of the privacy policy can be found here <a href="https://www.wsg.pl/polityka-prywatnosci-wsg">more information</a>'
+                        }]
                     }
                 },
-                language: {
-                    default: 'pl',
-                    translations: {
-                        en: {
-                            consentModal: {
-                                title: 'Cookie consent',
-                                description: 'Websites operated by the University of Economy in Bydgoszcz use cookies. If you do not want cookies to be saved on your disk, change your browser settings.',
-                                acceptAllBtn: 'Accept all',
-                                acceptNecessaryBtn: 'Reject all',
-                                showPreferencesBtn: 'Manage Individual preferences'
-                            },
-                            preferencesModal: {
-                                title: 'Manage cookie preferences',
-                                acceptAllBtn: 'Accept all',
-                                acceptNecessaryBtn: 'Reject all',
-                                savePreferencesBtn: 'Accept current selection',
-                                closeIconLabel: 'Close modal',
-                                sections: [
-                                    {
-                                        title: 'Strictly Necessary cookies',
-                                        description: 'These cookies are essential for the proper functioning of the website and cannot be disabled.',
-                                        linkedCategory: 'necessary',
-                                        cookieTable: {
-                                            headers: {
-                                                name: 'Cookie',
-                                                domain: 'Domain',
-                                                desc: 'Description'
-                                            },
-                                            body: [
-                                                { name: '^contrast', domain: location.hostname, desc: 'Accessibility settings' },
-                                                { name: 'wyzsza_szkola_gospodarki_session', domain: location.hostname, desc: 'Session' },
-                                                { name: 'XSRF-TOKEN', domain: location.hostname, desc: 'Cross site request forgery protection' }
-                                            ]
-                                        }
-                                    },
-                                    {
-                                        title: 'Performance and Analytics',
-                                        description: 'These cookies collect information about how you use our website. All of the data is anonymized and cannot be used to identify you.',
-                                        linkedCategory: 'analytics',
-                                        cookieTable: {
-                                            headers: {
-                                                name: 'Cookie',
-                                                domain: 'Domain',
-                                                desc: 'Description'
-                                            },
-                                            body: [
-                                                { name: '^_ga', domain: location.hostname, desc: 'Google analytics, tagmanager' },
-                                                { name: '^_fbp', domain: location.hostname, desc: 'Facebook Meta Pixel' }
-                                            ]
-                                        }
-                                    },
-                                    {
-                                        title: 'More information',
-                                        description: 'A detailed description of the privacy policy can be found here <a href="https://www.wsg.pl/polityka-prywatnosci-wsg">more information</a>'
-                                    }
-                                ]
+                pl: {
+                    consentModal: {
+                        title: 'Zgoda na pliki cookies',
+                        description: 'Strony internetowe, których operatorem jest Wyższa Szkoła Gospodarki w Bydgoszczy używają plików cookies. Jeśli nie chcesz, by pliki cookies były zapisywane na Twoim dysku zmień ustawienia swojej przeglądarki.',
+                        acceptAllBtn: 'Zaakceptuj wszystkie',
+                        acceptNecessaryBtn: 'Odrzuć wszystkie',
+                        showPreferencesBtn: 'Zarządzaj indywidualnymi ustawieniami'
+                    },
+                    preferencesModal: {
+                        title: 'Zarządzaj preferencjami dotyczącymi plików cookie',
+                        acceptAllBtn: 'Zaakceptuj wszystkie',
+                        acceptNecessaryBtn: 'Odrzuć wszystkie',
+                        savePreferencesBtn: 'Zaakceptuj bieżący wybór',
+                        closeIconLabel: 'Zamknij',
+                        sections: [
+                        {
+                            title: 'Wymagane pliki cookie',
+                            description: 'Te pliki cookie są niezbędne do prawidłowego funkcjonowania witryny i nie można ich wyłączyć.',
+
+                            //this field will generate a toggle linked to the 'necessary' category
+                            linkedCategory: 'necessary',
+                            cookieTable: {
+
+                                headers: {
+                                    name: 'Cookie',
+                                    domain: 'Domena',
+                                    desc: 'Opis'
+                                },
+                                body: [{
+                                    name: '^contrast',
+                                    domain: location.hostname,
+                                    desc: 'Ustawienia dostępności',
+                                }, {
+                                    name: 'wyzsza_szkola_gospodarki_session',
+                                    domain: location.hostname,
+                                    desc: 'Sesja strony',
+                                }, {
+                                    name: 'XSRF-TOKEN',
+                                    domain: location.hostname,
+                                    desc: 'Ochrona przed fałszowaniem żądań między witrynami',
+                                }]
                             }
-                        },
-                        pl: {
-                            consentModal: {
-                                title: 'Zgoda na pliki cookies',
-                                description: 'Strony internetowe, których operatorem jest Wyższa Szkoła Gospodarki w Bydgoszczy używają plików cookies. Jeśli nie chcesz, by pliki cookies były zapisywane na Twoim dysku zmień ustawienia swojej przeglądarki.',
-                                acceptAllBtn: 'Zaakceptuj wszystkie',
-                                acceptNecessaryBtn: 'Odrzuć wszystkie',
-                                showPreferencesBtn: 'Zarządzaj indywidualnymi ustawieniami'
-                            },
-                            preferencesModal: {
-                                title: 'Zarządzaj preferencjami dotyczącymi plików cookie',
-                                acceptAllBtn: 'Zaakceptuj wszystkie',
-                                acceptNecessaryBtn: 'Odrzuć wszystkie',
-                                savePreferencesBtn: 'Zaakceptuj bieżący wybór',
-                                closeIconLabel: 'Zamknij',
-                                sections: [
-                                    {
-                                        title: 'Wymagane pliki cookie',
-                                        description: 'Te pliki cookie są niezbędne do prawidłowego funkcjonowania witryny i nie można ich wyłączyć.',
-                                        linkedCategory: 'necessary',
-                                        cookieTable: {
-                                            headers: {
-                                                name: 'Cookie',
-                                                domain: 'Domena',
-                                                desc: 'Opis'
-                                            },
-                                            body: [
-                                                { name: '^contrast', domain: location.hostname, desc: 'Ustawienia dostępności' },
-                                                { name: 'wyzsza_szkola_gospodarki_session', domain: location.hostname, desc: 'Sesja strony' },
-                                                { name: 'XSRF-TOKEN', domain: location.hostname, desc: 'Ochrona przed fałszowaniem żądań między witrynami' }
-                                            ]
-                                        }
-                                    },
-                                    {
-                                        title: 'Wydajność i analityka',
-                                        description: 'Te pliki cookie zbierają informacje o tym, jak korzystasz z naszej witryny. Wszystkie dane są anonimizowane i nie mogą być użyte do zidentyfikowania Ciebie.',
-                                        linkedCategory: 'analytics',
-                                        cookieTable: {
-                                            headers: {
-                                                name: 'Cookie',
-                                                domain: 'Domena',
-                                                desc: 'Opis'
-                                            },
-                                            body: [
-                                                { name: '^_ga', domain: location.hostname, desc: 'Google analytics, tagmanager' },
-                                                { name: '^_fbp', domain: location.hostname, desc: 'Facebook Meta Pixel' }
-                                            ]
-                                        }
-                                    },
-                                    {
-                                        title: 'Więcej informacji',
-                                        description: 'Szczegółowy opis polityki prywatności znajdziesz pod tym adresem <a href="https://www.wsg.pl/polityka-prywatnosci-wsg">więcej informacji</a>'
-                                    }
-                                ]
+                        }, {
+                            title: 'Wydajność i analityka',
+                            description: 'Te pliki cookie zbierają informacje o tym, jak korzystasz z naszej witryny. Wszystkie dane są anonimizowane i nie mogą być użyte do zidentyfikowania Ciebie.',
+                            linkedCategory: 'analytics',
+                            cookieTable: {
+
+                                headers: {
+                                    name: 'Cookie',
+                                    domain: 'Domena',
+                                    desc: 'Opis'
+                                },
+                                body: [{
+                                    name: '^_ga',
+                                    domain: location.hostname,
+                                    desc: 'Google analytics, tagmanager',
+                                }, {
+                                    name: '^_fbp',
+                                    domain: location.hostname,
+                                    desc: 'Facebook Meta Pixel',
+                                }]
                             }
-                        }
+                        }, {
+                            title: 'Więcej informacji',
+                            description: 'Szczegółowy opis polityki prywatności znajdziesz pod tym adresem <a href="https://www.wsg.pl/polityka-prywatnosci-wsg">więcej informacji</a>'
+                        }]
                     }
                 }
-            });
 
-            $(document).ready(function(){
-                $(window).scroll(function(){
-                    if($(this).scrollTop() > 40){
-                        $('#topBtn').fadeIn();
-                    } else {
-                        $('#topBtn').fadeOut();
-                    }
-                });
-                $("#topBtn i").click(function(){
-                    $('html, body').animate({scrollTop: 0},800);
-                });
-            });
-             
-        document.addEventListener('DOMContentLoaded', function () {
-            var myCarousel = document.querySelector('#imageCarousel');
-            var carousel = new bootstrap.Carousel(myCarousel, {
-                interval: 3000,
-                ride: 'carousel'
-            });
+            }
+        }
+    });
+
+    $(document).ready(function() {
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 40) {
+                $('#topBtn').fadeIn();
+            } else {
+                $('#topBtn').fadeOut();
+            }
         });
-   
-        </script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
-      <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+        $("#topBtn i").click(function() {
+            $('html, body').animate({
+                scrollTop: 0
+            }, 800);
+        });
+    });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
@@ -787,7 +821,6 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
             });
         });
     </script>
-    
-    
-    </body>
-</html>
+
+
+</body></html>
